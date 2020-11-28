@@ -18,7 +18,6 @@
 \renewcommand{\baselinestretch}{1.5}
 \setlength{\parindent}{0pt}
 \pagestyle{plain}
-\pagestyle{fancy}
 %\documentclass{article}
 %\usepackage{indentfirst}
 \usepackage{graphicx}
@@ -29,6 +28,7 @@
 %\setlength{\parindent}{1cm} % Default is 15pt.
 
 \usepackage{titlesec}
+\usepackage{subcaption}
 
 \titleformat*{\section}{\LARGE\bfseries}
 \titleformat*{\subsection}{\Large\bfseries}
@@ -51,9 +51,18 @@
 \newtheorem{Proposition}{Mệnh đề } %without numbering
 \newtheorem*{Propositionproof}{Chứng minh mệnh đề 1: } %without numbering
 \newtheorem{claim}{Khẳng định}
-\lfoot{\textit{Lai Đức Thắng}}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{}
+\fancyhead[R]{\itshape Đồ án tốt nghiệp 20201}
 
-\rfoot{\textit{Toán Tin K61}}
+\fancyfoot{}
+\fancyfoot[L]{\itshape Thực hiện: Lai Đức Thắng}
+\fancyfoot[R]{Toán Tin K61}
+%\lfoot{\textit{Lai Đức Thắng}}
+%
+%\rfoot{\textit{Toán Tin K61}}
+
 \renewcommand{\footrulewidth}{1,2pt}
 
 
@@ -84,8 +93,8 @@
 %						(Principal Component Analysis - PCA )
 %				}}
 
-				{\Large\bf \textbf{VĨNH THỨC
-						VÀ ỨNG DỤNG TRONG\\ BÀI TOÁN ĐẾM TỔ HỢP\\
+				{\Large\bf \textbf{HỌC SÂU
+						VÀ ỨNG DỤNG TRONG\\ BÀI TOÁN ĐẾM CÂY\\
 				}}
 				\vskip 1cm
 				{\bf ĐỒ ÁN III}
@@ -114,7 +123,7 @@
 			\end{center}
 			
 	\end{titlepage}
-\tableofcontents
+\tableofcontents{}
 \addcontentsline{toc}{chapter}{Lời mở đầu}
 
 \chapter*{Lời mở đầu}
@@ -491,22 +500,151 @@ Faster R-CNN ResNet-50 FPN là một mô hình Faster R-CNN với mạng backbon
 Ảnh đầu vào sẽ được chia nhỏ thành các ảnh có kích thước $256 \times 256$ (bằng với kích thước trong tập ảnh training),  với tỉ lệ \textit{overlap} giữa các tấm ảnh là $0.5$ \\
 \textbf{Output:} \\
 Các file định dạng txt chứa các bounding box mà mô hình đoán đó là vật thể trong bức ảnh đó.  
-Vì mục tiêu của bài toán là nhận dạng và đếm số cây trên một bức ảnh lớn,  nên ta sẽ ghép các tấm ảnh nhỏ ở trên lại để đưa về hình ảnh gốc của chúng.  Vì trong quá trình tiền xử lý, ta thiết lập overlap $= 0.5$ nên việc các bounding box của các bức ảnh gần nhau sẽ đè lên nhau,  gây ra hiện tượng trùng lặp.  Để giải quyết vấn đề này,  các bounding box thu được trên toàn bộ các ảnh đầu tiên sẽ được đưa về toạ độ địa lý, sau đó sử dụng thuật toán NMS để loại bỏ các bounding box trùng nhau (nếu như giá trị IOU của hai bounding box này vượt quá một ngưỡng (trong mô hình này em lấy ngưỡng $=0.3$))
+Vì mục tiêu của bài toán là nhận dạng và đếm số cây trên một bức ảnh lớn,  nên ta sẽ ghép các tấm ảnh nhỏ ở trên lại để đưa về hình ảnh gốc của chúng.  Vì trong quá trình tiền xử lý, ta thiết lập overlap $= 0.5$ nên việc các bounding box của các bức ảnh gần nhau sẽ đè lên nhau,  gây ra hiện tượng trùng lặp.  Để giải quyết vấn đề này,  các bounding box thu được trên toàn bộ các ảnh đầu tiên sẽ được đưa về toạ độ địa lý, sau đó sử dụng thuật toán NMS để loại bỏ các bounding box trùng nhau (nếu như giá trị IOU của hai bounding box này vượt quá một ngưỡng (trong mô hình này em lấy ngưỡng $=0.3$)).  Kết quả sau khi thực hiện thuật toán NMS sẽ 
 
 
-\item a durian
+\item \textit{Thiết kế dữ liệu luyện mạng} \\
+Dữ liệu sử dụng trong bài toán này được cung cấp bởi thầy giáo hướng dẫn TS.  Lê Hải Hà.  Dữ liệu bao gồm 2 thư mục,  nỗi thư mực gồm một vài ảnh ở định dạng GeoTif và các \textbf{shapefile} chưa toạ độ các bounding box trong các bức ảnh đó
+ \begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\linewidth]{Images/data_folder}
+	\caption{Dữ liệu sử dụng trong bài toán}
+	\label{fig:data_folder}
+\end{figure}
+
+\newpage
+ \begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\linewidth]{Images/qgisa}
+	\caption{Minh hoạ ảnh viễn thám với phần mềm QGIS} 
+	\label{fig:1a}
+\end{figure}
+
+
+ \begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Images/qgisb}
+	\caption{Toạ độ các bounding box trên ảnh,  biểu thị bởi các hình tròn màu vàng}
+	\label{fig:1b}
+\end{figure}
+
+
+%\begin{figure}
+%  \begin{subfigure}{0.6\textwidth}
+%    \includegraphics[width=\linewidth]{Images/qgisa}
+%    \caption{} \label{fig:1a}
+%  \end{subfigure}%
+%  \hspace*{\fill}   % maximize separation between the subfigures
+%  \begin{subfigure}{0.5\textwidth}
+%    \includegraphics[width=\linewidth]{Images/qgisb}
+%    \caption{} \label{fig:1b}
+%  \end{subfigure}%
+%  \hspace*{\fill}   % maximizeseparation between the subfigures
+
+%
+%\caption{Minh hoạ ảnh viễn thám với phần mềm QGIS (hình \ref{fig:1a}),  toạ độ các bounding box trên ảnh,  biểu thị bởi các hình tròn màu vàng (hình \ref{fig:1b})} \label{fig:1}
+%\end{figure}
+\newpage
+Các ảnh trong bộ dữ liệu ở trên có 2 loại kích thước : $3141 \times 1885$ và $3874 \times 3100$.  Để thuận tiện cho việc training mô hình,  ta sẽ chia nhỏ mỗi ảnh thành nhiều ảnh con có kích thước $256 \times 256$ với giá trị $overlap = 0.5$.  Để lấy bounding box trong từng bức ảnh được cắt ra,  đầu tiên ta tiến hành đọc file \textit{shapefile} của ảnh đó bằng thư viện \textit{geopandas} (hình \ref{fig:polygon_ori}): 
+
+ \begin{figure}[!h]
+	\centering
+	\includegraphics[width=1\linewidth]{Images/polygon_ori}
+	\caption{Đọc file shapefile với thư viện geopandas}
+	\label{fig:polygon_ori}
+\end{figure}
+Vì toạ độ các câu được đánh dấu theo hình tròn nên ta cần chuyển định dạng hình tròn về bounding box (hình \ref{fig:polygon_bounds})
+
+ \begin{figure}[!h]
+	\centering
+	\includegraphics[width=1\linewidth]{Images/polygon_bounds}
+	\caption{Toạ độ 4 đỉnh của một polygon}
+	\label{fig:polygon_bounds}
+\end{figure}
+
+
+%\begin{figure}
+%  \begin{subfigure}{0.5\textwidth}
+%    \includegraphics[width=\linewidth]{Images/split1}
+%    \caption{} \label{fig:1a}
+%  \end{subfigure}%
+%  \hspace*{\fill}   % maximize separation between the subfigures
+%  \begin{subfigure}{0.5\textwidth}
+%    \includegraphics[width=\linewidth]{Images/split2}
+%    \caption{} \label{fig:1b}
+%  \end{subfigure}%
+%  \hspace*{\fill}   % maximizeseparation between the subfigures
+%%    \begin{subfigure}{0.4\textwidth}
+%%    \includegraphics[width=\linewidth]{Images/split3}
+%%    \caption{} \label{fig:1b}
+%%  \end{subfigure}%
+%\caption{Minh hoạ ảnh viễn thám với phần mềm QGIS (hình \ref{fig:1a}),  toạ độ các bounding box trên ảnh,  biểu thị bởi các hình tròn màu vàng (hình \ref{fig:1b})} \label{fig:1}
+%\end{figure}
+%
+% \begin{figure}[!h]
+%	\centering
+%	\includegraphics[width=0.5\linewidth]{Images/split3}
+%	\caption{Toạ độ 4 đỉnh của một polygon}
+%	\label{fig:polygon_bounds}
+%\end{figure}
+\newpage
+Tuy nhiên trong hình trên, mỗi điểm là một toạ độ trên một mặt phẳng địa lý,  ta phải chuyển các toạ độ $x,y$ về toạ độ cột,  hàng tương ứng.  Một vài kết quả thu được sau khi tiến hành cắt ảnh và lấy bounding box tương ứng cho mỗi bức ảnh đó: 
+\newpage
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[!h]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{Images/split1}
+        \subcaption[short for lof]{}
+%        \rule{\linewidth}{3cm}
+        \label{fig:subfig1}
+    \end{subfigure}%
+    \quad
+    \begin{subfigure}[!h]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{Images/split2}
+        \subcaption[short for lof]{}
+%        \rule{\linewidth}{3cm}
+        \label{fig:subfig2}
+    \end{subfigure}
+ 
+    \begin{subfigure}[!h]{0.45\textwidth}
+    	\includegraphics[width=\linewidth]{Images/split3}
+        \subcaption[short for lof]{}
+%        \rule{\linewidth}{3cm}
+        \label{fig:subfig3}
+    \end{subfigure}
+    \caption[Optional caption for list of figures]{Main caption for subfigures \subref{fig:subfig1}, \subref{fig:subfig2} and \subref{fig:subfig3}}
+\end{figure}
 \end{enumerate}
+Kết quả sau khi cắt ảnh ra ta thu được bộ dữ liệu hơn 5000 ảnh kích thước $256 \times 256$ cùng với toạ độ các bounding box tương ứng trong từng ảnh đó
 \section{Huấn luyện mạng neural}
-
+Chúng ta sẽ tiến hành huấn luyện mô hình dựa trên bộ dữ liệu được tạo ra ở trên.  Mô hình mà em sử dụng trong bài toán này là Faster- RCNN; trong đó backbone sử dụng ở đây là ResNet101 phục vụ cho việc trích xuất các đặc trưng trong ảnh
 \section{Xây dựng chương trình}
 
 \chapter{Cài đặt chương trình và đánh giá kết quả}
 
 \section{Môi trường cài đặt chương trình và các yêu cầu liên quan}
+\subsection{Môi trường cài đặt chương trình}
+Chương trình được cài đặt trên ngôn ngữ Python (phiên bản 3.6.9) và được thử nghiệm trên hệ điều hành máy ảo của google colab sử dụng chip 4 core , bộ nhớ RAM 24GB,  card đồ hoạ NVIDIA Tesla V100 16GB
+ \begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Images/nvidia-smi}
+	\caption{Cấu hình máy tính sử dụng cho bài toán}
+	\label{fig:nvidia-smi}
+\end{figure}
+\subsection{Các yêu cầu liên quan}
+\begin{itemize}
+	\item Ngôn ngữ sử dụng: Python phiên bản 3.6.9
+	\item IDE sử dụng: Visual Studio Code
+	\item Các thư viện Python sử dụng: pandas, numpy, matplotlib,  torch, os , cv2 và xlwt.
+	\item Các thư viện Python sử dụng: pandas, numpy, matplotlib, seaborn, Ipython, sklearn, keras, imageio, scipy, os, cv2 và xlwt.
+\end{itemize}
+
+
 
 \section{Dữ liệu đầu vào}
+Vì dữ liệu em được cung cấp bị hạn chế, nên trong bộ dữ liệu ban đầu em lấy ra 1 ảnh chưa được xử lý cho tập train và validation để đưa vào mô hình nhận diện vật thể đã xây dựng ở chương trước.  Lý do của việc lấy một ảnh kích thước lớn để dự đoán là vì theo yêu cầu của khách hàng,  họ cần đánh giá kết quả mô hình trên toàn bộ diện tích đất của họ chứ không phải các tấm ảnh kích thước $256 \times 256$ được cắt nhỏ từ tấm ảnh ban đầu
 
-\section{Kết quả huấn luyện}
+\section{Kết quả nhận dạng}
 
 \section{Đánh giá kết quả}
 

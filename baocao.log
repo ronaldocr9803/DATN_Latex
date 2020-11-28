@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  22 NOV 2020 23:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  28 NOV 2020 11:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -817,9 +817,34 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \titlewidthlast=\dimen194
 \titlewidthfirst=\dimen195
 )
-\c@theoremnum=\count149
-\c@Proposition=\count150
-\c@claim=\count151
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen196
+\captionmargin@=\dimen197
+\captionwidth=\dimen198
+\caption@tempdima=\dimen199
+\caption@indent=\dimen256
+\caption@parindent=\dimen257
+\caption@hangindent=\dimen258
+)
+\c@caption@flags=\count149
+\c@ContinuedFloat=\count150
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+)
+\c@subfigure=\count151
+\c@subtable=\count152
+)
+\c@theoremnum=\count153
+\c@Proposition=\count154
+\c@claim=\count155
 
 (./baocao.aux
 
@@ -828,20 +853,20 @@ LaTeX Warning: Label `fig:nn3' multiply defined.
 )
 \openout1 = `baocao.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -879,16 +904,16 @@ LaTeX Font Info:    ... okay on input line 61.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count152
-\scratchdimen=\dimen196
+\scratchcounter=\count156
+\scratchdimen=\dimen259
 \scratchbox=\box55
-\nofMPsegments=\count153
-\nofMParguments=\count154
+\nofMPsegments=\count157
+\nofMParguments=\count158
 \everyMPshowfont=\toks51
-\MPscratchCnt=\count155
-\MPscratchDim=\dimen197
-\MPnumerator=\count156
-\makeMPintoPDFobject=\count157
+\MPscratchCnt=\count159
+\MPscratchDim=\dimen260
+\MPnumerator=\count160
+\makeMPintoPDFobject=\count161
 \everyMPtoPDFconversion=\toks52
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -942,23 +967,25 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-\c@lstlisting=\count158
+\c@lstlisting=\count162
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 <Images/biaDA.png, id=4, 134.5025pt x 181.67876pt>
 File: Images/biaDA.png Graphic file (type png)
 <use Images/biaDA.png>
-Package pdftex.def Info: Images/biaDA.png  used on input line 78.
+Package pdftex.def Info: Images/biaDA.png  used on input line 87.
 (pdftex.def)             Requested size: 114.32764pt x 154.42766pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 99.
+LaTeX Font Info:    Try loading font information for U+msa on input line 108.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 99.
+LaTeX Font Info:    Try loading font information for U+msb on input line 108.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 99.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 108.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -974,7 +1001,7 @@ s/biaDA.png>] (./baocao.toc [1
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
-Make it at least 14.49998pt.
+Make it at least 14.93912pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
@@ -986,208 +1013,196 @@ Ch\uhorn \ohorn ng 1.
 
 ]
 Ch\uhorn \ohorn ng 2.
-<Images/aimldl.png, id=28, 578.16pt x 368.1253pt>
+<Images/aimldl.png, id=27, 578.16pt x 368.1253pt>
 File: Images/aimldl.png Graphic file (type png)
 <use Images/aimldl.png>
-Package pdftex.def Info: Images/aimldl.png  used on input line 137.
+Package pdftex.def Info: Images/aimldl.png  used on input line 146.
 (pdftex.def)             Requested size: 441.01773pt x 280.80046pt.
 [5
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 145.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 154.
 
  (/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 145.
-<Images/nn1.png, id=32, 1129.21875pt x 263.48438pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 154.
+<Images/nn1.png, id=31, 1129.21875pt x 263.48438pt>
 File: Images/nn1.png Graphic file (type png)
 <use Images/nn1.png>
-Package pdftex.def Info: Images/nn1.png  used on input line 155.
+Package pdftex.def Info: Images/nn1.png  used on input line 164.
 (pdftex.def)             Requested size: 352.81552pt x 82.32257pt.
-
-
-Package Fancyhdr Warning: \headheight is too small (14.49998pt): 
-Make it at least 17.97171pt.
-We now make it that large for the rest of the document.
-This may cause the page layout to be inconsistent, however.
-
-[6 <./Images/aimldl.png (PNG copy)>]
-<Images/nn2.png, id=38, 839.38594pt x 290.58563pt>
+ [6 <./Images/aimldl.png (PNG copy)>]
+<Images/nn2.png, id=37, 839.38594pt x 290.58563pt>
 File: Images/nn2.png Graphic file (type png)
 <use Images/nn2.png>
-Package pdftex.def Info: Images/nn2.png  used on input line 165.
+Package pdftex.def Info: Images/nn2.png  used on input line 174.
 (pdftex.def)             Requested size: 441.01773pt x 152.67502pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [7 <./Images/nn1.png (PNG copy)>]
-<Images/nn3.png, id=46, 312.41719pt x 257.46187pt>
+<Images/nn3.png, id=45, 312.41719pt x 257.46187pt>
 File: Images/nn3.png Graphic file (type png)
 <use Images/nn3.png>
-Package pdftex.def Info: Images/nn3.png  used on input line 188.
+Package pdftex.def Info: Images/nn3.png  used on input line 197.
 (pdftex.def)             Requested size: 352.81552pt x 290.75958pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [8 <./Images/nn2.png>]
-<Images/cnn1.jpg, id=51, 1606.0pt x 401.5pt>
+<Images/cnn1.jpg, id=50, 1606.0pt x 401.5pt>
 File: Images/cnn1.jpg Graphic file (type jpg)
 <use Images/cnn1.jpg>
-Package pdftex.def Info: Images/cnn1.jpg  used on input line 198.
+Package pdftex.def Info: Images/cnn1.jpg  used on input line 207.
 (pdftex.def)             Requested size: 441.01773pt x 110.25049pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Package Fancyhdr Warning: \headheight is too small (17.97171pt): 
-Make it at least 32.47171pt.
-We now make it that large for the rest of the document.
-This may cause the page layout to be inconsistent, however.
-
-[9 <./Images/nn3.png>]
-<Images/cnn2.png, id=56, 865.73438pt x 376.40625pt>
+<Images/cnn2.png, id=51, 865.73438pt x 376.40625pt>
 File: Images/cnn2.png Graphic file (type png)
 <use Images/cnn2.png>
-Package pdftex.def Info: Images/cnn2.png  used on input line 205.
+Package pdftex.def Info: Images/cnn2.png  used on input line 214.
 (pdftex.def)             Requested size: 441.01773pt x 191.74638pt.
-<Images/stride1.png, id=57, 182.93344pt x 176.91093pt>
+[9 <./Images/nn3.png>]
+<Images/stride1.png, id=56, 182.93344pt x 176.91093pt>
 File: Images/stride1.png Graphic file (type png)
 <use Images/stride1.png>
-Package pdftex.def Info: Images/stride1.png  used on input line 213.
+Package pdftex.def Info: Images/stride1.png  used on input line 222.
 (pdftex.def)             Requested size: 91.46649pt x 88.45525pt.
-<Images/stride2.png, id=58, 256.96pt x 229.85875pt>
+<Images/stride2.png, id=57, 256.96pt x 229.85875pt>
 File: Images/stride2.png Graphic file (type png)
 <use Images/stride2.png>
-Package pdftex.def Info: Images/stride2.png  used on input line 217.
+Package pdftex.def Info: Images/stride2.png  used on input line 226.
 (pdftex.def)             Requested size: 109.20851pt x 97.69041pt.
-<Images/stride3.png, id=59, 217.81375pt x 198.7425pt>
+<Images/stride3.png, id=58, 217.81375pt x 198.7425pt>
 File: Images/stride3.png Graphic file (type png)
 <use Images/stride3.png>
-Package pdftex.def Info: Images/stride3.png  used on input line 221.
+Package pdftex.def Info: Images/stride3.png  used on input line 230.
 (pdftex.def)             Requested size: 108.9066pt x 99.371pt.
  [10 <./Images/cnn1.jpg> <./Images/cnn2.png> <./Images/stride1.png (PNG copy)> 
 <./Images/stride2.png (PNG copy)> <./Images/stride3.png (PNG copy)>]
-<Images/pooling.png, id=64, 815.29594pt x 437.38406pt>
+<Images/pooling.png, id=63, 815.29594pt x 437.38406pt>
 File: Images/pooling.png Graphic file (type png)
 <use Images/pooling.png>
-Package pdftex.def Info: Images/pooling.png  used on input line 231.
+Package pdftex.def Info: Images/pooling.png  used on input line 240.
 (pdftex.def)             Requested size: 396.91325pt x 212.93187pt.
-<Images/fc.png, id=65, 828.09375pt x 301.125pt>
+<Images/fc.png, id=64, 828.09375pt x 301.125pt>
 File: Images/fc.png Graphic file (type png)
 <use Images/fc.png>
-Package pdftex.def Info: Images/fc.png  used on input line 238.
+Package pdftex.def Info: Images/fc.png  used on input line 247.
 (pdftex.def)             Requested size: 396.91325pt x 144.33618pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/relu1.png, id=66, 740.7675pt x 258.21469pt>
+<Images/relu1.png, id=65, 740.7675pt x 258.21469pt>
 File: Images/relu1.png Graphic file (type png)
 <use Images/relu1.png>
-Package pdftex.def Info: Images/relu1.png  used on input line 247.
+Package pdftex.def Info: Images/relu1.png  used on input line 256.
 (pdftex.def)             Requested size: 441.01773pt x 153.72829pt.
 [11 <./Images/pooling.png>] [12 <./Images/fc.png> <./Images/relu1.png>]
-<Images/det.png, id=80, 402.75468pt x 270.25969pt>
+<Images/det.png, id=79, 402.75468pt x 270.25969pt>
 File: Images/det.png Graphic file (type png)
 <use Images/det.png>
-Package pdftex.def Info: Images/det.png  used on input line 259.
+Package pdftex.def Info: Images/det.png  used on input line 268.
 (pdftex.def)             Requested size: 308.71106pt x 207.15211pt.
 
 [13 <./Images/det.png>]
-Overfull \hbox (3.92351pt too wide) in paragraph at lines 271--271
+Overfull \hbox (3.92351pt too wide) in paragraph at lines 280--280
 []\T5/cmr/bx/n/12 One-stage Object Detection: \T5/cmr/m/n/12 C¡c thuªt to¡n ^^_
 iºn h¼nh nh÷: SSD, YOLO, RetinaNet.
  []
 
 [14]
-<Images/rcnn.png, id=88, 442.65375pt x 150.5625pt>
+<Images/rcnn.png, id=87, 442.65375pt x 150.5625pt>
 File: Images/rcnn.png Graphic file (type png)
 <use Images/rcnn.png>
-Package pdftex.def Info: Images/rcnn.png  used on input line 283.
+Package pdftex.def Info: Images/rcnn.png  used on input line 292.
 (pdftex.def)             Requested size: 441.01773pt x 150.01534pt.
-<Images/rcnn1.png, id=89, 418.56375pt x 374.90062pt>
+<Images/rcnn1.png, id=88, 418.56375pt x 374.90062pt>
 File: Images/rcnn1.png Graphic file (type png)
 <use Images/rcnn1.png>
-Package pdftex.def Info: Images/rcnn1.png  used on input line 290.
+Package pdftex.def Info: Images/rcnn1.png  used on input line 299.
 (pdftex.def)             Requested size: 198.45662pt x 177.75357pt.
  [15 <./Images/rcnn.png (PNG copy)> <./Images/rcnn1.png (PNG copy)>]
-<Images/fastrcnn.png, id=93, 792.9625pt x 321.2pt>
+<Images/fastrcnn.png, id=92, 792.9625pt x 321.2pt>
 File: Images/fastrcnn.png Graphic file (type png)
 <use Images/fastrcnn.png>
-Package pdftex.def Info: Images/fastrcnn.png  used on input line 307.
+Package pdftex.def Info: Images/fastrcnn.png  used on input line 316.
 (pdftex.def)             Requested size: 308.71106pt x 125.04694pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [16]
-<Images/roi.png, id=97, 578.16pt x 314.67563pt>
+<Images/roi.png, id=96, 578.16pt x 314.67563pt>
 File: Images/roi.png Graphic file (type png)
 <use Images/roi.png>
-Package pdftex.def Info: Images/roi.png  used on input line 315.
+Package pdftex.def Info: Images/roi.png  used on input line 324.
 (pdftex.def)             Requested size: 308.71106pt x 168.02089pt.
-<Images/time.png, id=98, 658.71094pt x 225.84375pt>
+<Images/time.png, id=97, 658.71094pt x 225.84375pt>
 File: Images/time.png Graphic file (type png)
 <use Images/time.png>
-Package pdftex.def Info: Images/time.png  used on input line 322.
+Package pdftex.def Info: Images/time.png  used on input line 331.
 (pdftex.def)             Requested size: 441.01773pt x 151.20769pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--323
-[]\T5/cmr/m/n/12 H¼nh 2.15: So s¡nh mët sè thuªt to¡n object detection (Nguçn:
+Underfull \hbox (badness 10000) in paragraph at lines 332--332
+[]\T5/cmr/m/n/12 H¼nh 2.15: |So s¡nh mët sè thuªt to¡n object detection (Nguçn:
+
  []
 
 [17 <./Images/fastrcnn.png> <./Images/roi.png (PNG copy)>]
-<Images/fasterrcnn.png, id=103, 470.50781pt x 392.21532pt>
+<Images/fasterrcnn.png, id=102, 470.50781pt x 392.21532pt>
 File: Images/fasterrcnn.png Graphic file (type png)
 <use Images/fasterrcnn.png>
-Package pdftex.def Info: Images/fasterrcnn.png  used on input line 331.
+Package pdftex.def Info: Images/fasterrcnn.png  used on input line 340.
 (pdftex.def)             Requested size: 308.71106pt x 257.34279pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [18 <./Images/time.png (PNG copy)>]
-<Images/fasterrcnn2.png, id=108, 578.16pt x 330.48468pt>
+<Images/fasterrcnn2.png, id=107, 578.16pt x 330.48468pt>
 File: Images/fasterrcnn2.png Graphic file (type png)
 <use Images/fasterrcnn2.png>
-Package pdftex.def Info: Images/fasterrcnn2.png  used on input line 353.
+Package pdftex.def Info: Images/fasterrcnn2.png  used on input line 362.
 (pdftex.def)             Requested size: 308.71106pt x 176.46213pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [19 <./Images/fasterrcnn.png (PNG copy)>]
-<Images/iou1.jpg, id=112, 602.25pt x 451.6875pt>
+<Images/iou1.jpg, id=111, 602.25pt x 451.6875pt>
 File: Images/iou1.jpg Graphic file (type jpg)
 <use Images/iou1.jpg>
-Package pdftex.def Info: Images/iou1.jpg  used on input line 362.
+Package pdftex.def Info: Images/iou1.jpg  used on input line 371.
 (pdftex.def)             Requested size: 220.50887pt x 165.38492pt.
 
-Underfull \hbox (badness 2142) in paragraph at lines 363--363
-[]\T5/cmr/m/n/12 H¼nh 2.18: Mët v½ dö v· ph¡t hi»n biºn b¡o Stop tø h¼nh £nh. (
-Nguçn:
+Underfull \hbox (badness 2142) in paragraph at lines 372--372
+[]\T5/cmr/m/n/12 H¼nh 2.18: |Mët v½ dö v· ph¡t hi»n biºn b¡o Stop tø h¼nh £nh. 
+(Nguçn:
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/iou3.png, id=113, 602.25pt x 469.755pt>
+<Images/iou3.png, id=112, 602.25pt x 469.755pt>
 File: Images/iou3.png Graphic file (type png)
 <use Images/iou3.png>
-Package pdftex.def Info: Images/iou3.png  used on input line 373.
+Package pdftex.def Info: Images/iou3.png  used on input line 382.
 (pdftex.def)             Requested size: 220.50887pt x 172.00032pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/iou4.png, id=114, 451.6875pt x 186.6975pt>
+<Images/iou4.png, id=113, 451.6875pt x 186.6975pt>
 File: Images/iou4.png Graphic file (type png)
 <use Images/iou4.png>
-Package pdftex.def Info: Images/iou4.png  used on input line 379.
+Package pdftex.def Info: Images/iou4.png  used on input line 388.
 (pdftex.def)             Requested size: 308.71106pt x 127.60783pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1197,21 +1212,21 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: Text page 21 contains only floats.
 
 [21 <./Images/iou1.jpg> <./Images/iou3.png> <./Images/iou4.png>]
-<Images/PR.png, id=123, 2690.05pt x 1572.87625pt>
+<Images/PR.png, id=122, 2690.05pt x 1572.87625pt>
 File: Images/PR.png Graphic file (type png)
 <use Images/PR.png>
-Package pdftex.def Info: Images/PR.png  used on input line 391.
+Package pdftex.def Info: Images/PR.png  used on input line 400.
 (pdftex.def)             Requested size: 308.71106pt x 180.48096pt.
  [22 <./Images/PR.png>]
-<Images/screensprhot001.png, id=128, 658.71094pt x 326.72063pt>
+<Images/screensprhot001.png, id=127, 658.71094pt x 326.72063pt>
 File: Images/screensprhot001.png Graphic file (type png)
 <use Images/screensprhot001.png>
-Package pdftex.def Info: Images/screensprhot001.png  used on input line 429.
+Package pdftex.def Info: Images/screensprhot001.png  used on input line 438.
 (pdftex.def)             Requested size: 308.71106pt x 153.12498pt.
-<Images/cocometric.png, id=129, 741.52031pt x 293.59688pt>
+<Images/cocometric.png, id=128, 741.52031pt x 293.59688pt>
 File: Images/cocometric.png Graphic file (type png)
 <use Images/cocometric.png>
-Package pdftex.def Info: Images/cocometric.png  used on input line 439.
+Package pdftex.def Info: Images/cocometric.png  used on input line 448.
 (pdftex.def)             Requested size: 441.01773pt x 174.61838pt.
 
 
@@ -1219,15 +1234,15 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [23 <./Images/screensprhot001.png (PNG copy)>] [24 <./Images/cocometric.png>]
 [25]
-<Images/resnet_1.png, id=141, 351.56343pt x 279.29344pt>
+<Images/resnet_1.png, id=140, 351.56343pt x 279.29344pt>
 File: Images/resnet_1.png Graphic file (type png)
 <use Images/resnet_1.png>
-Package pdftex.def Info: Images/resnet_1.png  used on input line 467.
+Package pdftex.def Info: Images/resnet_1.png  used on input line 476.
 (pdftex.def)             Requested size: 220.50887pt x 175.1759pt.
-<Images/fpn.png, id=142, 376.40625pt x 151.3153pt>
+<Images/fpn.png, id=141, 376.40625pt x 151.3153pt>
 File: Images/fpn.png Graphic file (type png)
 <use Images/fpn.png>
-Package pdftex.def Info: Images/fpn.png  used on input line 475.
+Package pdftex.def Info: Images/fpn.png  used on input line 484.
 (pdftex.def)             Requested size: 308.71106pt x 124.11166pt.
 
 
@@ -1238,17 +1253,67 @@ Ch\uhorn \ohorn ng 3.
 [28
 
 ]
+<Images/data_folder.png, id=152, 774.895pt x 400.49625pt>
+File: Images/data_folder.png Graphic file (type png)
+<use Images/data_folder.png>
+Package pdftex.def Info: Images/data_folder.png  used on input line 510.
+(pdftex.def)             Requested size: 441.01773pt x 227.9369pt.
+ [29 <./Images/data_folder.png>]
+<Images/qgisa.png, id=157, 920.43875pt x 549.05125pt>
+File: Images/qgisa.png Graphic file (type png)
+<use Images/qgisa.png>
+Package pdftex.def Info: Images/qgisa.png  used on input line 518.
+(pdftex.def)             Requested size: 441.01773pt x 263.07245pt.
+<Images/qgisb.png, id=158, 648.4225pt x 466.74374pt>
+File: Images/qgisb.png Graphic file (type png)
+<use Images/qgisb.png>
+Package pdftex.def Info: Images/qgisb.png  used on input line 526.
+(pdftex.def)             Requested size: 308.71106pt x 222.21835pt.
+ [30 <./Images/qgisa.png> <./Images/qgisb.png>]
+<Images/polygon_ori.png, id=165, 565.11125pt x 396.48125pt>
+File: Images/polygon_ori.png Graphic file (type png)
+<use Images/polygon_ori.png>
+Package pdftex.def Info: Images/polygon_ori.png  used on input line 552.
+(pdftex.def)             Requested size: 441.01773pt x 309.42351pt.
+<Images/polygon_bounds.png, id=166, 581.17125pt x 449.68pt>
+File: Images/polygon_bounds.png Graphic file (type png)
+<use Images/polygon_bounds.png>
+Package pdftex.def Info: Images/polygon_bounds.png  used on input line 560.
+(pdftex.def)             Requested size: 441.01773pt x 341.23886pt.
 
-Package Fancyhdr Warning: \headheight is too small (32.47171pt): 
-Make it at least 34.3679pt.
-We now make it that large for the rest of the document.
-This may cause the page layout to be inconsistent, however.
 
-[29]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[31 <./Images/polygon_ori.png>] [32 <./Images/polygon_bounds.png>]
+<Images/split1.png, id=175, 256.96pt x 256.96pt>
+File: Images/split1.png Graphic file (type png)
+<use Images/split1.png>
+Package pdftex.def Info: Images/split1.png  used on input line 596.
+(pdftex.def)             Requested size: 198.45662pt x 198.4597pt.
+<Images/split2.png, id=176, 256.96pt x 256.96pt>
+File: Images/split2.png Graphic file (type png)
+<use Images/split2.png>
+Package pdftex.def Info: Images/split2.png  used on input line 603.
+(pdftex.def)             Requested size: 198.45662pt x 198.4597pt.
+<Images/split3.png, id=177, 256.96pt x 256.96pt>
+File: Images/split3.png Graphic file (type png)
+<use Images/split3.png>
+Package pdftex.def Info: Images/split3.png  used on input line 610.
+(pdftex.def)             Requested size: 198.45662pt x 198.4597pt.
+ [33 <./Images/split1.png (PNG copy)> <./Images/split2.png (PNG copy)> <./Image
+s/split3.png (PNG copy)>] [34]
 Ch\uhorn \ohorn ng 4.
-[30
+<Images/nvidia-smi.png, id=185, 670.505pt x 589.20125pt>
+File: Images/nvidia-smi.png Graphic file (type png)
+<use Images/nvidia-smi.png>
+Package pdftex.def Info: Images/nvidia-smi.png  used on input line 630.
+(pdftex.def)             Requested size: 352.81552pt x 310.02754pt.
 
-] [31
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[35
+
+] [36 <./Images/nvidia-smi.png>] [37
 
 ] (./baocao.aux)
 
@@ -1256,13 +1321,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18209 strings out of 492616
- 329953 string characters out of 6129480
- 396200 words of memory out of 5000000
- 21712 multiletter control sequences out of 15000+600000
- 22699 words of font info for 50 fonts, out of 8000000 for 9000
+ 19393 strings out of 492616
+ 351588 string characters out of 6129480
+ 418223 words of memory out of 5000000
+ 22879 multiletter control sequences out of 15000+600000
+ 22290 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,48p,1533b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,12n,49p,1533b,627s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></
@@ -1272,13 +1337,13 @@ local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
 al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
 l/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/
 local/texlive/2019/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2019/te
-xmf-dist/fonts/type1/vntex/vnr/vnsl12.pfb></usr/local/texlive/2019/texmf-dist/f
-onts/type1/vntex/vnr/vnti12.pfb>
-Output written on baocao.pdf (32 pages, 3024915 bytes).
+ive/2019/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2019/te
+xmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2019/texmf-dist/fo
+nts/type1/vntex/vnr/vnti12.pfb>
+Output written on baocao.pdf (38 pages, 8424831 bytes).
 PDF statistics:
- 203 PDF objects out of 1000 (max. 8388607)
- 112 compressed objects within 2 object streams
+ 239 PDF objects out of 1000 (max. 8388607)
+ 127 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 158 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 203 words of extra memory for PDF output out of 10000 (max. 10000000)
 
