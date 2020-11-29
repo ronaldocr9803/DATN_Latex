@@ -97,11 +97,11 @@
 						VÀ ỨNG DỤNG TRONG\\ BÀI TOÁN ĐẾM CÂY\\
 				}}
 				\vskip 1cm
-				{\bf ĐỒ ÁN III}
+				{\bf ĐỒ ÁN TỐT NGHIỆP ĐẠI HỌC}
 				
 				
 				{\bf {\it Chuyên ngành:} TOÁN TIN}\\
-				{\bf {\it Chuyên sâu:} }Xác suất rời rạc
+%				{\bf {\it Chuyên sâu:} }Xác suất rời rạc
 				
 				\vskip 1cm
 				
@@ -123,11 +123,21 @@
 			\end{center}
 			
 	\end{titlepage}
+
 \tableofcontents{}
-\addcontentsline{toc}{chapter}{Lời mở đầu}
+
+\chapter*{Danh mục từ viết tắt}
+\addcontentsline{toc}{chapter}{Danh mục từ viết tắt}
+
+
+\chapter*{Danh sách hình vẽ}
+\addcontentsline{toc}{chapter}{Danh sách hình vẽ}
+
+\chapter*{Lời cảm ơn}
+\addcontentsline{toc}{chapter}{Lời cảm ơn}	
 
 \chapter*{Lời mở đầu}
-
+\addcontentsline{toc}{chapter}{Lời mở đầu}
 
 \chapter{Lý thuyết về hệ thống thông tin địa lý và tiền xử lý ảnh viễn thám}
 
@@ -662,7 +672,7 @@ Hình ảnh kết quả được lưu lại ở dạng shapefile: 	(hình \ref{f
 
 
 
-Ta sử dụng file shapefile ở trên để mô phỏng kết quả trên phần mềm QGIS:
+Ta sử dụng file shapefile ở trên để mô phỏng kết quả trên phần mềm QGIS (hình \ref{fig:demo_result}): 
  \begin{figure}[!h]
 	\centering
 	\includegraphics[width=1\linewidth]{Images/demo_result}
@@ -672,7 +682,22 @@ Ta sử dụng file shapefile ở trên để mô phỏng kết quả trên ph�
 
 
 \section{Đánh giá kết quả}
-Hình \ref{fig:demo_result} ở trên chỉ cho ta một cách khái quát về kết quả mô hình khi so sánh với các bounding box ban đầu.  Để đánh giá kết quả của mô hình,  trước tiên ta định nghĩa 2 bounding box cùng phát hiện một đối tượng nếu giá trị IOU của chúng $\geq 0.3$. Khi đó,  bounding box được dự đoán từ mô hình sẽ được coi là một \textit{True positive},  ngược lại sẽ là \textit{False positive}.  Trong trường hợp có nhiều hơn 1 bounding box cùng dự đoán một đối tượng,  ta sẽ lấy bounding box có confidence (độ tin cậy) cao nhất làm TP, các bounding box còn lại sẽ là FP.  Lần lượt tính toán các bounding box và áp dụng công thức của Precision,  Recall,  F1,  ta thu được các thông số cho việc đánh giá kết quả như sau: 
+Hình \ref{fig:demo_result} ở trên chỉ cho ta một cách khái quát về kết quả mô hình khi so sánh với các bounding box ban đầu.  Để đánh giá kết quả của mô hình,  trước tiên ta định nghĩa 2 bounding box cùng phát hiện một đối tượng nếu giá trị IOU của chúng $\geq 0.3$. Khi đó,  bounding box được dự đoán từ mô hình sẽ được coi là một \textit{True positive},  ngược lại sẽ là \textit{False positive}.  Trong trường hợp có nhiều hơn 1 bounding box cùng dự đoán một đối tượng,  ta sẽ lấy bounding box có confidence (độ tin cậy) cao nhất làm TP, các bounding box còn lại sẽ là FP.  Để so sánh một cách khách quan, em sử dụng cùng một tập các thang đo phổ biến là Precision, Recall và F1-score.  Trong đó, Precision là tỉ lệ giữa số tên miền phân loại chính xác trên tổng số tên miền được dự đoán của mỗi lớp. Recall là tỉ lệ giữa số tên miền được
+phân loại đúng theo một nhãn trên tổng số tên miền được gán theo nhãn đó.
+F1-score là trung bình điều hòa giữa hai giá trị Precision và Recall. Các tham
+số trên được biểu diễn trong các biểu thức:
+\begin{equation*}
+	Precision = \frac{TP}{TP + FP}
+\end{equation*}
+
+\begin{equation*}
+	Recall = \frac{TP}{TP + FN}
+\end{equation*}
+
+\begin{equation*}
+	F1 - score = \frac{2 \times Precision \times Recall}{Precision + Recall}
+\end{equation*}
+%Lần lượt tính toán các bounding box và áp dụng công thức của Precision,  Recall,  F1,  ta thu được các thông số cho việc đánh giá kết quả như sau: 
 \begin{figure}[!h]
 	\centering
   	\includegraphics[width=.4\linewidth]{example-image-a}
