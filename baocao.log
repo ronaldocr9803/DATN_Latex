@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  28 NOV 2020 11:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  29 NOV 2020 11:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1311,9 +1311,43 @@ Package pdftex.def Info: Images/nvidia-smi.png  used on input line 630.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+<Images/demo.png, id=186, 1292.83pt x 729.72626pt>
+File: Images/demo.png Graphic file (type png)
+<use Images/demo.png>
+Package pdftex.def Info: Images/demo.png  used on input line 647.
+(pdftex.def)             Requested size: 441.01773pt x 248.92761pt.
 [35
 
-] [36 <./Images/nvidia-smi.png>] [37
+]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Images/shpfile_demo_result.png, id=190, 277.035pt x 94.3525pt>
+File: Images/shpfile_demo_result.png Graphic file (type png)
+<use Images/shpfile_demo_result.png>
+Package pdftex.def Info: Images/shpfile_demo_result.png  used on input line 657
+.
+(pdftex.def)             Requested size: 220.50887pt x 75.10056pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Images/demo_result.png, id=191, 1020.81375pt x 601.24625pt>
+File: Images/demo_result.png Graphic file (type png)
+<use Images/demo_result.png>
+Package pdftex.def Info: Images/demo_result.png  used on input line 668.
+(pdftex.def)             Requested size: 441.01773pt x 259.7602pt.
+[36 <./Images/nvidia-smi.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<example-image-a.pdf, id=197, 321.2pt x 240.9pt>
+File: example-image-a.pdf Graphic file (type pdf)
+<use example-image-a.pdf>
+Package pdftex.def Info: example-image-a.pdf  used on input line 678.
+(pdftex.def)             Requested size: 176.40439pt x 132.30792pt.
+[37 <./Images/demo.png> <./Images/shpfile_demo_result.png>] [38 <./Images/demo_
+result.png> </usr/local/texlive/2019/texmf-dist/tex/latex/mwe/example-image-a.p
+df>] [39] [40
 
 ] (./baocao.aux)
 
@@ -1321,10 +1355,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 19393 strings out of 492616
- 351588 string characters out of 6129480
- 418223 words of memory out of 5000000
- 22879 multiletter control sequences out of 15000+600000
+ 19417 strings out of 492616
+ 352159 string characters out of 6129480
+ 418267 words of memory out of 5000000
+ 22899 multiletter control sequences out of 15000+600000
  22290 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,49p,1533b,627s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1335,15 +1369,16 @@ usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
 local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
 al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
-l/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/
-local/texlive/2019/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2019/te
-xmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2019/texmf-dist/fo
-nts/type1/vntex/vnr/vnti12.pfb>
-Output written on baocao.pdf (38 pages, 8424831 bytes).
+l/texlive/2019/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/
+2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texl
+ive/2019/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2019/t
+exmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2019/texmf-dist/f
+onts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/
+vntex/vnr/vnti12.pfb>
+Output written on baocao.pdf (41 pages, 10352191 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
- 127 compressed objects within 2 object streams
+ 262 PDF objects out of 1000 (max. 8388607)
+ 139 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 203 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 223 words of extra memory for PDF output out of 10000 (max. 10000000)
 

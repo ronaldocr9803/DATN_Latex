@@ -28,6 +28,7 @@
 \contentsline {subsection}{\numberline {4.1.1}M\IeC {\^o}i tr\IeC {\uhorn }\IeC {\`\ohorn }ng c\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t ch\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh}{35}% 
 \contentsline {subsection}{\numberline {4.1.2}C\IeC {\'a}c y\IeC {\^e}u c\IeC {\`\acircumflex }u li\IeC {\^e}n quan}{35}% 
 \contentsline {section}{\numberline {4.2}D\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u \IeC {\dj }\IeC {\`\acircumflex }u v\IeC {\`a}o}{36}% 
-\contentsline {section}{\numberline {4.3}K\IeC {\'\ecircumflex }t qu\IeC {\h a} nh\IeC {\d \acircumflex }n d\IeC {\d a}ng}{36}% 
-\contentsline {section}{\numberline {4.4}\IeC {\DJ }\IeC {\'a}nh gi\IeC {\'a} k\IeC {\'\ecircumflex }t qu\IeC {\h a}}{36}% 
-\contentsline {chapter}{T\IeC {\`a}i li\IeC {\d \ecircumflex }u tham kh\IeC {\h a}o}{37}% 
+\contentsline {section}{\numberline {4.3}K\IeC {\'\ecircumflex }t qu\IeC {\h a} m\IeC {\^o} h\IeC {\`\i }nh}{36}% 
+\contentsline {section}{\numberline {4.4}\IeC {\DJ }\IeC {\'a}nh gi\IeC {\'a} k\IeC {\'\ecircumflex }t qu\IeC {\h a}}{37}% 
+\contentsline {section}{\numberline {4.5}\IeC {\DJ }\IeC {\d i}nh h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n trong t\IeC {\uhorn }\IeC {\ohorn }ng lai}{39}% 
+\contentsline {chapter}{T\IeC {\`a}i li\IeC {\d \ecircumflex }u tham kh\IeC {\h a}o}{40}% 

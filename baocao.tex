@@ -624,7 +624,7 @@ Chúng ta sẽ tiến hành huấn luyện mô hình dựa trên bộ dữ liệ
 
 \section{Môi trường cài đặt chương trình và các yêu cầu liên quan}
 \subsection{Môi trường cài đặt chương trình}
-Chương trình được cài đặt trên ngôn ngữ Python (phiên bản 3.6.9) và được thử nghiệm trên hệ điều hành máy ảo của google colab sử dụng chip 4 core , bộ nhớ RAM 24GB,  card đồ hoạ NVIDIA Tesla V100 16GB
+Chương trình được cài đặt trên ngôn ngữ Python (phiên bản 3.6.9) và được thử nghiệm trên hệ điều hành máy ảo của google colab sử dụng chip 4 cores , bộ nhớ RAM 24GB,  card đồ hoạ NVIDIA Tesla V100 16GB (hình \ref{fig:nvidia-smi})
  \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Images/nvidia-smi}
@@ -636,17 +636,78 @@ Chương trình được cài đặt trên ngôn ngữ Python (phiên bản 3.6.
 	\item Ngôn ngữ sử dụng: Python phiên bản 3.6.9
 	\item IDE sử dụng: Visual Studio Code
 	\item Các thư viện Python sử dụng: pandas, numpy, matplotlib,  torch, os , cv2 và xlwt.
-	\item Các thư viện Python sử dụng: pandas, numpy, matplotlib, seaborn, Ipython, sklearn, keras, imageio, scipy, os, cv2 và xlwt.
 \end{itemize}
 
 
 
 \section{Dữ liệu đầu vào}
-Vì dữ liệu em được cung cấp bị hạn chế, nên trong bộ dữ liệu ban đầu em lấy ra 1 ảnh chưa được xử lý cho tập train và validation để đưa vào mô hình nhận diện vật thể đã xây dựng ở chương trước.  Lý do của việc lấy một ảnh kích thước lớn để dự đoán là vì theo yêu cầu của khách hàng,  họ cần đánh giá kết quả mô hình trên toàn bộ diện tích đất của họ chứ không phải các tấm ảnh kích thước $256 \times 256$ được cắt nhỏ từ tấm ảnh ban đầu
+Vì dữ liệu em được cung cấp bị hạn chế, nên trong bộ dữ liệu ban đầu em lấy ra 1 ảnh chưa được xử lý cho tập train và validation (hình \ref{fig:demo}) để làm dữ liệu đầu vào cho mô hình nhận diện vật thể đã xây dựng ở chương trước.  Lý do của việc lấy một ảnh kích thước lớn để dự đoán là vì theo yêu cầu của khách hàng,  họ cần đánh giá kết quả mô hình trên toàn bộ diện tích đất của họ chứ không phải các tấm ảnh kích thước $256 \times 256$ được cắt nhỏ từ tấm ảnh ban đầu
+ \begin{figure}[!h]
+	\centering
+	\includegraphics[width=1\linewidth]{Images/demo}
+	\caption{Dữ liệu đầu vào để phát hiện vật thể}
+	\label{fig:demo}
+\end{figure}
 
-\section{Kết quả nhận dạng}
+\section{Kết quả mô hình}
+Thời gian chạy chương trình cho ảnh trên: giây \\
+Hình ảnh kết quả được lưu lại ở dạng shapefile: 	(hình \ref{fig:shpfile_demo_result})
+ \begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Images/shpfile_demo_result}
+	\caption{Kết quả mô hình: thư mục chứa các shapfile}
+	\label{fig:shpfile_demo_result}
+\end{figure}
+
+
+
+
+Ta sử dụng file shapefile ở trên để mô phỏng kết quả trên phần mềm QGIS:
+ \begin{figure}[!h]
+	\centering
+	\includegraphics[width=1\linewidth]{Images/demo_result}
+	\caption{Kết quả mô hình: các ô vuông màu xanh là kết quả phát hiện của mô hình; chấm màu cam là các cây được gán nhãn sẵn. }
+	\label{fig:demo_result}
+\end{figure}
+
 
 \section{Đánh giá kết quả}
+Hình \ref{fig:demo_result} ở trên chỉ cho ta một cách khái quát về kết quả mô hình khi so sánh với các bounding box ban đầu.  Để đánh giá kết quả của mô hình,  trước tiên ta định nghĩa 2 bounding box cùng phát hiện một đối tượng nếu giá trị IOU của chúng $\geq 0.3$. Khi đó,  bounding box được dự đoán từ mô hình sẽ được coi là một \textit{True positive},  ngược lại sẽ là \textit{False positive}.  Trong trường hợp có nhiều hơn 1 bounding box cùng dự đoán một đối tượng,  ta sẽ lấy bounding box có confidence (độ tin cậy) cao nhất làm TP, các bounding box còn lại sẽ là FP.  Lần lượt tính toán các bounding box và áp dụng công thức của Precision,  Recall,  F1,  ta thu được các thông số cho việc đánh giá kết quả như sau: 
+\begin{figure}[!h]
+	\centering
+  	\includegraphics[width=.4\linewidth]{example-image-a}
+ 	 \caption{Đánh giá kết quả}
+ 	 \label{fig:sub1}
+\end{figure}
+
+\section{Định hướng phát triển trong tương lai}
+Từ kết quả thực nghiệm cho thấy, chương trình đã có những thành công nhất định. Song bên cạnh đó cũng còn khá nhiều nhược điểm cần cải tiến. Trong quá trình hoàn thành đồ án em đã đầu tư nhiều thời gian và công sức với bài toán này, và nhận thấy đây là bài toán có khả năng phát triển cao hơn nữa . Em xin đưa ra một số hướng phát triển tiếp theo cho bài toán như sau:
+\begin{itemize}
+	\item Phát triển và cài đặt giao diện chương trình để có thể dễ dàng chạy và sử dụng hơn. 
+	\item Sử dụng thêm một vài phép xử lý ảnh để tăng cường dữ liệu phục vụ cho việc training 
+	\item Cải tiến, thay đổi các thuật toán để loại bỏ các bounding box trùng nhau nhanh hơn khi sử dụng thuật toán NMS; giúp chương trình chạy tối ưu hơn
+\end{itemize}
+
+
+
+
+%\begin{figure}
+%\centering
+%\begin{subfigure}{.5\textwidth}
+%  \centering
+%  \includegraphics[width=.4\linewidth]{example-image-a}
+%  \caption{A subfigure}
+%  \label{fig:sub1}
+%\end{subfigure}%
+%\begin{subfigure}{.5\textwidth}
+%  \centering
+%  \includegraphics[width=.4\linewidth]{example-image-a}
+%  \caption{A subfigure}
+%  \label{fig:sub2}
+%\end{subfigure}
+%\caption{A figure with two subfigures}
+%\label{fig:test}
+%\end{figure}
 
 \chapter*{Tài liệu tham khảo}
 \addcontentsline{toc}{chapter}{Tài liệu tham khảo}
