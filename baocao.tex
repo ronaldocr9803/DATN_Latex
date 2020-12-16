@@ -138,6 +138,16 @@
 
 \chapter*{Lời mở đầu}
 \addcontentsline{toc}{chapter}{Lời mở đầu}
+Việc sản xuất và phân phối loại cây trồng có giá trị kinh tế này đòi hỏi phải có sự giám sát thường xuyên đối với theo chu kì và theo mùa vụ. Đây là một nhiệm vụ quan trọng đối với việc quản lý tài nguyên, rừng. Để đáp ứng nhu cầu ngày càng tăng của thế giới và sản lượng nông nghiệp tiêu dùng, năng suất cây trồng phải được ước tính. Việc phát hiện, thu thập thủ công dữ liệu cây trồng để lưu trữ hồ sơ trên một diễn tích đất lớn là không khả thi đối với con người, gây tốn kém tiền bạc và dễ bị ảnh hưởng bởi lỗi của con người
+Việc phát hiện cây trên một diện tích lớn sẽ giúp doanh nghiệp giảm bớt sự phụ thuộc vào con người và chi phí, dễ dàng quản lý và lên kế hoạch kịp thời cho sản xuất. Trong vài năm trở lại đây, lĩnh vực học sâu và xử lý ảnh đang nhận được nhiều sự quan tâm, áp dụng trong nhiều lĩnh vực khoa học khác nhau. Trong báo cáo đồ án này, em xin giới thiệu một giải phát phát hiện cây trong các bức ảnh viễn thám dựa trên mô hình học sâu. Nội dung của đồ án gồm có phần mở đầu, 4 chương, phần kết luận, tài liệu tham khảo:
+\begin{itemize}
+	\item \textbf{Chương 1: }
+	
+	\item \textbf{Chương 2: }
+
+	\item \textbf{Chương 3: }
+
+\end{itemize}
 
 \chapter{Lý thuyết về hệ thống thông tin địa lý và tiền xử lý ảnh viễn thám}
 
@@ -488,19 +498,79 @@ Cấu trúc dữ liệu cốt lõi được sử dụng trong PyTorch là \textb
 	\label{fig:resnet-1}
 \end{figure}
 ResNet-50 là một mạng bao gồm 50 lớp residual.\par
-\textbf{Feature Pyramid Networks:} Dò tìm các đối tượng có kích thước nhỏ là một vấn đề đáng được giải quyết để nâng cao độ chính xác. Và FPN là mô hình mạng được thiết kế ra dựa trên khái niệm pyramid để giải quyết vấn đề này.\par
+
+\textbf{Mạng kim tự tháp đặc trưng-Feature Pyramid Networks (FPN)} 
+Phát hiện các đối tượng có kích thước nhỏ là một vấn đề vô cùng quan
+trọng để nâng cao độ chính xác. Và FPN là mô hình mạng được thiết kế
+ra dựa trên khái niệm kim tự tháp (pyramid) để giải quyết vấn đề này. \\
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Images/fpn}
-	\caption{FPN (Nguồn:\textit{ arXiv: 1612.03144})}
-	\label{fig:fpn}
+	\includegraphics[width=0.5\linewidth]{Images/fpn1}
+	\caption{Feature Pyramid Network (FPN)}
+	\label{fig:resnet-fpn1}
 \end{figure}
-Mô hình FPN kết hợp thông tin của mô hình theo hướng bottom-up kết hợp với top-down để dò tìm đối tượng (trong khi đó, các thuật toán khác chỉ thường sử dụng bottom-up). Khi chúng ta ở bottom và đi lên (up), độ phân giải sẽ giảm, nhưng giá trị ngữ nghĩa sẽ tăng lên.\par
-Faster R-CNN ResNet-50 FPN là một mô hình Faster R-CNN với mạng backbond là mạng ResNet-50 kết hợp với Feature Pyramid Networks. Trong Faster R-CNN, FPN sẽ sẽ tạo ra các feature map, sau đó, chúng ta sẽ rút trích các ROIs trên các feature map đó. Dựa trên kích thước của các ROI, chúng ta sẽ chọn feature map nào tốt nhất để tạo các feature patches (các hình chữ nhật nhỏ).\par
-
+\hspace*{1cm}Mô hình FPN giúp nhận diện được cả những đối tượng có kích thước
+to và nhỏ nhờ sự kết hợp của tất cả các lớp kim tự tháp. Mô hình được
+xây dựng bằng cách thực hiện quá trình bottom-up kết hợp với top-down
+để dò tìm đối tượng (trong khi đó, các thuật toán khác chỉ thường sử dụng
+bottom-up).Trong đó bottom-up sử dụng mạng tích chập thông thường
+dùng để trích xuất các đặc trưng, khi chúng ta ở bottom và đi lên (up) độ
+phân giải sẽ giảm, nhưng giá trị cấu trúc cấp cao ( high-level semantic) sẽ
+tăng lên. \\
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Images/fpn2}
+	\caption{Trích xuất đặc trưng trong mô hình FPN}
+	\label{fig:resnet-fpn2}
+\end{figure}
+%ảnh
+Một vài các mô hình khác trong phát hiện đối tượng (ví dụ: SSD,..)
+quyết định dựa vào nhiều feature map. Nhưng tầng ở dưới không được
+sử dụng để nhận dạng đối tượng. Vì những tầng này có độ phân giải cao
+nhưng giá trị cấu trúc cấp cao của chúng lại không đủ cao nên những nhà
+nghiên cứu bỏ chúng đi để tăng tốc độ xử lý. Các nhà nghiên cứu biện
+minh rằng các tầng ở dưới chưa đủ mức ý nghĩa cần thiết để nâng cao độ
+chính xác, thêm các tầng đó vào sẽ không nâng độ chính xác cao thêm bao
+nhiêu và họ bỏ chúng đi để có tốc độ tốt hơn. Cho nên, những mô hình phát hiện đối tượng này chỉ sử dụng các tầng ở lớp trên, và do đó sẽ không nhận
+dạng được các đối tượng có kích thước nhỏ. \\
+\hspace*{1cm}Trong khi đó, FPN xây dựng thêm mô hình top-down, nhằm mục đích
+xây dựng các tầng có độ phân giải cao hơn từ các tầng high-level semantics
+%ảnh 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Images/fpn3}
+	\caption{Top-down}
+	\label{fig:resnet-fpn3}
+\end{figure}
+\hspace*{1cm}Trong quá trình xây dựng lại các tầng top-down, chúng ta sẽ gặp một
+vấn đề khá nghiêm trọng là bị mất mát thông tin của các đối tượng. Ví dụ
+một đối tượng nhỏ khi đi lên (top) sẽ không thấy nó, và từ trên đi ngược
+lại sẽ không thể tái tạo lại đối tượng nhỏ đó. Để giải quyết vấn đề này,
+chúng ta sẽ tạo các kết nối (skip connection) giữa các reconstruction layer
+và các feature maps để giúp quá trình dự đoán các vị trí của đối tượng
+thực hiện tốt hơn (sao cho hàm mất mát đạt giá trị nhỏ nhất).  \\
+\hspace*{1cm}Đồ hình bên dưới biểu diễn chi tiết đường đi theo bottom-up và topdown. P2, P3, P4, P5 là các pyramid của các feature map. \\
+%ảnh
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Images/fpn4}
+	\caption{Bottom-up và top-down.}
+	\label{fig:resnet-fpn4}
+\end{figure}
+\hspace*{1cm}FPN không phải là mô hình phát hiện đối tượng. Nó là mô hình phát
+hiện đặc trưng và được sử dụng trong phát hiện đối tượng. Các feature
+map từ P2 đến P5 trong Hình \ref{fig:resnet-fpn4} độc lập với nhau và các đặc trưng
+được sử dụng để phát hiện đối tượng.
 
 \chapter{Ứng dụng học sâu vào bài toán đếm cây trên ảnh viễn thám}
 \section{Giới thiệu bài toán}
+\hspace*{1cm} Cây keo là một loại cây dễ trồng, có khả năng thích nghi với các loại đất nghèo chất dinh dưỡng, ở những nơi thời tiết khắc nghiệt. Gỗ keo có rất nhiều tác dụng nên keo rất phù hợp với các dự án lâm nghiệp thương mại: là nguyên liệu sử dụng để sản xuất đồ nội thất xuất khẩu và sản xuất giấy. Cây keo ở Việt Nam ngày càng được trồng với quy mô lớn, nhằm nhanh chóng phủ xanh đồi núi trọc keo được trồng thành rừng, đem lại nguồn thu nhập lớn, tạo công ăn việc làm cho nhiều người. Để đáp ứng nhu cầu tiêu thụ gỗ ngày càng tăng ở trong nước và thế giới, sản lượng nông nghiệp tiêu dùng, năng suất cây trồng phải được ước tính. Việc phát hiện, kiểm soát cây keo trên một diện tích lớn trong khu rừng giúp cho doanh nghiệp và các nhà quản lý biết được tình trạng hiện tại của các cây keo, có thể trồng thêm được cây nào vào những khu đất còn trống. Tuy nhiên việc thu thập thủ công dữ liệu cây trồng để lưu trữ hồ sơ trên một diện tích đất lớn là không khả thi đối với con người, gây tốn kém tiền bạc và dễ bị ảnh hưởng bởi lỗi của con người. \\
+\hspace*{1cm} Một tiềm năng lớn để giải quyết vấn đề này là sử dụng các hình ảnh vệ tinh
+kết hợp với các thuật toán thị giác máy tính để phát hiện quản lý những cây trồng này. Sử dụng hình ảnh vệ tinh để khảo sát sẽ giảm bớt một phần công việc của con người khi phải trực tiếp đến khu vực đó tiến hành theo dõi, phân tích. Các bức ảnh viễn thãm được chụp lại với kích thước lớn, có thể bao quát một khu diện tích đất trồng rộng giúp tiết kiệm thời gian điều tra khảo sát, từ đó giúp các nhà quản lý của doanh nghiệp có thể nắm bắt tình hình kịp thời, lập kệ hoạch sản xuất phù hợp \\
+\hspace*{1cm}Để việc giải quyết bài toán này trở nên đơn giản và tự động hơn, trong Đồ án
+này, em trình bày về việc sử dụng các phương pháp Deep Learning để tiến hành phân
+tích.
+
 
 \section{Mô hình hoá bài toán và thiết kế dữ liệu luyện}
 \begin{enumerate}[label= \textit{\alph*)}]
@@ -660,7 +730,7 @@ Vì dữ liệu em được cung cấp bị hạn chế, nên trong bộ dữ li
 \end{figure}
 
 \section{Kết quả mô hình}
-Thời gian chạy chương trình cho ảnh trên: giây \\
+Thời gian chạy chương trình cho ảnh trên: $43$ giây \\
 Hình ảnh kết quả được lưu lại ở dạng shapefile: 	(hình \ref{fig:shpfile_demo_result})
  \begin{figure}[!h]
 	\centering
@@ -700,7 +770,7 @@ số trên được biểu diễn trong các biểu thức:
 %Lần lượt tính toán các bounding box và áp dụng công thức của Precision,  Recall,  F1,  ta thu được các thông số cho việc đánh giá kết quả như sau: 
 \begin{figure}[!h]
 	\centering
-  	\includegraphics[width=.4\linewidth]{example-image-a}
+  	\includegraphics[width=.8\linewidth]{Images/f1-score} %example-image-a
  	 \caption{Đánh giá kết quả}
  	 \label{fig:sub1}
 \end{figure}
@@ -750,6 +820,9 @@ Từ kết quả thực nghiệm cho thấy, chương trình đã có những th
 \item
 	Valle Martinez, Vicente, "Notes on the proof of the van der Waerden permanent conjecture" (2018).
 \end{enumerate}
+
+
+
 
 
 \end{document}
