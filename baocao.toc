@@ -21,6 +21,7 @@
 \contentsline {subsubsection}{S\IeC {\ohorn } l\IeC {\uhorn }\IeC {\d \ohorn }c v\IeC {\`\ecircumflex } Transfer Learning}{27}% 
 \contentsline {subsection}{\numberline {2.3.4}PyTorch}{28}% 
 \contentsline {subsection}{\numberline {2.3.5}Faster R-CNN ResNet-50 FPN}{29}% 
+\contentsline {section}{\numberline {2.4}Ki\IeC {\'\ecircumflex }n tr\IeC {\'u}c m\IeC {\^o} h\IeC {\`\i }nh RetinaNet}{32}% 
 \contentsline {chapter}{\numberline {3}\IeC {\'\UHORN }ng d\IeC {\d u}ng h\IeC {\d o}c s\IeC {\^a}u v\IeC {\`a}o b\IeC {\`a}i to\IeC {\'a}n \IeC {\dj }\IeC {\'\ecircumflex }m c\IeC {\^a}y tr\IeC {\^e}n \IeC {\h a}nh vi\IeC {\~\ecircumflex }n th\IeC {\'a}m}{33}% 
 \contentsline {section}{\numberline {3.1}Gi\IeC {\'\ohorn }i thi\IeC {\d \ecircumflex }u b\IeC {\`a}i to\IeC {\'a}n}{33}% 
 \contentsline {section}{\numberline {3.2}M\IeC {\^o} h\IeC {\`\i }nh ho\IeC {\'a} b\IeC {\`a}i to\IeC {\'a}n v\IeC {\`a} thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex } d\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u luy\IeC {\d \ecircumflex }n}{34}% 

@@ -524,7 +524,7 @@ tăng lên. \\
 	\label{fig:resnet-fpn2}
 \end{figure}
 %ảnh
-Một vài các mô hình khác trong phát hiện đối tượng (ví dụ: SSD,..)
+\hspace*{1cm}Một vài các mô hình khác trong phát hiện đối tượng (ví dụ: SSD,..)
 quyết định dựa vào nhiều feature map. Nhưng tầng ở dưới không được
 sử dụng để nhận dạng đối tượng. Vì những tầng này có độ phân giải cao
 nhưng giá trị cấu trúc cấp cao của chúng lại không đủ cao nên những nhà
@@ -534,7 +534,7 @@ chính xác, thêm các tầng đó vào sẽ không nâng độ chính xác cao
 nhiêu và họ bỏ chúng đi để có tốc độ tốt hơn. Cho nên, những mô hình phát hiện đối tượng này chỉ sử dụng các tầng ở lớp trên, và do đó sẽ không nhận
 dạng được các đối tượng có kích thước nhỏ. \\
 \hspace*{1cm}Trong khi đó, FPN xây dựng thêm mô hình top-down, nhằm mục đích
-xây dựng các tầng có độ phân giải cao hơn từ các tầng high-level semantics
+xây dựng các tầng có độ phân giải cao hơn từ các tầng high-level semantics \\
 %ảnh 
 \begin{figure}[!h]
 	\centering
@@ -562,6 +562,19 @@ hiện đặc trưng và được sử dụng trong phát hiện đối tượng
 map từ P2 đến P5 trong Hình \ref{fig:resnet-fpn4} độc lập với nhau và các đặc trưng
 được sử dụng để phát hiện đối tượng.
 
+\section{Kiến trúc mô hình RetinaNet}
+RetinaNet là một mạng tổng hợp bao gồm:
+\begin{itemize}
+	\item Mạng kim tự tháp đặc trưng-Feature Pyramid Networks (FPN) được xây dựng dưa trên mạng ResNet; chịu trách nhiệm tính toán,  trích xuất các đặc trưng trong bức ảnh
+	\item Mạng con chịu trách nhiệm thực hiện phân loại đối tượng bằng cách sử dụng đầu ra của mạng kim tự tháp đặc trưng FPN
+	\item Mạng con chịu trách nhiệm điều chỉnh các kích thước phát hiện vật thể từ đầu ra của mạng kim tự tháp đặc trưng FPN
+\end{itemize}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=12cm,height=6cm]{Images/resnet_visulize}
+	\caption{Kiến trúc mô hình RetinaNet.}
+	\label{fig:resnet-fpn4}
+\end{figure}
 \chapter{Ứng dụng học sâu vào bài toán đếm cây trên ảnh viễn thám}
 \section{Giới thiệu bài toán}
 \hspace*{1cm} Cây keo là một loại cây dễ trồng, có khả năng thích nghi với các loại đất nghèo chất dinh dưỡng, ở những nơi thời tiết khắc nghiệt. Gỗ keo có rất nhiều tác dụng nên keo rất phù hợp với các dự án lâm nghiệp thương mại: là nguyên liệu sử dụng để sản xuất đồ nội thất xuất khẩu và sản xuất giấy. Cây keo ở Việt Nam ngày càng được trồng với quy mô lớn, nhằm nhanh chóng phủ xanh đồi núi trọc keo được trồng thành rừng, đem lại nguồn thu nhập lớn, tạo công ăn việc làm cho nhiều người. Để đáp ứng nhu cầu tiêu thụ gỗ ngày càng tăng ở trong nước và thế giới, sản lượng nông nghiệp tiêu dùng, năng suất cây trồng phải được ước tính. Việc phát hiện, kiểm soát cây keo trên một diện tích lớn trong khu rừng giúp cho doanh nghiệp và các nhà quản lý biết được tình trạng hiện tại của các cây keo, có thể trồng thêm được cây nào vào những khu đất còn trống. Tuy nhiên việc thu thập thủ công dữ liệu cây trồng để lưu trữ hồ sơ trên một diện tích đất lớn là không khả thi đối với con người, gây tốn kém tiền bạc và dễ bị ảnh hưởng bởi lỗi của con người. \\
