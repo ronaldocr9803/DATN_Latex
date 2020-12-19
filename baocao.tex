@@ -488,7 +488,22 @@ PyTorch là một thư viện machine learning mã nguồn mở dựa trên Torc
 	\item Một platform Deep learning phục vụ trong nghiên cứu, mang lại sự linh hoạt và tốc độ.
 \end{itemize}
 Cấu trúc dữ liệu cốt lõi được sử dụng trong PyTorch là \textbf{Tensor}.\par
-\subsection{Faster R-CNN ResNet-50 FPN}
+
+\section{Kiến trúc mô hình RetinaNet}
+RetinaNet là một mạng tổng hợp bao gồm:
+\begin{itemize}
+	\item Mạng kim tự tháp đặc trưng-Feature Pyramid Networks (FPN) được xây dựng dưa trên mạng ResNet; chịu trách nhiệm tính toán,  trích xuất các đặc trưng trong bức ảnh
+	\item Mạng con chịu trách nhiệm thực hiện phân loại đối tượng bằng cách sử dụng đầu ra của mạng kim tự tháp đặc trưng FPN
+	\item Mạng con chịu trách nhiệm điều chỉnh các kích thước phát hiện vật thể từ đầu ra của mạng kim tự tháp đặc trưng FPN
+\end{itemize}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=12cm,height=6cm]{Images/resnet_visulize}
+	\caption{Kiến trúc mô hình RetinaNet.}
+	\label{fig:resnet-fpn4}
+\end{figure}
+
+\subsection{Mạng kim tự tháp đặc trưng Feature Pyramid Network (FPN)}
 
 \textbf{Residual Network (ResNet):} Một vấn đề phổ biến của Deep learning là Vanishing Gradients, tức là theo công thức tính đạo hàm bằng chain rule (trong lan truyền ngược, back propagation), nếu gradient của các lớp sau nhỏ thì gradient ở các lớp đầu sẽ gần bằng 0. Vì thế mà parameter của các lớp trước sẽ không được cập nhật nên các parameter này không đóng góp được gì trong việc đưa ra output. Vậy nên dù ta dùng nhiều lớp, thực chất số lớp hữu ích chỉ là một vài lớp cuối, điều đó làm giảm sự hiệu quả của mạng neural. ResNet ra đời để giải quyết vấn đề đó, giải pháp mà ResNet đưa ra là sử dụng kết nối "tắt" đồng nhất để xuyên qua một hay nhiều lớp. Một khối như vậy được gọi là một Residual Block.\par
 \begin{figure}[!h]
@@ -499,7 +514,7 @@ Cấu trúc dữ liệu cốt lõi được sử dụng trong PyTorch là \textb
 \end{figure}
 ResNet-50 là một mạng bao gồm 50 lớp residual.\par
 
-\textbf{Mạng kim tự tháp đặc trưng-Feature Pyramid Networks (FPN)} 
+\textbf{Mạng kim tự tháp đặc trưng-Feature Pyramid Networks (FPN)}  \\
 Phát hiện các đối tượng có kích thước nhỏ là một vấn đề vô cùng quan
 trọng để nâng cao độ chính xác. Và FPN là mô hình mạng được thiết kế
 ra dựa trên khái niệm kim tự tháp (pyramid) để giải quyết vấn đề này. \\
@@ -561,20 +576,92 @@ thực hiện tốt hơn (sao cho hàm mất mát đạt giá trị nhỏ nhất
 hiện đặc trưng và được sử dụng trong phát hiện đối tượng. Các feature
 map từ P2 đến P5 trong Hình \ref{fig:resnet-fpn4} độc lập với nhau và các đặc trưng
 được sử dụng để phát hiện đối tượng.
+\subsection{Mạng con phân loại}
+Mạng con phân loại là một mạng tích chập đầy đủ (FCN) gắn ở mỗi mức của FPN. Mạng con này chứa 4 lớp tích chập 3x3 với 256 bộ lock, kết hợp với hàm kích hoạt RELU; tiếp đến là lớp tích chập 3x3 với số bộ lọc = KA. Do đó đầu ra của feature map có kích thước W*H*KA, trong đó W,H là các kích thước của feature map, K,A lần lượt là số lượng class và số lượng anchor box. Lý do cho việc sử dụng lớp tích chập cuối cùng của mạng con phân loại có K*A  bộ lọc vì nếu có “A” anchor box được đề xuất cho mỗi vị trí trong feature map thu được từ lớp tích chập cuối thì mỗi anchor box  có khả năng được phân loại được K lớp .  Do đó, đầu ra của feature map sẽ có KA bộ lọc.
 
-\section{Kiến trúc mô hình RetinaNet}
-RetinaNet là một mạng tổng hợp bao gồm:
-\begin{itemize}
-	\item Mạng kim tự tháp đặc trưng-Feature Pyramid Networks (FPN) được xây dựng dưa trên mạng ResNet; chịu trách nhiệm tính toán,  trích xuất các đặc trưng trong bức ảnh
-	\item Mạng con chịu trách nhiệm thực hiện phân loại đối tượng bằng cách sử dụng đầu ra của mạng kim tự tháp đặc trưng FPN
-	\item Mạng con chịu trách nhiệm điều chỉnh các kích thước phát hiện vật thể từ đầu ra của mạng kim tự tháp đặc trưng FPN
-\end{itemize}
+\subsection{Mạng con hồi quy}
+Song song với mạng con phân loại đối tượng, mô hình đi kèm một mạng tích chập đầy đủ khác vào mỗi cấp của mạng FPN nhằm mục đích điều chỉnh kích thước các anchor box trong việc  được phát hiện các đối tượng (nếu có).  Cấu trúc của mạng con này giống với mạng con phân loại ở trên, ngoại trừ lớp tích chập cuối có kích thước 3x3 với 4 bộ lọc cho kết quả đầu ra feature map của mạng con này có kích thước W*H*4A.  Lý do để lớp tích chập cuối có 4 bộ lọc là vì để xác định vị trí đối tượng trong ảnh, mạng con hồi quy tạo ra 4 giá trị cho mỗi anchor box  dự đoán độ lệch tương đối (về tọa độ tâm, chiều rộng và chiều cao) giữa các anchor box với  box thực tế chứa đối tượng. Do đó, đầu ra của feature map  trong mạng con hồi quy sẽ có 4A bộ lọc (kênh)
+
+
+\subsection{Hàm mất mát}
+\hspace*{1cm}Trong bài toán nhận diện vật thể, nhãn dữ liệu mô tả chính xác vị trí đối tượng trong bức ảnh được gọi là các ground-truth boxes. Thông qua 2 mạng con ở trên, mỗi anchor box được dự đoán sẽ được phân vào một lớp nào đó và vị trí của anchor box đó trong ảnh. Để tính toán hàm mất mát trong training, ta cần phải so sánh các giá trị dự đoán này với nhãn của dữ liệu.  Một anchor box được coi là dự đoán đúng với một ground truth box nào đó nếu giá trị IOU giữa 2 đối tượng này > 0.5; một anchor box được coi là không khớp với bất kì ground truth box nào trong ảnh nếu giá trị IOU giữa chúng < 0.4.  CUối cùng, nếu giá trị IOU giữa một anchor box với bất kì ground truth box nào nằm giữa 0.4 và 0.5 sẽ không đóng góp vào hàm mất mát. \\
+\hspace*{1cm}
+Hàm mất mát của mô hình RetinaNet chứa 2 thành phần: Hàm mất mát hồi quy và hàm mất mát phân loại
+
+\subsubsection{Hàm mất mát hồi quy}
+Giả sử các cặp dữ liệu trùng khớp nhau kí hiệu ${(A^i, G^i)}_{i=1,...N}$, trong đó $A$  là tập các anchor box, $G$ là tập các ground truth box, N là số lượng các ground truth box 
+
+Với mỗi anchor, mô hình dự đoán 4 giá trị, kì hiệu lần lượt $P^i = (P^i_x, P^i_y, P^i_w, P^i_h)$. Hai giá trị đầu là độ lệch giữa tâm của anchor $A_{i}$ và ground truth $G_i$, trong đó 2 giá trị cuối là độ lệch giữa chiều cao và chiều rộng của 2 box đó. Tương ứng vỡi mỗi dự đoán, giá trị mục tiêu Ti được tính như là độ lệch giữa anchor box và gt box theo công thức:
+\begin{align}
+T^i_x &= (G^i_x - A^i_x) / A^i_w \quad & \\
+T^i_y &= (G^i_y - A^i_y) / A^i_h & \\
+T^i_w &= log(G^i_w / A^i_w) & \\
+T^i_h &= log(G^i_h / A^i_h) &
+\end{align}
+
+Với các giá trị trên, hàm mất mát hồi quy được đĩnh nghĩa là:
+\begin{equation}
+	L_{loc} = \sum_{j \in \{x, y, w, h\}}smooth_{L1}(P^i_j - T^i_j) \quad
+\end{equation}
+trong đó hàm $smooth_{L1}(x)$ có công thức:
+\begin{equation}
+smooth_{L1}(x) = 
+\begin{cases}
+0.5x^2 &|x| < 1 \\
+|x| - 0.5 &|x| \geq 1
+\end{cases}
+\end{equation}
+
+\subsubsection{Hàm mất mát phân loại}
+hàm mất mát phân loại mà mô hình retinanet sử dụng là focal loss. Nói một cách đơn giản, Focal loss (FL) là một phiên bản cải tiến của hàm Cross-Entropy Loss (CE) cố gắng xử lý vấn đề mất cân bằng giữa các lớp foreground và background; một điều thường xảy ra trong các bài toàn object detection .Hàm được xây dựng bằng cách gán nhiều trọng số hơn cho các mẫu khó hoặc dễ bị phân loại sai và giảm trọng số cho các mẫu dễ phân loại. Vì vậy, Focal loss làm giảm sự đóng góp tổn thất từ các mẫu dễ phân loại và tăng tầm quan trọng của việc sửa lỗi các mẫu được phân loại sai
+
+Đầu tiên ta sẽ tìm hiểu về hàm Cross-Entropy (CE) loss trong bài toán phân loại nhị phân:
+
+\begin{equation}
+CE(p,y) = 
+\begin{cases} 
+-log(p) \textrm{     if      }  y =1 \\
+-log(1-p) \textrm{     otherwise,      }
+\end{cases}
+\end{equation}
+với $y$ là nhãn phân loại của dữ liệu,  $p \in [0, 1]$ là xác suất dự đoán cho lớp có nhãn y của mô hình. Để thuận tiện, ta định nghĩa $p_t$:
+\begin{equation}
+p_t = 
+\begin{cases} 
+p \textrm{     if      }  y =1 \\
+1-p \textrm{     otherwise,      }
+\end{cases}
+\end{equation}
+Khi đó $CE(p,y)=CE(p_t)=-log(p_t)$ \\
+%FocalLoss_6_1
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=12cm,height=6cm]{Images/resnet_visulize}
-	\caption{Kiến trúc mô hình RetinaNet.}
-	\label{fig:resnet-fpn4}
-\end{figure}
+	\includegraphics[width=1\linewidth]{Images/FocalLoss_6_1}
+	\caption{Đồ thị hàm focal loss với các giá trị $\gamma$ khác nhau}
+	\label{fig:focal-loss_gamma}
+\end{figure} 
+
+Đồ thị của CE loss có thể được xem là đường cong màu xanh trong hình \ref{fig:focal-loss_gamma} Một điểm đáng chú ý có thể dễ dàng nhận ra từ đồ thị trên, đó là ngay cả những mẫu dễ phân loại  (có $p_{t} >> 5$) cũng có giá trị loss khá lớn.\\
+Trong cross entropy ta thấy rằng vai trò đóng góp vào loss function của các class cùng bằng $-\log(p_i)$. Khi xảy ra hiện tượng mất cân bằng, chúng ta muốn rằng mô hình sẽ dự báo chuẩn hơn đối với những class thiểu số. Do đó cần một hàm loss function hiệu quả hơn, có thể điều chỉnh được giá trị phạt lớn hơn đối với nhóm thiểu số. \\
+Một kĩ thuật thường dùng để giải quyết việc mất cân bằng giữa các lớp là áp dụng trọng số $\alpha$ bằng nghịch đảo tần suất nhãn vào hàm cross entropy. Hàm loss function mới được gọi là balanced cross entropy:
+\begin{equation}
+BCE(\mathbf{p}, \mathbf{q}) = -\alpha_i\log(q_i),~~~ \text{với} ~ p_i=1
+\end{equation}
+
+hàm mất mát này là một mở rộng nhỏ của CE loss mà tác giả của bài báo coi là cơ sở cho đề xuất hàm mất mát mới: Focal loss. Focal loss là hàm loss function lần đầu được giới thiệu trong RetinaNet. Hàm loss function này đã chứng minh được tính hiệu quả trong các bài toán object detection. Đây là lớp bài toán có sự mất cân bằng nghiêm trọng giữa hai class positive (các bounding box có chứa object) và negative (các bounding box không chứa object). Thường thì negative có số lượng lớn hơn positive rất nhiều. Lấy ví dụ như hình \ref{fig:pos-neg}: Chỉ có 4 bounding box thuộc positive (đường viền in đậm), các trường hợp còn lại thuộc nhóm negative. \\
+Do đó nếu áp dụng loss function là hàm cross entropy sẽ giảm độ chính xác khi dự báo các bounding box có chứa object. Trong bài báo Focal Loss for Dense Object Detection tác giả đã giới thiệu hàm Focal Loss dựa trên hai tham số là $\alpha, \gamma$ như sau
+
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Images/dog_bike}
+	\caption{Minh hoạ các lớp positive và negative trong object detection}
+	\label{fig:pos-neg}
+\end{figure} 
+
+
+
+
 \chapter{Ứng dụng học sâu vào bài toán đếm cây trên ảnh viễn thám}
 \section{Giới thiệu bài toán}
 \hspace*{1cm} Cây keo là một loại cây dễ trồng, có khả năng thích nghi với các loại đất nghèo chất dinh dưỡng, ở những nơi thời tiết khắc nghiệt. Gỗ keo có rất nhiều tác dụng nên keo rất phù hợp với các dự án lâm nghiệp thương mại: là nguyên liệu sử dụng để sản xuất đồ nội thất xuất khẩu và sản xuất giấy. Cây keo ở Việt Nam ngày càng được trồng với quy mô lớn, nhằm nhanh chóng phủ xanh đồi núi trọc keo được trồng thành rừng, đem lại nguồn thu nhập lớn, tạo công ăn việc làm cho nhiều người. Để đáp ứng nhu cầu tiêu thụ gỗ ngày càng tăng ở trong nước và thế giới, sản lượng nông nghiệp tiêu dùng, năng suất cây trồng phải được ước tính. Việc phát hiện, kiểm soát cây keo trên một diện tích lớn trong khu rừng giúp cho doanh nghiệp và các nhà quản lý biết được tình trạng hiện tại của các cây keo, có thể trồng thêm được cây nào vào những khu đất còn trống. Tuy nhiên việc thu thập thủ công dữ liệu cây trồng để lưu trữ hồ sơ trên một diện tích đất lớn là không khả thi đối với con người, gây tốn kém tiền bạc và dễ bị ảnh hưởng bởi lỗi của con người. \\
@@ -583,6 +670,22 @@ kết hợp với các thuật toán thị giác máy tính để phát hiện q
 \hspace*{1cm}Để việc giải quyết bài toán này trở nên đơn giản và tự động hơn, trong Đồ án
 này, em trình bày về việc sử dụng các phương pháp Deep Learning để tiến hành phân
 tích.
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[!h]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{Images/Img_RSKA003603_0_r2560_c3200_2}
+        \subcaption[short for lof]{}
+%        \rule{\linewidth}{3cm}
+        \label{fig:subfig1}
+    \end{subfigure}%
+    \quad
+    \begin{subfigure}[!h]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{Images/Img_RSKA003603_0_r2560_c3200}
+        \subcaption[short for lof]{}
+%        \rule{\linewidth}{3cm}
+        \label{fig:subfig2}
+    \end{subfigure}
+\end{figure}
 
 
 \section{Mô hình hoá bài toán và thiết kế dữ liệu luyện}
@@ -617,7 +720,7 @@ Dữ liệu sử dụng trong bài toán này được cung cấp bởi thầy g
  \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Images/qgisb}
-	\caption{Toạ độ các bounding box trên ảnh,  biểu thị bởi các hình tròn màu vàng}
+	\caption{Toạ độ các bounding box được gán nhãn trên ảnh,  biểu thị bởi các hình tròn màu vàng}
 	\label{fig:1b}
 \end{figure}
 
@@ -673,6 +776,8 @@ Vì toạ độ các câu được đánh dấu theo hình tròn nên ta cần c
 %%  \end{subfigure}%
 %\caption{Minh hoạ ảnh viễn thám với phần mềm QGIS (hình \ref{fig:1a}),  toạ độ các bounding box trên ảnh,  biểu thị bởi các hình tròn màu vàng (hình \ref{fig:1b})} \label{fig:1}
 %\end{figure}
+
+
 %
 % \begin{figure}[!h]
 %	\centering

@@ -20,19 +20,24 @@
 \contentsline {subsection}{\numberline {2.3.3}PyTorch v\IeC {\`a} Faster R-CNN ResNet-50 FPN}{27}% 
 \contentsline {subsubsection}{S\IeC {\ohorn } l\IeC {\uhorn }\IeC {\d \ohorn }c v\IeC {\`\ecircumflex } Transfer Learning}{27}% 
 \contentsline {subsection}{\numberline {2.3.4}PyTorch}{28}% 
-\contentsline {subsection}{\numberline {2.3.5}Faster R-CNN ResNet-50 FPN}{29}% 
-\contentsline {section}{\numberline {2.4}Ki\IeC {\'\ecircumflex }n tr\IeC {\'u}c m\IeC {\^o} h\IeC {\`\i }nh RetinaNet}{32}% 
-\contentsline {chapter}{\numberline {3}\IeC {\'\UHORN }ng d\IeC {\d u}ng h\IeC {\d o}c s\IeC {\^a}u v\IeC {\`a}o b\IeC {\`a}i to\IeC {\'a}n \IeC {\dj }\IeC {\'\ecircumflex }m c\IeC {\^a}y tr\IeC {\^e}n \IeC {\h a}nh vi\IeC {\~\ecircumflex }n th\IeC {\'a}m}{33}% 
-\contentsline {section}{\numberline {3.1}Gi\IeC {\'\ohorn }i thi\IeC {\d \ecircumflex }u b\IeC {\`a}i to\IeC {\'a}n}{33}% 
-\contentsline {section}{\numberline {3.2}M\IeC {\^o} h\IeC {\`\i }nh ho\IeC {\'a} b\IeC {\`a}i to\IeC {\'a}n v\IeC {\`a} thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex } d\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u luy\IeC {\d \ecircumflex }n}{34}% 
-\contentsline {section}{\numberline {3.3}Hu\IeC {\'\acircumflex }n luy\IeC {\d \ecircumflex }n m\IeC {\d a}ng neural}{39}% 
-\contentsline {section}{\numberline {3.4}X\IeC {\^a}y d\IeC {\d \uhorn }ng ch\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh}{40}% 
-\contentsline {chapter}{\numberline {4}C\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t ch\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh v\IeC {\`a} \IeC {\dj }\IeC {\'a}nh gi\IeC {\'a} k\IeC {\'\ecircumflex }t qu\IeC {\h a}}{41}% 
-\contentsline {section}{\numberline {4.1}M\IeC {\^o}i tr\IeC {\uhorn }\IeC {\`\ohorn }ng c\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t ch\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh v\IeC {\`a} c\IeC {\'a}c y\IeC {\^e}u c\IeC {\`\acircumflex }u li\IeC {\^e}n quan}{41}% 
-\contentsline {subsection}{\numberline {4.1.1}M\IeC {\^o}i tr\IeC {\uhorn }\IeC {\`\ohorn }ng c\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t ch\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh}{41}% 
-\contentsline {subsection}{\numberline {4.1.2}C\IeC {\'a}c y\IeC {\^e}u c\IeC {\`\acircumflex }u li\IeC {\^e}n quan}{41}% 
-\contentsline {section}{\numberline {4.2}D\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u \IeC {\dj }\IeC {\`\acircumflex }u v\IeC {\`a}o}{42}% 
-\contentsline {section}{\numberline {4.3}K\IeC {\'\ecircumflex }t qu\IeC {\h a} m\IeC {\^o} h\IeC {\`\i }nh}{42}% 
-\contentsline {section}{\numberline {4.4}\IeC {\DJ }\IeC {\'a}nh gi\IeC {\'a} k\IeC {\'\ecircumflex }t qu\IeC {\h a}}{43}% 
-\contentsline {section}{\numberline {4.5}\IeC {\DJ }\IeC {\d i}nh h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n trong t\IeC {\uhorn }\IeC {\ohorn }ng lai}{45}% 
-\contentsline {chapter}{T\IeC {\`a}i li\IeC {\d \ecircumflex }u tham kh\IeC {\h a}o}{46}% 
+\contentsline {section}{\numberline {2.4}Ki\IeC {\'\ecircumflex }n tr\IeC {\'u}c m\IeC {\^o} h\IeC {\`\i }nh RetinaNet}{29}% 
+\contentsline {subsection}{\numberline {2.4.1}M\IeC {\d a}ng kim t\IeC {\d \uhorn } th\IeC {\'a}p \IeC {\dj }\IeC {\d \abreve }c tr\IeC {\uhorn }ng Feature Pyramid Network (FPN)}{29}% 
+\contentsline {subsection}{\numberline {2.4.2}M\IeC {\d a}ng con ph\IeC {\^a}n lo\IeC {\d a}i}{33}% 
+\contentsline {subsection}{\numberline {2.4.3}M\IeC {\d a}ng con h\IeC {\`\ocircumflex }i quy}{33}% 
+\contentsline {subsection}{\numberline {2.4.4}H\IeC {\`a}m m\IeC {\'\acircumflex }t m\IeC {\'a}t}{33}% 
+\contentsline {subsubsection}{H\IeC {\`a}m m\IeC {\'\acircumflex }t m\IeC {\'a}t h\IeC {\`\ocircumflex }i quy}{34}% 
+\contentsline {subsubsection}{H\IeC {\`a}m m\IeC {\'\acircumflex }t m\IeC {\'a}t ph\IeC {\^a}n lo\IeC {\d a}i}{34}% 
+\contentsline {chapter}{\numberline {3}\IeC {\'\UHORN }ng d\IeC {\d u}ng h\IeC {\d o}c s\IeC {\^a}u v\IeC {\`a}o b\IeC {\`a}i to\IeC {\'a}n \IeC {\dj }\IeC {\'\ecircumflex }m c\IeC {\^a}y tr\IeC {\^e}n \IeC {\h a}nh vi\IeC {\~\ecircumflex }n th\IeC {\'a}m}{38}% 
+\contentsline {section}{\numberline {3.1}Gi\IeC {\'\ohorn }i thi\IeC {\d \ecircumflex }u b\IeC {\`a}i to\IeC {\'a}n}{38}% 
+\contentsline {section}{\numberline {3.2}M\IeC {\^o} h\IeC {\`\i }nh ho\IeC {\'a} b\IeC {\`a}i to\IeC {\'a}n v\IeC {\`a} thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex } d\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u luy\IeC {\d \ecircumflex }n}{39}% 
+\contentsline {section}{\numberline {3.3}Hu\IeC {\'\acircumflex }n luy\IeC {\d \ecircumflex }n m\IeC {\d a}ng neural}{44}% 
+\contentsline {section}{\numberline {3.4}X\IeC {\^a}y d\IeC {\d \uhorn }ng ch\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh}{45}% 
+\contentsline {chapter}{\numberline {4}C\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t ch\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh v\IeC {\`a} \IeC {\dj }\IeC {\'a}nh gi\IeC {\'a} k\IeC {\'\ecircumflex }t qu\IeC {\h a}}{46}% 
+\contentsline {section}{\numberline {4.1}M\IeC {\^o}i tr\IeC {\uhorn }\IeC {\`\ohorn }ng c\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t ch\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh v\IeC {\`a} c\IeC {\'a}c y\IeC {\^e}u c\IeC {\`\acircumflex }u li\IeC {\^e}n quan}{46}% 
+\contentsline {subsection}{\numberline {4.1.1}M\IeC {\^o}i tr\IeC {\uhorn }\IeC {\`\ohorn }ng c\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t ch\IeC {\uhorn }\IeC {\ohorn }ng tr\IeC {\`\i }nh}{46}% 
+\contentsline {subsection}{\numberline {4.1.2}C\IeC {\'a}c y\IeC {\^e}u c\IeC {\`\acircumflex }u li\IeC {\^e}n quan}{46}% 
+\contentsline {section}{\numberline {4.2}D\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u \IeC {\dj }\IeC {\`\acircumflex }u v\IeC {\`a}o}{47}% 
+\contentsline {section}{\numberline {4.3}K\IeC {\'\ecircumflex }t qu\IeC {\h a} m\IeC {\^o} h\IeC {\`\i }nh}{47}% 
+\contentsline {section}{\numberline {4.4}\IeC {\DJ }\IeC {\'a}nh gi\IeC {\'a} k\IeC {\'\ecircumflex }t qu\IeC {\h a}}{48}% 
+\contentsline {section}{\numberline {4.5}\IeC {\DJ }\IeC {\d i}nh h\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n trong t\IeC {\uhorn }\IeC {\ohorn }ng lai}{50}% 
+\contentsline {chapter}{T\IeC {\`a}i li\IeC {\d \ecircumflex }u tham kh\IeC {\h a}o}{51}% 
