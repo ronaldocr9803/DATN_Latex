@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  22 DEC 2020 21:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  22 DEC 2020 23:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1244,150 +1244,150 @@ Package pdftex.def Info: Images/FocalLoss_6_1.png  used on input line 555.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[29]
-<Images/dog_bike.png, id=157, 340.27126pt x 341.275pt>
+[29] [30 <./Images/FocalLoss_6_1.png>]
+<Images/dog_bike.png, id=163, 340.27126pt x 341.275pt>
 File: Images/dog_bike.png Graphic file (type png)
 <use Images/dog_bike.png>
-Package pdftex.def Info: Images/dog_bike.png  used on input line 573.
+Package pdftex.def Info: Images/dog_bike.png  used on input line 586.
 (pdftex.def)             Requested size: 220.50887pt x 221.15956pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[30 <./Images/FocalLoss_6_1.png>] [31 <./Images/dog_bike.png>]
+[31] [32 <./Images/dog_bike.png>]
 Ch\uhorn \ohorn ng 2.
-<Images/Img_RSKA003603_0_r2560_c3200_2.png, id=168, 256.96pt x 256.96pt>
+<Images/Img_RSKA003603_0_r2560_c3200_2.png, id=171, 256.96pt x 256.96pt>
 File: Images/Img_RSKA003603_0_r2560_c3200_2.png Graphic file (type png)
 <use Images/Img_RSKA003603_0_r2560_c3200_2.png>
 Package pdftex.def Info: Images/Img_RSKA003603_0_r2560_c3200_2.png  used on inp
-ut line 592.
+ut line 605.
 (pdftex.def)             Requested size: 198.45662pt x 198.4597pt.
-<Images/Img_RSKA003603_0_r2560_c3200.png, id=169, 256.96pt x 256.96pt>
+<Images/Img_RSKA003603_0_r2560_c3200.png, id=172, 256.96pt x 256.96pt>
 File: Images/Img_RSKA003603_0_r2560_c3200.png Graphic file (type png)
 <use Images/Img_RSKA003603_0_r2560_c3200.png>
 Package pdftex.def Info: Images/Img_RSKA003603_0_r2560_c3200.png  used on input
- line 599.
+ line 612.
 (pdftex.def)             Requested size: 198.45662pt x 198.4597pt.
-[32
+[33
 
-] [33 <./Images/Img_RSKA003603_0_r2560_c3200_2.png (PNG copy)> <./Images/Img_RS
+] [34 <./Images/Img_RSKA003603_0_r2560_c3200_2.png (PNG copy)> <./Images/Img_RS
 KA003603_0_r2560_c3200.png (PNG copy)>]
-<Images/data_folder.png, id=177, 774.895pt x 400.49625pt>
+<Images/data_folder.png, id=180, 774.895pt x 400.49625pt>
 File: Images/data_folder.png Graphic file (type png)
 <use Images/data_folder.png>
-Package pdftex.def Info: Images/data_folder.png  used on input line 622.
+Package pdftex.def Info: Images/data_folder.png  used on input line 635.
 (pdftex.def)             Requested size: 441.01773pt x 227.9369pt.
- [34 <./Images/data_folder.png>]
-<Images/qgisa.png, id=182, 920.43875pt x 549.05125pt>
+ [35 <./Images/data_folder.png>]
+<Images/qgisa.png, id=185, 920.43875pt x 549.05125pt>
 File: Images/qgisa.png Graphic file (type png)
 <use Images/qgisa.png>
-Package pdftex.def Info: Images/qgisa.png  used on input line 630.
+Package pdftex.def Info: Images/qgisa.png  used on input line 643.
 (pdftex.def)             Requested size: 441.01773pt x 263.07245pt.
-<Images/qgisb.png, id=183, 648.4225pt x 466.74374pt>
+<Images/qgisb.png, id=186, 648.4225pt x 466.74374pt>
 File: Images/qgisb.png Graphic file (type png)
 <use Images/qgisb.png>
-Package pdftex.def Info: Images/qgisb.png  used on input line 638.
+Package pdftex.def Info: Images/qgisb.png  used on input line 651.
 (pdftex.def)             Requested size: 308.71106pt x 222.21835pt.
 
-[35 <./Images/qgisa.png> <./Images/qgisb.png>]
-<Images/polygon_ori.png, id=189, 565.11125pt x 396.48125pt>
+[36 <./Images/qgisa.png> <./Images/qgisb.png>]
+<Images/polygon_ori.png, id=193, 565.11125pt x 396.48125pt>
 File: Images/polygon_ori.png Graphic file (type png)
 <use Images/polygon_ori.png>
-Package pdftex.def Info: Images/polygon_ori.png  used on input line 664.
+Package pdftex.def Info: Images/polygon_ori.png  used on input line 677.
 (pdftex.def)             Requested size: 441.01773pt x 309.42351pt.
-<Images/polygon_bounds.png, id=190, 581.17125pt x 449.68pt>
+<Images/polygon_bounds.png, id=194, 581.17125pt x 449.68pt>
 File: Images/polygon_bounds.png Graphic file (type png)
 <use Images/polygon_bounds.png>
-Package pdftex.def Info: Images/polygon_bounds.png  used on input line 672.
+Package pdftex.def Info: Images/polygon_bounds.png  used on input line 685.
 (pdftex.def)             Requested size: 441.01773pt x 341.23886pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[36 <./Images/polygon_ori.png>] [37 <./Images/polygon_bounds.png>]
-<Images/original/Img_RSKA003603_0_r000_c256.jpg, id=200, 256.96pt x 256.96pt>
+[37 <./Images/polygon_ori.png>] [38 <./Images/polygon_bounds.png>]
+<Images/original/Img_RSKA003603_0_r000_c256.jpg, id=203, 256.96pt x 256.96pt>
 File: Images/original/Img_RSKA003603_0_r000_c256.jpg Graphic file (type jpg)
 <use Images/original/Img_RSKA003603_0_r000_c256.jpg>
 Package pdftex.def Info: Images/original/Img_RSKA003603_0_r000_c256.jpg  used o
-n input line 710.
+n input line 723.
 (pdftex.def)             Requested size: 198.45662pt x 198.4597pt.
-<Images/original/Img_RSKA003603_0_r256_c3328.jpg, id=201, 256.96pt x 256.96pt>
+<Images/original/Img_RSKA003603_0_r256_c3328.jpg, id=204, 256.96pt x 256.96pt>
 File: Images/original/Img_RSKA003603_0_r256_c3328.jpg Graphic file (type jpg)
 <use Images/original/Img_RSKA003603_0_r256_c3328.jpg>
 Package pdftex.def Info: Images/original/Img_RSKA003603_0_r256_c3328.jpg  used 
-on input line 717.
+on input line 730.
 (pdftex.def)             Requested size: 198.45662pt x 198.4597pt.
-<Images/original/Img_RSKA014702_3_r1664_c384.jpg, id=202, 256.96pt x 222.8325pt
+<Images/original/Img_RSKA014702_3_r1664_c384.jpg, id=205, 256.96pt x 222.8325pt
 >
 File: Images/original/Img_RSKA014702_3_r1664_c384.jpg Graphic file (type jpg)
 <use Images/original/Img_RSKA014702_3_r1664_c384.jpg>
 Package pdftex.def Info: Images/original/Img_RSKA014702_3_r1664_c384.jpg  used 
-on input line 724.
+on input line 737.
 (pdftex.def)             Requested size: 220.50887pt x 191.2242pt.
- [38 <./Images/original/Img_RSKA003603_0_r000_c256.jpg> <./Images/original/Img_
+ [39 <./Images/original/Img_RSKA003603_0_r000_c256.jpg> <./Images/original/Img_
 RSKA003603_0_r256_c3328.jpg> <./Images/original/Img_RSKA014702_3_r1664_c384.jpg
 >]
-<Images/tree_DATN.png, id=206, 354.32375pt x 449.68pt>
+<Images/tree_DATN.png, id=209, 354.32375pt x 449.68pt>
 File: Images/tree_DATN.png Graphic file (type png)
 <use Images/tree_DATN.png>
-Package pdftex.def Info: Images/tree_DATN.png  used on input line 739.
+Package pdftex.def Info: Images/tree_DATN.png  used on input line 752.
 (pdftex.def)             Requested size: 352.81552pt x 447.77823pt.
- [39 <./Images/tree_DATN.png>] [40]
+ [40 <./Images/tree_DATN.png>] [41]
 Ch\uhorn \ohorn ng 3.
-<Images/nvidia-smi.png, id=214, 670.505pt x 589.20125pt>
+<Images/nvidia-smi.png, id=217, 670.505pt x 589.20125pt>
 File: Images/nvidia-smi.png Graphic file (type png)
 <use Images/nvidia-smi.png>
-Package pdftex.def Info: Images/nvidia-smi.png  used on input line 767.
+Package pdftex.def Info: Images/nvidia-smi.png  used on input line 780.
 (pdftex.def)             Requested size: 352.81552pt x 310.02754pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/demo.png, id=215, 1292.83pt x 729.72626pt>
+<Images/demo.png, id=218, 1292.83pt x 729.72626pt>
 File: Images/demo.png Graphic file (type png)
 <use Images/demo.png>
-Package pdftex.def Info: Images/demo.png  used on input line 784.
+Package pdftex.def Info: Images/demo.png  used on input line 797.
 (pdftex.def)             Requested size: 441.01773pt x 248.92761pt.
-[41
+[42
 
 ]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/shpfile_demo_result.png, id=219, 277.035pt x 94.3525pt>
+<Images/shpfile_demo_result.png, id=223, 277.035pt x 94.3525pt>
 File: Images/shpfile_demo_result.png Graphic file (type png)
 <use Images/shpfile_demo_result.png>
-Package pdftex.def Info: Images/shpfile_demo_result.png  used on input line 794
+Package pdftex.def Info: Images/shpfile_demo_result.png  used on input line 807
 .
 (pdftex.def)             Requested size: 220.50887pt x 75.10056pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/demo_result.png, id=220, 1020.81375pt x 601.24625pt>
+<Images/demo_result.png, id=224, 1020.81375pt x 601.24625pt>
 File: Images/demo_result.png Graphic file (type png)
 <use Images/demo_result.png>
-Package pdftex.def Info: Images/demo_result.png  used on input line 805.
+Package pdftex.def Info: Images/demo_result.png  used on input line 818.
 (pdftex.def)             Requested size: 441.01773pt x 259.7602pt.
-[42 <./Images/nvidia-smi.png>]
+[43 <./Images/nvidia-smi.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[43 <./Images/demo.png> <./Images/shpfile_demo_result.png>]
-<Images/f1-score.png, id=231, 263.98625pt x 72.27pt>
+[44 <./Images/demo.png> <./Images/shpfile_demo_result.png>]
+<Images/f1-score.png, id=234, 263.98625pt x 72.27pt>
 File: Images/f1-score.png Graphic file (type png)
 <use Images/f1-score.png>
-Package pdftex.def Info: Images/f1-score.png  used on input line 830.
+Package pdftex.def Info: Images/f1-score.png  used on input line 843.
 (pdftex.def)             Requested size: 352.81552pt x 96.59425pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[44 <./Images/demo_result.png>] [45 <./Images/f1-score.png>]
-Underfull \hbox (badness 4001) in paragraph at lines 918--926
+[45 <./Images/demo_result.png>] [46 <./Images/f1-score.png>]
+Underfull \hbox (badness 4001) in paragraph at lines 931--939
 \T5/cmr/m/n/12 and Serge J. Belongie. \T5/cmr/m/it/12 Feature Pyramid Networks 
 for Object Detection\T5/cmr/m/n/12 .
  []
 
-[46
+[47
 
 ] (./baocao.aux)
 
@@ -1416,10 +1416,10 @@ al/texlive/2019/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2019/texmf
 -dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2019/texmf-dist/fonts
 /type1/vntex/vnr/vnti12.pfb>
-Output written on baocao.pdf (47 pages, 9371871 bytes).
+Output written on baocao.pdf (48 pages, 9374351 bytes).
 PDF statistics:
- 291 PDF objects out of 1000 (max. 8388607)
- 152 compressed objects within 2 object streams
+ 294 PDF objects out of 1000 (max. 8388607)
+ 154 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  233 words of extra memory for PDF output out of 10000 (max. 10000000)
 
