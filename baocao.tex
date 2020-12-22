@@ -64,8 +64,7 @@
 %\rfoot{\textit{Toán Tin K61}}
 
 \renewcommand{\footrulewidth}{1,2pt}
-
-
+%\usepackage[english]{babel}
 
 \begin{document}
 
@@ -130,8 +129,9 @@
 \addcontentsline{toc}{chapter}{Danh mục từ viết tắt}
 
 
-\chapter*{Danh sách hình vẽ}
+%\chapter*{Danh sách hình vẽ}
 \addcontentsline{toc}{chapter}{Danh sách hình vẽ}
+\listoffigures
 
 \chapter*{Lời cảm ơn}
 \addcontentsline{toc}{chapter}{Lời cảm ơn}	
@@ -139,7 +139,7 @@
 \chapter*{Lời mở đầu}
 \addcontentsline{toc}{chapter}{Lời mở đầu}
 Việc sản xuất và phân phối loại cây trồng có giá trị kinh tế này đòi hỏi phải có sự giám sát thường xuyên đối với theo chu kì và theo mùa vụ. Đây là một nhiệm vụ quan trọng đối với việc quản lý tài nguyên, rừng. Để đáp ứng nhu cầu ngày càng tăng của thế giới và sản lượng nông nghiệp tiêu dùng, năng suất cây trồng phải được ước tính. Việc phát hiện, thu thập thủ công dữ liệu cây trồng để lưu trữ hồ sơ trên một diễn tích đất lớn là không khả thi đối với con người, gây tốn kém tiền bạc và dễ bị ảnh hưởng bởi lỗi của con người
-Việc phát hiện cây trên một diện tích lớn sẽ giúp doanh nghiệp giảm bớt sự phụ thuộc vào con người và chi phí, dễ dàng quản lý và lên kế hoạch kịp thời cho sản xuất. Trong vài năm trở lại đây, lĩnh vực học sâu và xử lý ảnh đang nhận được nhiều sự quan tâm, áp dụng trong nhiều lĩnh vực khoa học khác nhau. Trong báo cáo đồ án này, em xin giới thiệu một giải phát phát hiện cây trong các bức ảnh viễn thám dựa trên mô hình học sâu. Nội dung của đồ án gồm có phần mở đầu, 4 chương, phần kết luận, tài liệu tham khảo:
+Việc phát hiện cây trên một diện tích lớn sẽ giúp doanh nghiệp giảm bớt sự phụ thuộc vào con người và chi phí, dễ dàng quản lý và lên kế hoạch kịp thời cho sản xuất. Trong vài năm trở lại đây, lĩnh vực học sâu và xử lý ảnh đang nhận được nhiều sự quan tâm, áp dụng trong nhiều lĩnh vực khoa học khác nhau. Trong báo cáo đồ án này, em xin giới thiệu một giải pháp phát hiện cây trong các bức ảnh viễn thám dựa trên mô hình học sâu. Nội dung của đồ án gồm có phần mở đầu, 4 chương, phần kết luận, tài liệu tham khảo:
 \begin{itemize}
 	\item \textbf{Chương 1: }
 	
@@ -149,11 +149,11 @@ Việc phát hiện cây trên một diện tích lớn sẽ giúp doanh nghiệ
 
 \end{itemize}
 
-\chapter{Lý thuyết về hệ thống thông tin địa lý và tiền xử lý ảnh viễn thám}
-
-\section{Hệ thống thông tin địa lý}
-
-\section{Ảnh viễn thám và quá trình tiền xử lý}
+%\chapter{Lý thuyết về hệ thống thông tin địa lý và tiền xử lý ảnh viễn thám}
+%
+%\section{Hệ thống thông tin địa lý}
+%
+%\section{Ảnh viễn thám và quá trình tiền xử lý}
 
 
 
@@ -298,91 +298,7 @@ Object Detection là 1 bài toán đã đạt được rất nhiều các thành
 Có hai loại bài toán Object detection: two-stage object detection và one-stage object detection.\par
 \textbf{Two-stage object detection:} Điển hình họ các thuật toán R-CNN. Việc gọi là two-stage là do cách model xử lý để lấy ra được các vùng có khả năng chứa vật thể từ bức ảnh. Ví dụ, với Faster-RCNN thì trong stage-1, ảnh sẽ được đưa ra 1 sub-network gọi là RPN (Region Proposal Network) với nhiệm vụ extract các vùng trên ảnh có khả năng chứa đối tượng dựa vào các anchor. Sau khi đã thu được các vùng đặc trưng từ RPN, model Faster-RCNN sẽ thực hiện tiếp việc phân loại đối tượng và xác định vị trí nhờ vào việc chia làm 2 nhánh tại phần cuối của mô hình (Object classification \& Bounding box regression).\par
 \textbf{One-stage Object Detection:} Các thuật toán điển hình như: SSD, YOLO, RetinaNet. Gọi là one-stage vì trong việc thiết kế model hoàn toàn không có phần trích chọn các vùng đặc trưng (các vùng có khả năng chứa đối tượng) như RPN của Faster-RCNN. Các mô hình one-stage object detection coi phần việc phát hiện đối tượng (object localization) như một bài toán regression (với 4 tọa độ offset, ví dụ x, y, w, h) và cũng dựa trên các box được định nghĩa sẵn gọi là anchor để làm việc đó. Các mô hình dạng này thường nhanh hơn tuy nhiên "độ chính xác" của model thường kém hơn so với two-stage object detection. Tuy nhiên, một số mô hình one-stage vẫn tỏ ra vượt trội hơn một chút so với two-stage như Retina-Net với việc việc thiết kế mạng theo FPN (Feature Pyramid Network) và Focal Loss.\par
-\subsection{Mô hình Faster R-CNN}
-\subsubsection{Regions with CNN features (R-CNN)}
-R-CNN được giới thiệu lần đầu vào 2014 bởi Ross Girshick và các cộng sự ở UC Berkeley một trong những trung tâm nghiên cứu AI hàng đầu thế giới trong bài báo \textit{Rich feature hierarchies for accurate object detection and semantic segmentation}. RCNN có thể là xem một trong những ứng dụng nền móng đầu tiên của CNN đối với bài toán định vị, phát hiện và phân đoạn đối tượng. \par
-Kiến trúc của R-CNN gồm 3 thành phần đó là:
-\begin{itemize}
-	\item Vùng đề xuất hình ảnh (Region proposal): Có tác dụng tạo và trích xuất các vùng đề xuất chứa vật thể được bao bởi các bounding box.
-	\item Trích lọc đặc trưng (Feature Extractor): Trích xuất các đặc trưng giúp nhận diện hình ảnh từ các region proposal thông qua các CNN.
-	\item Phân loại (classifier): Dựa vào input là các features ở phần trước để phân loại hình ảnh chứa trong region proposal về đúng nhãn.
-\end{itemize}\par
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=1\linewidth]{Images/rcnn}
-	\caption{Sơ đồ xử lý trong mô hình mạng R-CNN (Nguồn: \textit{Medium})}
-	\label{fig:rcnn}
-\end{figure}
 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.45\linewidth]{Images/rcnn1}
-	\caption{R-CNN (Nguồn: \textit{Medium})}
-	\label{fig:rcnn1}
-\end{figure}
-
-Để vượt qua vấn đề chọn một số lượng lớn các region, Ross Girshick đề xuất một phương pháp gọi là selective search để chỉ trích xuất 2000 regions từ hình ảnh và gọi chúng là vùng đề xuất (region proposals), tức vùng có khả năng chứa đối tượng. Do đó, thay vì cố gắng phân loại một số lượng lớn các region, ta chỉ cần làm việc với 2000 regions. 2000 propsal regions này được uốn cong thành một hình vuông và được đưa vào một mạng CNN tạo ra một vector đặc trưng 4096 chiều làm đầu ra. CNN hoạt động như một công cụ trích xuất đặc trưng và dense layer đầu ra bao gồm các đặc trưng được trích xuất từ các ảnh và các đặc trưng được đưa vào một SVM để phân loại sự hiện diện của đối tượng trong proposal region được lấy ra đó. Ngoài việc dự đoán sự hiện diện của một đối tượng trong các proposal region, thuật toán cũng dự đoán bốn giá trị là độ lệch (offset values) để tăng độ chính xác của bounding box, Ví dụ với một region proposal cho trước, thuật toán sẽ dự đoán sự hiện diện của người nhưng khuôn mặt người đó trong region proposal đó có thể bị cắt đi một nửa. Do đó, các giá trị bù giúp điều chỉnh bounding box của region proposal.\par
-\textbf{Nhược điểm của R-CNN:}
-\begin{itemize}
-	\item Vẫn tốn lượng lớn thời gian để luyện mạng vì phải phân loại 2000 region proposals mỗi ảnh.
-	\item Không thể chạy với thời gian thực do nó tốn thời gian 47 giây cho mỗi ảnh
-	\item Thuật toán selective search là một thuật toán cố định. Do đó, không có việc học nào đang diễn ra ở giai đoạn đó, Điều này có thể dẫn đến việc tạo ra các region proposal tồi.
-\end{itemize}
-\subsubsection{Fast R-CNN}
-Dựa trên thành công của R-CNN, Ross Girshick (lúc này đã chuyển sang Microsoft Research) đề xuất một mở rộng để giải quyết vấn đề của R-CNN trong một bài báo vào năm 2015 với tiêu đề rất ngắn gọn Fast R-CNN.\par
-Tương tự như R-CNN thì Fast R-CNN vẫn dùng selective search để lấy ra các region proposal. Tuy nhiên là nó không tách 2000 region proposal ra khỏi ảnh và thực hiện bài toán image classification cho mỗi ảnh. Fast R-CNN cho cả bức ảnh vào ConvNet (một vài convolutional layer + max pooling layer) để tạo ra convolutional feature map. Sau đó các vùng region proposal được lấy ra tương ứng từ convolutional feature map. Tiếp đó được Flatten và thêm 2 Fully connected layer (FCs) để dự đoán lớp của region proposal và offset values của bounding box.\par
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.7\linewidth]{Images/fastrcnn}
-	\caption{Fast R-CNN (Nguồn: \textit{Medium})}
-	\label{fig:fastrcnn}
-\end{figure}
-Tuy nhiên là kích thước của các region proposal khác nhau nên khi Flatten sẽ ra các vector có kích thước khác nhau nên không thể áp dụng neural network được. Với R-CNN, nó đã resize các region proposal về cùng kích thước trước khi dùng transfer learning. Tuy nhiên ở feature map ta không thể resize được, nên ta phải có cách gì đấy để chuyển các region proposal trong feature map về cùng kích thước nên \textbf{Region of Interest (RoI) pooling} ra đời.\par
-\textbf{Region of Interest (RoI) pooling:} RoI pooling là một dạng của pooling layer. Điểm khác so với max pooling hay average pooling là bất kể kích thước của tensor input, RoI pooling luôn cho ra output có kích thước cố định được định nghĩa trước.\par
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.7\linewidth]{Images/roi}
-	\caption{RoI pooling (Nguồn: \textit{nttuan8.com})}
-	\label{fig:roi}
-\end{figure}
-Fast R-CNN khác với R-CNN là nó thực hiện feature map với cả ảnh sau đó với lấy các region proposal ra từ feature map, còn R-CNN thực hiện tách các region proposal ra rồi mới thực hiện CNN trên từng region proposal. Do đó Fast R-CNN nhanh hơn đáng kể nhờ tối ưu việc tính toán bằng Vectorization. \par
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=1\linewidth]{Images/time}
-	\caption{So sánh một số thuật toán object detection (Nguồn: \textit{towardsdatascience.com})}
-	\label{fig:time}
-\end{figure}
-Tuy nhiên nhìn hình trên ở phần test time với mục Fast R-CNN thì thời gian tính region proposal rất lâu và làm chậm thuật toán. Do đó cần thay thế thuật toán selective search và việc dùng Deep learning để tao ra region proposal được thực hiện với mô hình Faster R-CNN.\par
-\subsubsection{Faster R-CNN}
-Faster R-CNN không dùng thuật toán selective search để lấy ra các region proposal, mà nó thêm một mạng CNN mới gọi là Region Proposal Network (RPN) để tìm các region proposal.\par
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.7\linewidth]{Images/fasterrcnn}
-	\caption{Mô hình Faster R-CNN (Nguồn: \textit{arXiv:1506.01497})}
-	\label{fig:fasterrcnn}
-\end{figure}
-%\begin{figure}[!h]
-%	\centering
-%	\includegraphics[width=0.7\linewidth]{Images/fasterrcnn1}
-%	\caption{Mô hình Faster R-CNN. (Nguồn: \textit{d2l.aivivn.com})}
-%	\label{fig:fasterrcnn1}
-%\end{figure}
-
-Một Region Proposal Network nhận đầu vào là ảnh với kích thước bất kì và cho đầu ra là region proposal (tập vị trí của các hình chữ nhật có thể chứa vật thể), cùng với xác suất chứa vật thể của hình chữ nhật tương ứng. \par
-\textbf{Region Proposal Network (RPN):} Quy trình tính toán của RPN được mô tả chi tiết dưới đây: 
-\begin{enumerate}
-	\item Dùng một lớp tích chập $3\times 3$ với padding bằng 1 để biến đổi đầu ra của CNN và đặt số kênh đầu ra bằng $c$. Bằng cách này phần tử trong feature map mà CNN trích xuất ra từ bức ảnh là một đặc trưng mới có độ dài bằng $c$.
-	\item Lấy mỗi phần tử trong feature map làm tâm để tạo ra nhiều anchor box có kích thước và tỷ lệ khác nhau, sau đó gán nhãn cho chúng.  
-	\item Lấy những đặc trưng của các phần tử có độ dài $c$ ở tâm của anchor box để phân loại nhị phân (là vật thể hay là nền) và dự đoán bounding box tương ứng cho các anchor box.
-	\item Sau đó, sử dụng non-maximum suppression để loại bỏ các bounding box có kết quả giống nhau của hạng mục “vật thể”. Cuối cùng, ta xuất ra các bounding box dự đoán là các proposal region rồi đưa vào lớp RoI pooling.
-\end{enumerate}
-Vì là một phần của mô hình Faster R-CNN, nên RPN được huấn luyện cùng với phần còn lại trong mô hình. Ngoài ra, trong đối tượng Faster R-CNN còn chứa các hàm dự đoán hạng mục và bounding box trong bài toán phát hiện vật thể, cũng như các hàm dự đoán hạng mục nhị phân và bounding box cho các anchor box trong RPN. Sau cùng, RPN có thể học được cách sinh ra những proposal region có chất lượng cao, giảm đi số lượng proposal region trong khi vẫn giữ được độ chính xác khi phát hiện vật thể.\par
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.7\linewidth]{Images/fasterrcnn2}
-	\caption{Faster R-CNN nhanh hơn hẳn các dòng R-CNN trước đó, vì vậy có thể dùng cho real-time objec detection (Nguồn: \textit{nttuan8.com})}
-	\label{fig:fasterrcnn2}
-\end{figure}
 \subsection{Một số phương pháp đánh giá mô hình nhận diện vật thể}
 \subsubsection{Intersection over Union (IoU)}
 Intersection over Union là chỉ số đánh giá được sử dụng để đo độ chính xác của Object detector trên tập dữ liệu cụ thể. IoU đơn giản chỉ là một chỉ số đánh giá. Mọi thuật toán có khả năng predict ra các bounding box làm output đều có thể được đánh giá thông qua IoU. \par
@@ -470,7 +386,7 @@ Mean average precision (mAP) là trung bình của AP. Trong một số trườn
 	\label{fig:cocometric}
 \end{figure}
 
-\subsection{PyTorch và Faster R-CNN ResNet-50 FPN}
+\subsection{PyTorch và mô hình RetinaNet}
 \subsubsection{Sơ lược về Transfer Learning}
 Những năm gần đây, Deep Learning phát triển cực nhanh dựa trên lượng dữ liệu training khổng lồ và khả năng tính toán ngày càng được cải tiến của các máy tính. Các kết quả cho bài toán phân loại ảnh ngày càng được nâng cao. Bộ cơ sở dữ liệu thường được dùng nhất là ImageNet với 1.2M ảnh cho 1000 classes khác nhau. Rất nhiều các mô hình Deep Learning đã giành chiến thắng trong các cuộc thi ILSVRC (ImageNet Large Scale Visual Recognition Challenge). Có thể kể ra một vài: AlexNet, ZFNet, GoogLeNet, ResNet, VGG.\par
 Nhìn chung, các mô hình này đều bao gồm rất nhiều layers. Các layers phía trước thường là các Convolutional layers kết hợp với các nonlinear activation functions và pooling layers (và được gọi chung là ConvNet). Layer cuối cùng là một Fully Connected Layer và thường là một Softmax Regression (Xem Hình 1). Số lượng units ở layer cuối cùng bằng với số lượng classes (với ImageNet là 1000). Vì vậy output ở layer gần cuối cùng (second to last layer) có thể được coi là feature vectors và Softmax Regression chính là Classifier được sử dụng.\par
@@ -489,7 +405,7 @@ PyTorch là một thư viện machine learning mã nguồn mở dựa trên Torc
 \end{itemize}
 Cấu trúc dữ liệu cốt lõi được sử dụng trong PyTorch là \textbf{Tensor}.\par
 
-\section{Kiến trúc mô hình RetinaNet}
+\subsection{Kiến trúc mô hình RetinaNet}
 RetinaNet là một mạng tổng hợp bao gồm:
 \begin{itemize}
 	\item Mạng kim tự tháp đặc trưng-Feature Pyramid Networks (FPN) được xây dựng dưa trên mạng ResNet; chịu trách nhiệm tính toán,  trích xuất các đặc trưng trong bức ảnh
@@ -674,14 +590,14 @@ tích.
     \centering
     \begin{subfigure}[!h]{0.45\textwidth}
     \includegraphics[width=\linewidth]{Images/Img_RSKA003603_0_r2560_c3200_2}
-        \subcaption[short for lof]{}
+        \subcaption[short for lof]{Ảnh ban đầu}
 %        \rule{\linewidth}{3cm}
         \label{fig:subfig1}
     \end{subfigure}%
     \quad
     \begin{subfigure}[!h]{0.45\textwidth}
     \includegraphics[width=\linewidth]{Images/Img_RSKA003603_0_r2560_c3200}
-        \subcaption[short for lof]{}
+        \subcaption[]{Kết quả sau khi nhận dạng đối tượng trong ảnh}
 %        \rule{\linewidth}{3cm}
         \label{fig:subfig2}
     \end{subfigure}
@@ -700,7 +616,7 @@ Vì mục tiêu của bài toán là nhận dạng và đếm số cây trên m�
 
 
 \item \textit{Thiết kế dữ liệu luyện mạng} \\
-Dữ liệu sử dụng trong bài toán này được cung cấp bởi thầy giáo hướng dẫn TS.  Lê Hải Hà.  Dữ liệu bao gồm 2 thư mục,  nỗi thư mực gồm một vài ảnh ở định dạng GeoTif và các \textbf{shapefile} chưa toạ độ các bounding box trong các bức ảnh đó
+Dữ liệu sử dụng trong bài toán này được cung cấp bởi thầy giáo hướng dẫn TS.  Lê Hải Hà.  Dữ liệu bao gồm 2 thư mục,  nỗi thư mực gồm một vài ảnh ở định dạng GeoTif và các \textbf{shapefile} chứa toạ độ các bounding box trong các bức ảnh đó
  \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\linewidth]{Images/data_folder}
@@ -791,32 +707,55 @@ Tuy nhiên trong hình trên, mỗi điểm là một toạ độ trên một m�
 \begin{figure}[!h]
     \centering
     \begin{subfigure}[!h]{0.45\textwidth}
-    \includegraphics[width=\linewidth]{Images/split1}
+    \includegraphics[width=\linewidth]{Images/original/Img_RSKA003603_0_r000_c256}
         \subcaption[short for lof]{}
 %        \rule{\linewidth}{3cm}
         \label{fig:subfig1}
     \end{subfigure}%
     \quad
     \begin{subfigure}[!h]{0.45\textwidth}
-    \includegraphics[width=\linewidth]{Images/split2}
+    \includegraphics[width=\linewidth]{Images/original/Img_RSKA003603_0_r256_c3328}
         \subcaption[short for lof]{}
 %        \rule{\linewidth}{3cm}
         \label{fig:subfig2}
     \end{subfigure}
  
-    \begin{subfigure}[!h]{0.45\textwidth}
-    	\includegraphics[width=\linewidth]{Images/split3}
+    \begin{subfigure}[!h]{0.5\textwidth}
+    	\includegraphics[width=\linewidth]{Images/original/Img_RSKA014702_3_r1664_c384}
         \subcaption[short for lof]{}
 %        \rule{\linewidth}{3cm}
         \label{fig:subfig3}
     \end{subfigure}
-    \caption[Optional caption for list of figures]{Main caption for subfigures \subref{fig:subfig1}, \subref{fig:subfig2} and \subref{fig:subfig3}}
+    \caption[Optional caption for list of figures]{Một vài ảnh trọng bộ dữ liệu được tạo ra}
 \end{figure}
 \end{enumerate}
-Kết quả sau khi cắt ảnh ra ta thu được bộ dữ liệu hơn 5000 ảnh kích thước $256 \times 256$ cùng với toạ độ các bounding box tương ứng trong từng ảnh đó
+Kết quả sau khi cắt ảnh ra ta thu được bộ dữ liệu hơn 5000 ảnh kích thước $256 \times 256$ cùng với toạ độ các bounding box chứa đối tượng trong từng ảnh đó
 \section{Huấn luyện mạng neural}
-Chúng ta sẽ tiến hành huấn luyện mô hình dựa trên bộ dữ liệu được tạo ra ở trên.  Mô hình mà em sử dụng trong bài toán này là Faster- RCNN; trong đó backbone sử dụng ở đây là ResNet101 phục vụ cho việc trích xuất các đặc trưng trong ảnh
+Chúng ta sẽ tiến hành huấn luyện mô hình dựa trên bộ dữ liệu được tạo ra ở trên.  Mô hình mà em sử dụng trong bài toán này là RetinaNet; trong đó backbone sử dụng ở đây là ResNet50 được pretrained trên bộ dữ liệu nổi tiếng ImageNet phục vụ cho việc trích xuất các đặc trưng trong ảnh
 \section{Xây dựng chương trình}
+Chương trình được xây dựng trên nền tảng ngôn ngữ Python (phiên bản 3.6).. Cấu trúc thư mục của chương trình như hình 4.2 dưới đây: 
+ \begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Images/tree_DATN}
+	\caption{Cấu trúc chương trình}
+	\label{fig:tree_DATN}
+\end{figure}
+Dưới đây ta sẽ tìm hiểu kỹ chức năng các thư mục và file trên:
+\begin{itemize}
+	\item $/$data\_tiff: Thư mục này chứa các ảnh viễn thám định dạng GeoTiff cùng với các file ".shp" chứa các thông tin về đặc dạng hình học của đối tượng có trong ảnh
+	\item $/$retinanet: Thư mục xây dưng mô hình RetinaNet: khởi tạo model,  hàm loss, DataLoader để đưa dữ liệu vào mô hình
+	\item $/$checkpoint: Thư mục này lưu lại các trọng số trong mạng sau mỗi lần duyệt qua toàn bộ dataset, phục vụ cho việc đánh giá và dự đoán model. Các file trong thư mục này đều có định dạng: *.pt
+	\item /raster\_split: Thư mục này dùng để chuyển các ảnh vệ tinh định dạng GeoTiff về định dạng .png đồng thời tạo một bộ dataset gồm các ảnh png và file .txt chứa vị trí các đối tượng trong ảnh.
+	\item /lib: Thư mục này xây dựng các metrics trong việc đánh giá một mô hình object detection: Precision, Recall, Average Precision, F1-score.
+	\item demo.py: Kết hợp với các file trong thư mục /demo thực hiện nhiệm vụ testing: Đầu tiên sẽ load file weight trong thư mục checkpoint, đọc dữ liệu ảnh GeoTiff đầu vào và đưa vào trong model. Kết quả sau đó được lưu lại và xử lý để xuất ra shapefile
+	\item train.py: File này có nhiệm vụ chạy mô hình RetinaNet và lưu kết quả vào thư mục /checkpoint sau mỗi lần lặp trên bộ dataset. Thao tác này chỉ cần thực hiện một lần duy nhất.
+	
+	 
+	
+	
+\end{itemize}
+
+
 
 \chapter{Cài đặt chương trình và đánh giá kết quả}
 
@@ -839,7 +778,7 @@ Chương trình được cài đặt trên ngôn ngữ Python (phiên bản 3.6.
 
 
 \section{Dữ liệu đầu vào}
-Vì dữ liệu em được cung cấp bị hạn chế, nên trong bộ dữ liệu ban đầu em lấy ra 1 ảnh chưa được xử lý cho tập train và validation (hình \ref{fig:demo}) để làm dữ liệu đầu vào cho mô hình nhận diện vật thể đã xây dựng ở chương trước.  Lý do của việc lấy một ảnh kích thước lớn để dự đoán là vì theo yêu cầu của khách hàng,  họ cần đánh giá kết quả mô hình trên toàn bộ diện tích đất của họ chứ không phải các tấm ảnh kích thước $256 \times 256$ được cắt nhỏ từ tấm ảnh ban đầu
+Vì dữ liệu em được cung cấp bị hạn chế, nên trong bộ dữ liệu ban đầu em lấy ra 1 ảnh chưa được xử lý trong tập train và validation (hình \ref{fig:demo}) để làm dữ liệu đầu vào cho mô hình nhận diện vật thể đã xây dựng ở chương trước.  Lý do của việc lấy một ảnh kích thước lớn để dự đoán là vì theo yêu cầu của khách hàng,  họ cần đánh giá kết quả mô hình trên toàn bộ diện tích đất của họ chứ không phải các tấm ảnh kích thước $256 \times 256$ được cắt nhỏ từ tấm ảnh ban đầu
  \begin{figure}[!h]
 	\centering
 	\includegraphics[width=1\linewidth]{Images/demo}
@@ -849,7 +788,7 @@ Vì dữ liệu em được cung cấp bị hạn chế, nên trong bộ dữ li
 
 \section{Kết quả mô hình}
 Thời gian chạy chương trình cho ảnh trên: $43$ giây \\
-Hình ảnh kết quả được lưu lại ở dạng shapefile: 	(hình \ref{fig:shpfile_demo_result})
+Hình ảnh kết quả được lưu lại ở định dạng shapefile: 	(hình \ref{fig:shpfile_demo_result})
  \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.5\linewidth]{Images/shpfile_demo_result}
@@ -870,7 +809,7 @@ Ta sử dụng file shapefile ở trên để mô phỏng kết quả trên ph�
 
 
 \section{Đánh giá kết quả}
-Hình \ref{fig:demo_result} ở trên chỉ cho ta một cách khái quát về kết quả mô hình khi so sánh với các bounding box ban đầu.  Để đánh giá kết quả của mô hình,  trước tiên ta định nghĩa 2 bounding box cùng phát hiện một đối tượng nếu giá trị IOU của chúng $\geq 0.3$. Khi đó,  bounding box được dự đoán từ mô hình sẽ được coi là một \textit{True positive},  ngược lại sẽ là \textit{False positive}.  Trong trường hợp có nhiều hơn 1 bounding box cùng dự đoán một đối tượng,  ta sẽ lấy bounding box có confidence (độ tin cậy) cao nhất làm TP, các bounding box còn lại sẽ là FP.  Để so sánh một cách khách quan, em sử dụng cùng một tập các thang đo phổ biến là Precision, Recall và F1-score.  Trong đó, Precision là tỉ lệ giữa số tên miền phân loại chính xác trên tổng số tên miền được dự đoán của mỗi lớp. Recall là tỉ lệ giữa số tên miền được
+Hình \ref{fig:demo_result} chỉ cho ta một cách khái quát về kết quả mô hình khi so sánh với các bounding box ban đầu.  Để đánh giá kết quả của mô hình,  trước tiên ta định nghĩa: Hai bounding box cùng phát hiện một đối tượng nếu giá trị IOU của chúng $\geq 0.3$. Khi đó,  bounding box được dự đoán từ mô hình sẽ được coi là một \textit{True positive},  ngược lại sẽ là \textit{False positive}.  Trong trường hợp có nhiều hơn 1 bounding box cùng dự đoán một đối tượng,  ta sẽ lấy bounding box có confidence (độ tin cậy) cao nhất làm TP, các bounding box còn lại sẽ là FP.  Để so sánh một cách khách quan, em sử dụng cùng một tập các thang đo phổ biến là Precision, Recall và F1-score.  Trong đó, Precision là tỉ lệ giữa số tên miền phân loại chính xác trên tổng số tên miền được dự đoán của mỗi lớp. Recall là tỉ lệ giữa số tên miền được
 phân loại đúng theo một nhãn trên tổng số tên miền được gán theo nhãn đó.
 F1-score là trung bình điều hòa giữa hai giá trị Precision và Recall. Các tham
 số trên được biểu diễn trong các biểu thức:
@@ -922,25 +861,69 @@ Từ kết quả thực nghiệm cho thấy, chương trình đã có những th
 %\label{fig:test}
 %\end{figure}
 
-\chapter*{Tài liệu tham khảo}
-\addcontentsline{toc}{chapter}{Tài liệu tham khảo}
-\mdseries 
-\textbf{Tài liệu tham khảo tiếng Việt}
-
-\begin{enumerate}[label=\textrm{[\arabic*.]}]
-\item Nguyễn Đức Nghĩa, Nguyễn Tô Thành, "Toán rời rạc", Nhà xuất bản Đại Học Quốc Gia Hà Nội, 1997, tr. 147-155.
-\item Tống Đình Quỳ, "Giáo trình xác suất thống kê", Nhà xuất bản Bách Khoa-Hà Nội, 2016.
-\end{enumerate}
- \textbf{Tài liệu tham khảo tiếng Anh}
-\begin{enumerate}[label=\textrm{[\arabic*.]}]
-\item
-	Martin Aigner, Günter M. Ziegler, ‘‘Proofs from THE BOOK’’, $6^{th}$ Edition.
-\item
-	Valle Martinez, Vicente, "Notes on the proof of the van der Waerden permanent conjecture" (2018).
-\end{enumerate}
-
-
-
-
+%\chapter*{Tài liệu tham khảo}
+%\addcontentsline{toc}{chapter}{Tài liệu tham khảo}
+%\mdseries 
+%-------------------------------------------------------------------------------------
+\newpage
+\addcontentsline{toc}{section}{Tài liệu tham khảo}
+\begin{thebibliography}{9}
+	\bibitem{mlcoban} 
+	Vũ Hữu Tiệp. 
+	\textit{Machine Learning cơ bản}. machinelearningcoban.com/ebook, 2018.
+	
+	\bibitem{dlpython} 
+	François Chollet. 
+	\textit{Deep Learning with Python}. \textcopyright 2018 Manning Publications Co.
+	
+	\bibitem{dlpytorch} 
+	Eli Stevens, Luca Antiga. 
+	\textit{Deep Learning with PyTorch, Essential Excerpts}. \textcopyright 2019 Manning Publications Co.
+	
+	\bibitem{d2l} 
+	Aston Zhang, Zachary C. Lipton, Mu Li, and Alexander J. Smola. 
+	\textit{Dive into Deep Learning}. Release 0.14.3, 8/2020
+	
+	\bibitem{coco} 
+	Tsung-Yi Lin,
+	James Hays,
+	Michael Maire Serge Belongie,
+	Pietro Perona Deva Ramanan,
+	Lubomir Bourdev Ross Girshick,
+	C. Lawrence Zitnick Piotr Dollár. 
+	\textit{Microsoft COCO: Common Objects in Context}.  
+	arXiv:1405.0312.
+	
+	\bibitem{fastrcnn} 
+	Ross Girshick. 
+	\textit{Fast R-CNN}.  
+	arXiv:1504.08083.
+	
+	\bibitem{fasterrcnn} 
+	Shaoqing Ren, Kaiming He, Ross Girshick, and Jian Sun. 
+	\textit{Faster R-CNN: Towards Real-Time Object
+		Detection with Region Proposal Networks}.  
+	arXiv:1506.01497.
+		
+	\bibitem{cpoints} 
+	Tsung{-}Yi Lin,
+               Priya Goyal,
+               Ross B. Girshick,
+               Kaiming He and
+               Piotr Doll{\'{a}}r.
+	\textit{Focal Loss for Dense Object Detection}.  
+	arXiv:1708.02002.
+	
+	\bibitem{cfpn} 
+	Tsung{-}Yi Lin,
+               Piotr Doll{\'{a}}r,
+               Ross B. Girshick,
+               Kaiming He,
+               Bharath Hariharan and
+               Serge J. Belongie.
+	\textit{Feature Pyramid Networks for Object Detection}.  
+	arXiv:1612.03144.
+	
+\end{thebibliography}
 
 \end{document}
