@@ -65,7 +65,8 @@
 
 \renewcommand{\footrulewidth}{1,2pt}
 %\usepackage[english]{babel}
-
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
 \begin{document}
 
 
@@ -282,6 +283,7 @@ Ví dụ về stride = 1 và stride bằng 2
 \end{itemize}
 
 \section{Bài toán nhận diện vật thể (Object Detection)}
+\subsection{Tổng quan bài toán}
 Các hình ảnh trong cuộc sống bình thường thì không chỉ chứa 1 đối tượng mà thường bao gồm rất nhiều các đối tượng. Ta quan tâm đến vị trí của từng đối tượng trong ảnh. Bài toán như vậy được gọi là: object detection.\par
 \begin{figure}[!h]
 	\centering
@@ -298,6 +300,17 @@ Object Detection là 1 bài toán đã đạt được rất nhiều các thành
 Có hai loại bài toán Object detection: two-stage object detection và one-stage object detection.\par
 \textbf{Two-stage object detection:} Điển hình họ các thuật toán R-CNN. Việc gọi là two-stage là do cách model xử lý để lấy ra được các vùng có khả năng chứa vật thể từ bức ảnh. Ví dụ, với Faster-RCNN thì trong stage-1, ảnh sẽ được đưa ra 1 sub-network gọi là RPN (Region Proposal Network) với nhiệm vụ extract các vùng trên ảnh có khả năng chứa đối tượng dựa vào các anchor. Sau khi đã thu được các vùng đặc trưng từ RPN, model Faster-RCNN sẽ thực hiện tiếp việc phân loại đối tượng và xác định vị trí nhờ vào việc chia làm 2 nhánh tại phần cuối của mô hình (Object classification \& Bounding box regression).\par
 \textbf{One-stage Object Detection:} Các thuật toán điển hình như: SSD, YOLO, RetinaNet. Gọi là one-stage vì trong việc thiết kế model hoàn toàn không có phần trích chọn các vùng đặc trưng (các vùng có khả năng chứa đối tượng) như RPN của Faster-RCNN. Các mô hình one-stage object detection coi phần việc phát hiện đối tượng (object localization) như một bài toán regression (với 4 tọa độ offset, ví dụ x, y, w, h) và cũng dựa trên các box được định nghĩa sẵn gọi là anchor để làm việc đó. Các mô hình dạng này thường nhanh hơn tuy nhiên "độ chính xác" của model thường kém hơn so với two-stage object detection. Tuy nhiên, một số mô hình one-stage vẫn tỏ ra vượt trội hơn một chút so với two-stage như Retina-Net với việc việc thiết kế mạng theo FPN (Feature Pyramid Network) và Focal Loss.\par
+
+\subsection{Sơ lược về Transfer Learning}
+Những năm gần đây, Deep Learning phát triển cực nhanh dựa trên lượng dữ liệu training khổng lồ và khả năng tính toán ngày càng được cải tiến của các máy tính. Các kết quả cho bài toán phân loại ảnh ngày càng được nâng cao. Bộ cơ sở dữ liệu thường được dùng nhất là ImageNet với 1.2M ảnh cho 1000 classes khác nhau. Rất nhiều các mô hình Deep Learning đã giành chiến thắng trong các cuộc thi ILSVRC (ImageNet Large Scale Visual Recognition Challenge). Có thể kể ra một vài: AlexNet, ZFNet, GoogLeNet, ResNet, VGG.\par
+Nhìn chung, các mô hình này đều bao gồm rất nhiều layers. Các layers phía trước thường là các Convolutional layers kết hợp với các nonlinear activation functions và pooling layers (và được gọi chung là ConvNet). Layer cuối cùng là một Fully Connected Layer và thường là một Softmax Regression (Xem Hình 1). Số lượng units ở layer cuối cùng bằng với số lượng classes (với ImageNet là 1000). Vì vậy output ở layer gần cuối cùng (second to last layer) có thể được coi là feature vectors và Softmax Regression chính là Classifier được sử dụng.\par
+Chính nhờ việc features và classifier được trained cùng nhau qua deep networks khiến cho các mô hình này đạt kết quả tốt. Tuy nhiên, những mô hình này đều là các Deep Networks với rất nhiều layers. Việc training dựa trên 1.2M bức ảnh của ImageNet cũng tốn rất nhiều thời gian (2-3 tuần).\par
+Với các bài toàn dựa trên tập dữ liệu khác, rất ít khi người ta xây dựng và train lại toàn bộ Network từ đầu, bởi vì có rất ít các cơ sở dữ liệu có kích thước lớn. Thay vào đó, phương pháp thường được dùng là sử dụng các mô hình (nêu phía trên) đã được trained từ trước, và sử dụng một vài kỹ thuật khác để giải quyết bài toán. Phương pháp sử dụng các mô hình có sẵn như thế này được gọi là Transfer Learning.\par
+Có 2 loại transfer learning:
+\begin{itemize}
+	\item \textbf{Feature extractor:} Sau khi lấy ra các đặc điểm của ảnh bằng việc sử dụng ConvNet của pre-trained model, thì ta sẽ dùng linear classifier (linear SVM, softmax classifier,..) để phân loại ảnh.
+	\item \textbf{Fine tuning:} Sau khi lấy ra các đặc điểm của ảnh bằng việc sử dụng ConvNet của pre-trained model, thì ta sẽ coi đây là input của 1 CNN mới bằng cách thêm các ConvNet và Fully Connected layer. 
+\end{itemize}
 
 \subsection{Một số phương pháp đánh giá mô hình nhận diện vật thể}
 \subsubsection{Intersection over Union (IoU)}
@@ -386,24 +399,24 @@ Mean average precision (mAP) là trung bình của AP. Trong một số trườn
 	\label{fig:cocometric}
 \end{figure}
 
-\subsection{PyTorch và mô hình RetinaNet}
-\subsubsection{Sơ lược về Transfer Learning}
-Những năm gần đây, Deep Learning phát triển cực nhanh dựa trên lượng dữ liệu training khổng lồ và khả năng tính toán ngày càng được cải tiến của các máy tính. Các kết quả cho bài toán phân loại ảnh ngày càng được nâng cao. Bộ cơ sở dữ liệu thường được dùng nhất là ImageNet với 1.2M ảnh cho 1000 classes khác nhau. Rất nhiều các mô hình Deep Learning đã giành chiến thắng trong các cuộc thi ILSVRC (ImageNet Large Scale Visual Recognition Challenge). Có thể kể ra một vài: AlexNet, ZFNet, GoogLeNet, ResNet, VGG.\par
-Nhìn chung, các mô hình này đều bao gồm rất nhiều layers. Các layers phía trước thường là các Convolutional layers kết hợp với các nonlinear activation functions và pooling layers (và được gọi chung là ConvNet). Layer cuối cùng là một Fully Connected Layer và thường là một Softmax Regression (Xem Hình 1). Số lượng units ở layer cuối cùng bằng với số lượng classes (với ImageNet là 1000). Vì vậy output ở layer gần cuối cùng (second to last layer) có thể được coi là feature vectors và Softmax Regression chính là Classifier được sử dụng.\par
-Chính nhờ việc features và classifier được trained cùng nhau qua deep networks khiến cho các mô hình này đạt kết quả tốt. Tuy nhiên, những mô hình này đều là các Deep Networks với rất nhiều layers. Việc training dựa trên 1.2M bức ảnh của ImageNet cũng tốn rất nhiều thời gian (2-3 tuần).\par
-Với các bài toàn dựa trên tập dữ liệu khác, rất ít khi người ta xây dựng và train lại toàn bộ Network từ đầu, bởi vì có rất ít các cơ sở dữ liệu có kích thước lớn. Thay vào đó, phương pháp thường được dùng là sử dụng các mô hình (nêu phía trên) đã được trained từ trước, và sử dụng một vài kỹ thuật khác để giải quyết bài toán. Phương pháp sử dụng các mô hình có sẵn như thế này được gọi là Transfer Learning.\par
-Có 2 loại transfer learning:
-\begin{itemize}
-	\item \textbf{Feature extractor:} Sau khi lấy ra các đặc điểm của ảnh bằng việc sử dụng ConvNet của pre-trained model, thì ta sẽ dùng linear classifier (linear SVM, softmax classifier,..) để phân loại ảnh.
-	\item \textbf{Fine tuning:} Sau khi lấy ra các đặc điểm của ảnh bằng việc sử dụng ConvNet của pre-trained model, thì ta sẽ coi đây là input của 1 CNN mới bằng cách thêm các ConvNet và Fully Connected layer. 
-\end{itemize}
-\subsection{PyTorch}
-PyTorch là một thư viện machine learning mã nguồn mở dựa trên Torch, được sử dụng cho lĩnh vực Thị giác máy tính (Computer Vision) và xử lý ngôn ngữ tự nhiên (Natural language processing), được phát triển bởi Phòng nghiên cứu AI của Facebook (FAIR). Pytorch tập trung vào 2 khả năng chính:
-\begin{itemize}
-	\item Một sự thay thế cho bộ thư viện numpy để tận dụng sức mạnh tính toán của GPU.
-	\item Một platform Deep learning phục vụ trong nghiên cứu, mang lại sự linh hoạt và tốc độ.
-\end{itemize}
-Cấu trúc dữ liệu cốt lõi được sử dụng trong PyTorch là \textbf{Tensor}.\par
+\section{Mô hình RetinaNet}
+%\subsection{Sơ lược về Transfer Learning}
+%Những năm gần đây, Deep Learning phát triển cực nhanh dựa trên lượng dữ liệu training khổng lồ và khả năng tính toán ngày càng được cải tiến của các máy tính. Các kết quả cho bài toán phân loại ảnh ngày càng được nâng cao. Bộ cơ sở dữ liệu thường được dùng nhất là ImageNet với 1.2M ảnh cho 1000 classes khác nhau. Rất nhiều các mô hình Deep Learning đã giành chiến thắng trong các cuộc thi ILSVRC (ImageNet Large Scale Visual Recognition Challenge). Có thể kể ra một vài: AlexNet, ZFNet, GoogLeNet, ResNet, VGG.\par
+%Nhìn chung, các mô hình này đều bao gồm rất nhiều layers. Các layers phía trước thường là các Convolutional layers kết hợp với các nonlinear activation functions và pooling layers (và được gọi chung là ConvNet). Layer cuối cùng là một Fully Connected Layer và thường là một Softmax Regression (Xem Hình 1). Số lượng units ở layer cuối cùng bằng với số lượng classes (với ImageNet là 1000). Vì vậy output ở layer gần cuối cùng (second to last layer) có thể được coi là feature vectors và Softmax Regression chính là Classifier được sử dụng.\par
+%Chính nhờ việc features và classifier được trained cùng nhau qua deep networks khiến cho các mô hình này đạt kết quả tốt. Tuy nhiên, những mô hình này đều là các Deep Networks với rất nhiều layers. Việc training dựa trên 1.2M bức ảnh của ImageNet cũng tốn rất nhiều thời gian (2-3 tuần).\par
+%Với các bài toàn dựa trên tập dữ liệu khác, rất ít khi người ta xây dựng và train lại toàn bộ Network từ đầu, bởi vì có rất ít các cơ sở dữ liệu có kích thước lớn. Thay vào đó, phương pháp thường được dùng là sử dụng các mô hình (nêu phía trên) đã được trained từ trước, và sử dụng một vài kỹ thuật khác để giải quyết bài toán. Phương pháp sử dụng các mô hình có sẵn như thế này được gọi là Transfer Learning.\par
+%Có 2 loại transfer learning:
+%\begin{itemize}
+%	\item \textbf{Feature extractor:} Sau khi lấy ra các đặc điểm của ảnh bằng việc sử dụng ConvNet của pre-trained model, thì ta sẽ dùng linear classifier (linear SVM, softmax classifier,..) để phân loại ảnh.
+%	\item \textbf{Fine tuning:} Sau khi lấy ra các đặc điểm của ảnh bằng việc sử dụng ConvNet của pre-trained model, thì ta sẽ coi đây là input của 1 CNN mới bằng cách thêm các ConvNet và Fully Connected layer. 
+%\end{itemize}
+%\subsubsection{PyTorch}
+%PyTorch là một thư viện machine learning mã nguồn mở dựa trên Torch, được sử dụng cho lĩnh vực Thị giác máy tính (Computer Vision) và xử lý ngôn ngữ tự nhiên (Natural language processing), được phát triển bởi Phòng nghiên cứu AI của Facebook (FAIR). Pytorch tập trung vào 2 khả năng chính:
+%\begin{itemize}
+%	\item Một sự thay thế cho bộ thư viện numpy để tận dụng sức mạnh tính toán của GPU.
+%	\item Một platform Deep learning phục vụ trong nghiên cứu, mang lại sự linh hoạt và tốc độ.
+%\end{itemize}
+%Cấu trúc dữ liệu cốt lõi được sử dụng trong PyTorch là \textbf{Tensor}.\par
 
 \subsection{Kiến trúc mô hình RetinaNet}
 RetinaNet là một mạng tổng hợp bao gồm:
@@ -419,7 +432,7 @@ RetinaNet là một mạng tổng hợp bao gồm:
 	\label{fig:resnet-fpn4}
 \end{figure}
 
-\subsection{Mạng kim tự tháp đặc trưng Feature Pyramid Network (FPN)}
+\subsubsection{Mạng kim tự tháp đặc trưng Feature Pyramid Network (FPN)}
 
 \textbf{Residual Network (ResNet):} Một vấn đề phổ biến của Deep learning là Vanishing Gradients, tức là theo công thức tính đạo hàm bằng chain rule (trong lan truyền ngược, back propagation), nếu gradient của các lớp sau nhỏ thì gradient ở các lớp đầu sẽ gần bằng 0. Vì thế mà parameter của các lớp trước sẽ không được cập nhật nên các parameter này không đóng góp được gì trong việc đưa ra output. Vậy nên dù ta dùng nhiều lớp, thực chất số lớp hữu ích chỉ là một vài lớp cuối, điều đó làm giảm sự hiệu quả của mạng neural. ResNet ra đời để giải quyết vấn đề đó, giải pháp mà ResNet đưa ra là sử dụng kết nối "tắt" đồng nhất để xuyên qua một hay nhiều lớp. Một khối như vậy được gọi là một Residual Block.\par
 \begin{figure}[!h]
@@ -492,19 +505,20 @@ thực hiện tốt hơn (sao cho hàm mất mát đạt giá trị nhỏ nhất
 hiện đặc trưng và được sử dụng trong phát hiện đối tượng. Các feature
 map từ P2 đến P5 trong Hình \ref{fig:resnet-fpn4} độc lập với nhau và các đặc trưng
 được sử dụng để phát hiện đối tượng.
-\subsection{Mạng con phân loại}
+\subsubsection{Mạng con phân loại}
 Mạng con phân loại là một mạng tích chập đầy đủ (FCN) gắn ở mỗi mức của FPN. Mạng con này chứa 4 lớp tích chập 3x3 với 256 bộ lock, kết hợp với hàm kích hoạt RELU; tiếp đến là lớp tích chập 3x3 với số bộ lọc = KA. Do đó đầu ra của feature map có kích thước W*H*KA, trong đó W,H là các kích thước của feature map, K,A lần lượt là số lượng class và số lượng anchor box. Lý do cho việc sử dụng lớp tích chập cuối cùng của mạng con phân loại có K*A  bộ lọc vì nếu có “A” anchor box được đề xuất cho mỗi vị trí trong feature map thu được từ lớp tích chập cuối thì mỗi anchor box  có khả năng được phân loại được K lớp .  Do đó, đầu ra của feature map sẽ có KA bộ lọc.
 
-\subsection{Mạng con hồi quy}
+\subsubsection{Mạng con hồi quy}
 Song song với mạng con phân loại đối tượng, mô hình đi kèm một mạng tích chập đầy đủ khác vào mỗi cấp của mạng FPN nhằm mục đích điều chỉnh kích thước các anchor box trong việc  được phát hiện các đối tượng (nếu có).  Cấu trúc của mạng con này giống với mạng con phân loại ở trên, ngoại trừ lớp tích chập cuối có kích thước 3x3 với 4 bộ lọc cho kết quả đầu ra feature map của mạng con này có kích thước W*H*4A.  Lý do để lớp tích chập cuối có 4 bộ lọc là vì để xác định vị trí đối tượng trong ảnh, mạng con hồi quy tạo ra 4 giá trị cho mỗi anchor box  dự đoán độ lệch tương đối (về tọa độ tâm, chiều rộng và chiều cao) giữa các anchor box với  box thực tế chứa đối tượng. Do đó, đầu ra của feature map  trong mạng con hồi quy sẽ có 4A bộ lọc (kênh)
 
 
-\subsection{Hàm mất mát}
+\subsubsection{Hàm mất mát}
 \hspace*{1cm}Trong bài toán nhận diện vật thể, nhãn dữ liệu mô tả chính xác vị trí đối tượng trong bức ảnh được gọi là các ground-truth boxes. Thông qua 2 mạng con ở trên, mỗi anchor box được dự đoán sẽ được phân vào một lớp nào đó và vị trí của anchor box đó trong ảnh. Để tính toán hàm mất mát trong training, ta cần phải so sánh các giá trị dự đoán này với nhãn của dữ liệu.  Một anchor box được coi là dự đoán đúng với một ground truth box nào đó nếu giá trị IOU giữa 2 đối tượng này > 0.5; một anchor box được coi là không khớp với bất kì ground truth box nào trong ảnh nếu giá trị IOU giữa chúng < 0.4.  CUối cùng, nếu giá trị IOU giữa một anchor box với bất kì ground truth box nào nằm giữa 0.4 và 0.5 sẽ không đóng góp vào hàm mất mát. \\
 \hspace*{1cm}
 Hàm mất mát của mô hình RetinaNet chứa 2 thành phần: Hàm mất mát hồi quy và hàm mất mát phân loại
 
-\subsubsection{Hàm mất mát hồi quy}
+\paragraph{Hàm mất mát hồi quy} \leavevmode \\
+
 Giả sử các cặp dữ liệu trùng khớp nhau kí hiệu ${(A^i, G^i)}_{i=1,...N}$, trong đó $A$  là tập các anchor box, $G$ là tập các ground truth box, N là số lượng các ground truth box 
 
 Với mỗi anchor, mô hình dự đoán 4 giá trị, kì hiệu lần lượt $P^i = (P^i_x, P^i_y, P^i_w, P^i_h)$. Hai giá trị đầu là độ lệch giữa tâm của anchor $A_{i}$ và ground truth $G_i$, trong đó 2 giá trị cuối là độ lệch giữa chiều cao và chiều rộng của 2 box đó. Tương ứng vỡi mỗi dự đoán, giá trị mục tiêu Ti được tính như là độ lệch giữa anchor box và gt box theo công thức:
@@ -528,8 +542,9 @@ smooth_{L1}(x) =
 \end{cases}
 \end{equation}
 
-\subsubsection{Hàm mất mát phân loại}
-hàm mất mát phân loại mà mô hình retinanet sử dụng là focal loss. Nói một cách đơn giản, Focal loss (FL) là một phiên bản cải tiến của hàm Cross-Entropy Loss (CE) cố gắng xử lý vấn đề mất cân bằng giữa các lớp foreground và background; một điều thường xảy ra trong các bài toàn object detection .Hàm được xây dựng bằng cách gán nhiều trọng số hơn cho các mẫu khó hoặc dễ bị phân loại sai và giảm trọng số cho các mẫu dễ phân loại. Vì vậy, Focal loss làm giảm sự đóng góp tổn thất từ các mẫu dễ phân loại và tăng tầm quan trọng của việc sửa lỗi các mẫu được phân loại sai
+\paragraph{Hàm mất mát phân loại} \leavevmode \\
+
+Hàm mất mát phân loại mà mô hình retinanet sử dụng là Focal Loss. Nói một cách đơn giản, Focal loss (FL) là một phiên bản cải tiến của hàm Cross-Entropy Loss (CE) cố gắng xử lý vấn đề mất cân bằng giữa các lớp foreground và background; một điều thường xảy ra trong các bài toàn object detection .Hàm được xây dựng bằng cách gán nhiều trọng số hơn cho các mẫu khó hoặc dễ bị phân loại sai và giảm trọng số cho các mẫu dễ phân loại. Vì vậy, Focal loss làm giảm sự đóng góp tổn thất từ các mẫu dễ phân loại và tăng tầm quan trọng của việc sửa lỗi các mẫu được phân loại sai
 
 Đầu tiên ta sẽ tìm hiểu về hàm Cross-Entropy (CE) loss trong bài toán phân loại nhị phân:
 
@@ -576,7 +591,7 @@ Ta thấy hàm focal loss chỉ thêm nhân tử $(1-q_i)^{\gamma}$ so với cô
  \begin{equation*}
  	\frac{(1-0.1)^2}{(1-0.9)^2} = \frac{0.9^2}{0.1^2} = 81
  \end{equation*}
-
+Tỷ lệ này sẽ còn lớn hơn nữa nếu tăng 
 
 \end{itemize}
 
