@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  29 DEC 2020 17:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  29 DEC 2020 23:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1047,357 +1047,357 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 
 [7
 
-]
+] [8]
 Ch\uhorn \ohorn ng 1.
-<Images/aimldl.png, id=39, 578.16pt x 368.1253pt>
+<Images/aimldl.png, id=42, 578.16pt x 368.1253pt>
 File: Images/aimldl.png Graphic file (type png)
 <use Images/aimldl.png>
-Package pdftex.def Info: Images/aimldl.png  used on input line 180.
+Package pdftex.def Info: Images/aimldl.png  used on input line 178.
 (pdftex.def)             Requested size: 441.01773pt x 280.80046pt.
-[8
+[9
 
 ]
-<Images/nn1.png, id=43, 1129.21875pt x 263.48438pt>
+<Images/nn1.png, id=46, 1129.21875pt x 263.48438pt>
 File: Images/nn1.png Graphic file (type png)
 <use Images/nn1.png>
-Package pdftex.def Info: Images/nn1.png  used on input line 198.
+Package pdftex.def Info: Images/nn1.png  used on input line 196.
 (pdftex.def)             Requested size: 352.81552pt x 82.32257pt.
- [9 <./Images/aimldl.png (PNG copy)>]
-<Images/nn2.png, id=47, 839.38594pt x 290.58563pt>
+ [10 <./Images/aimldl.png (PNG copy)>]
+<Images/nn2.png, id=50, 839.38594pt x 290.58563pt>
 File: Images/nn2.png Graphic file (type png)
 <use Images/nn2.png>
-Package pdftex.def Info: Images/nn2.png  used on input line 208.
+Package pdftex.def Info: Images/nn2.png  used on input line 206.
 (pdftex.def)             Requested size: 441.01773pt x 152.67502pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[10 <./Images/nn1.png (PNG copy)>]
-<Images/nn3.png, id=54, 312.41719pt x 257.46187pt>
+[11 <./Images/nn1.png (PNG copy)>]
+<Images/nn3.png, id=57, 312.41719pt x 257.46187pt>
 File: Images/nn3.png Graphic file (type png)
 <use Images/nn3.png>
-Package pdftex.def Info: Images/nn3.png  used on input line 231.
+Package pdftex.def Info: Images/nn3.png  used on input line 229.
 (pdftex.def)             Requested size: 352.81552pt x 290.75958pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[11 <./Images/nn2.png>]
-<Images/cnn1.jpg, id=59, 1606.0pt x 401.5pt>
+[12 <./Images/nn2.png>]
+<Images/cnn1.jpg, id=63, 1606.0pt x 401.5pt>
 File: Images/cnn1.jpg Graphic file (type jpg)
 <use Images/cnn1.jpg>
-Package pdftex.def Info: Images/cnn1.jpg  used on input line 241.
+Package pdftex.def Info: Images/cnn1.jpg  used on input line 239.
 (pdftex.def)             Requested size: 441.01773pt x 110.25049pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/cnn2.png, id=60, 865.73438pt x 376.40625pt>
+<Images/cnn2.png, id=64, 865.73438pt x 376.40625pt>
 File: Images/cnn2.png Graphic file (type png)
 <use Images/cnn2.png>
-Package pdftex.def Info: Images/cnn2.png  used on input line 248.
+Package pdftex.def Info: Images/cnn2.png  used on input line 246.
 (pdftex.def)             Requested size: 441.01773pt x 191.74638pt.
-[12 <./Images/nn3.png>]
-<Images/stride1.png, id=66, 182.93344pt x 176.91093pt>
+[13 <./Images/nn3.png>]
+<Images/stride1.png, id=69, 182.93344pt x 176.91093pt>
 File: Images/stride1.png Graphic file (type png)
 <use Images/stride1.png>
-Package pdftex.def Info: Images/stride1.png  used on input line 256.
+Package pdftex.def Info: Images/stride1.png  used on input line 254.
 (pdftex.def)             Requested size: 91.46649pt x 88.45525pt.
-<Images/stride2.png, id=67, 256.96pt x 229.85875pt>
+<Images/stride2.png, id=70, 256.96pt x 229.85875pt>
 File: Images/stride2.png Graphic file (type png)
 <use Images/stride2.png>
-Package pdftex.def Info: Images/stride2.png  used on input line 260.
+Package pdftex.def Info: Images/stride2.png  used on input line 258.
 (pdftex.def)             Requested size: 109.20851pt x 97.69041pt.
-<Images/stride3.png, id=68, 217.81375pt x 198.7425pt>
+<Images/stride3.png, id=71, 217.81375pt x 198.7425pt>
 File: Images/stride3.png Graphic file (type png)
 <use Images/stride3.png>
-Package pdftex.def Info: Images/stride3.png  used on input line 264.
+Package pdftex.def Info: Images/stride3.png  used on input line 262.
 (pdftex.def)             Requested size: 108.9066pt x 99.371pt.
- [13 <./Images/cnn1.jpg> <./Images/cnn2.png> <./Images/stride1.png (PNG copy)> 
+ [14 <./Images/cnn1.jpg> <./Images/cnn2.png> <./Images/stride1.png (PNG copy)> 
 <./Images/stride2.png (PNG copy)> <./Images/stride3.png (PNG copy)>]
-<Images/pooling.png, id=73, 815.29594pt x 437.38406pt>
+<Images/pooling.png, id=76, 815.29594pt x 437.38406pt>
 File: Images/pooling.png Graphic file (type png)
 <use Images/pooling.png>
-Package pdftex.def Info: Images/pooling.png  used on input line 274.
+Package pdftex.def Info: Images/pooling.png  used on input line 272.
 (pdftex.def)             Requested size: 396.91325pt x 212.93187pt.
-<Images/fc.png, id=74, 828.09375pt x 301.125pt>
+<Images/fc.png, id=77, 828.09375pt x 301.125pt>
 File: Images/fc.png Graphic file (type png)
 <use Images/fc.png>
-Package pdftex.def Info: Images/fc.png  used on input line 281.
+Package pdftex.def Info: Images/fc.png  used on input line 279.
 (pdftex.def)             Requested size: 396.91325pt x 144.33618pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/relu1.png, id=75, 740.7675pt x 258.21469pt>
+<Images/relu1.png, id=78, 740.7675pt x 258.21469pt>
 File: Images/relu1.png Graphic file (type png)
 <use Images/relu1.png>
-Package pdftex.def Info: Images/relu1.png  used on input line 290.
+Package pdftex.def Info: Images/relu1.png  used on input line 288.
 (pdftex.def)             Requested size: 441.01773pt x 153.72829pt.
-[14 <./Images/pooling.png>] [15 <./Images/fc.png> <./Images/relu1.png>]
-<Images/det.png, id=88, 402.75468pt x 270.25969pt>
+[15 <./Images/pooling.png>] [16 <./Images/fc.png> <./Images/relu1.png>]
+<Images/det.png, id=91, 402.75468pt x 270.25969pt>
 File: Images/det.png Graphic file (type png)
 <use Images/det.png>
-Package pdftex.def Info: Images/det.png  used on input line 303.
+Package pdftex.def Info: Images/det.png  used on input line 301.
 (pdftex.def)             Requested size: 308.71106pt x 207.15211pt.
 
-[16 <./Images/det.png>]
-Overfull \hbox (3.92351pt too wide) in paragraph at lines 315--315
+[17 <./Images/det.png>]
+Overfull \hbox (3.92351pt too wide) in paragraph at lines 313--313
 []\T5/cmr/bx/n/12 One-stage Object Detection: \T5/cmr/m/n/12 C¡c thuªt to¡n ^^_
 iºn h¼nh nh÷: SSD, YOLO, RetinaNet.
  []
 
-[17] [18]
-<Images/iou1.jpg, id=100, 602.25pt x 451.6875pt>
+[18] [19]
+<Images/iou1.jpg, id=103, 602.25pt x 451.6875pt>
 File: Images/iou1.jpg Graphic file (type jpg)
 <use Images/iou1.jpg>
-Package pdftex.def Info: Images/iou1.jpg  used on input line 333.
+Package pdftex.def Info: Images/iou1.jpg  used on input line 331.
 (pdftex.def)             Requested size: 220.50887pt x 165.38492pt.
 
-Underfull \hbox (badness 2142) in paragraph at lines 334--334
+Underfull \hbox (badness 2142) in paragraph at lines 332--332
 []\T5/cmr/m/n/12 H¼nh 1.11: |Mët v½ dö v· ph¡t hi»n biºn b¡o Stop tø h¼nh £nh. 
 (Nguçn:
  []
 
-<Images/iou3.png, id=101, 602.25pt x 469.755pt>
+<Images/iou3.png, id=104, 602.25pt x 469.755pt>
 File: Images/iou3.png Graphic file (type png)
 <use Images/iou3.png>
-Package pdftex.def Info: Images/iou3.png  used on input line 344.
+Package pdftex.def Info: Images/iou3.png  used on input line 342.
 (pdftex.def)             Requested size: 220.50887pt x 172.00032pt.
-<Images/iou4.png, id=102, 451.6875pt x 186.6975pt>
+<Images/iou4.png, id=105, 451.6875pt x 186.6975pt>
 File: Images/iou4.png Graphic file (type png)
 <use Images/iou4.png>
-Package pdftex.def Info: Images/iou4.png  used on input line 350.
+Package pdftex.def Info: Images/iou4.png  used on input line 348.
 (pdftex.def)             Requested size: 308.71106pt x 127.60783pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[19 <./Images/iou1.jpg> <./Images/iou3.png>]
-<Images/PR.png, id=107, 2690.05pt x 1572.87625pt>
+[20 <./Images/iou1.jpg> <./Images/iou3.png>]
+<Images/PR.png, id=110, 2690.05pt x 1572.87625pt>
 File: Images/PR.png Graphic file (type png)
 <use Images/PR.png>
-Package pdftex.def Info: Images/PR.png  used on input line 362.
+Package pdftex.def Info: Images/PR.png  used on input line 360.
 (pdftex.def)             Requested size: 308.71106pt x 180.48096pt.
- [20 <./Images/iou4.png> <./Images/PR.png>]
-<Images/screensprhot001.png, id=113, 658.71094pt x 326.72063pt>
+ [21 <./Images/iou4.png> <./Images/PR.png>]
+<Images/screensprhot001.png, id=116, 658.71094pt x 326.72063pt>
 File: Images/screensprhot001.png Graphic file (type png)
 <use Images/screensprhot001.png>
-Package pdftex.def Info: Images/screensprhot001.png  used on input line 400.
+Package pdftex.def Info: Images/screensprhot001.png  used on input line 398.
 (pdftex.def)             Requested size: 308.71106pt x 153.12498pt.
- [21 <./Images/screensprhot001.png (PNG copy)>]
-<Images/cocometric.png, id=117, 741.52031pt x 293.59688pt>
+ [22 <./Images/screensprhot001.png (PNG copy)>]
+<Images/cocometric.png, id=120, 741.52031pt x 293.59688pt>
 File: Images/cocometric.png Graphic file (type png)
 <use Images/cocometric.png>
-Package pdftex.def Info: Images/cocometric.png  used on input line 410.
+Package pdftex.def Info: Images/cocometric.png  used on input line 408.
 (pdftex.def)             Requested size: 441.01773pt x 174.61838pt.
-<Images/resnet_visulize.jpg, id=118, 1111.15125pt x 298.11375pt>
+<Images/resnet_visulize.jpg, id=121, 1111.15125pt x 298.11375pt>
 File: Images/resnet_visulize.jpg Graphic file (type jpg)
 <use Images/resnet_visulize.jpg>
-Package pdftex.def Info: Images/resnet_visulize.jpg  used on input line 443.
+Package pdftex.def Info: Images/resnet_visulize.jpg  used on input line 441.
 (pdftex.def)             Requested size: 341.43538pt x 170.7181pt.
- [22 <./Images/cocometric.png>]
-<Images/resnet_1.png, id=123, 351.56343pt x 279.29344pt>
+ [23 <./Images/cocometric.png>]
+<Images/resnet_1.png, id=126, 351.56343pt x 279.29344pt>
 File: Images/resnet_1.png Graphic file (type png)
 <use Images/resnet_1.png>
-Package pdftex.def Info: Images/resnet_1.png  used on input line 453.
+Package pdftex.def Info: Images/resnet_1.png  used on input line 451.
 (pdftex.def)             Requested size: 220.50887pt x 175.1759pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/fpn1.png, id=124, 368.37625pt x 157.58875pt>
+<Images/fpn1.png, id=127, 368.37625pt x 157.58875pt>
 File: Images/fpn1.png Graphic file (type png)
 <use Images/fpn1.png>
-Package pdftex.def Info: Images/fpn1.png  used on input line 465.
+Package pdftex.def Info: Images/fpn1.png  used on input line 463.
 (pdftex.def)             Requested size: 220.50887pt x 94.33034pt.
-<Images/fpn2.png, id=125, 351.3125pt x 250.9375pt>
+<Images/fpn2.png, id=128, 351.3125pt x 250.9375pt>
 File: Images/fpn2.png Graphic file (type png)
 <use Images/fpn2.png>
-Package pdftex.def Info: Images/fpn2.png  used on input line 479.
+Package pdftex.def Info: Images/fpn2.png  used on input line 477.
 (pdftex.def)             Requested size: 220.50887pt x 157.50945pt.
-<Images/fpn3.png, id=126, 362.35374pt x 177.66376pt>
+<Images/fpn3.png, id=129, 362.35374pt x 177.66376pt>
 File: Images/fpn3.png Graphic file (type png)
 <use Images/fpn3.png>
-Package pdftex.def Info: Images/fpn3.png  used on input line 498.
+Package pdftex.def Info: Images/fpn3.png  used on input line 496.
 (pdftex.def)             Requested size: 220.50887pt x 108.11719pt.
-<Images/fpn4.png, id=127, 421.575pt x 481.8pt>
+<Images/fpn4.png, id=130, 421.575pt x 481.8pt>
 File: Images/fpn4.png Graphic file (type png)
 <use Images/fpn4.png>
-Package pdftex.def Info: Images/fpn4.png  used on input line 513.
+Package pdftex.def Info: Images/fpn4.png  used on input line 511.
 (pdftex.def)             Requested size: 220.50887pt x 252.01512pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[23 <./Images/resnet_visulize.jpg>]
+[24 <./Images/resnet_visulize.jpg>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[24 <./Images/resnet_1.png> <./Images/fpn1.png>]
+[25 <./Images/resnet_1.png> <./Images/fpn1.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[25 <./Images/fpn2.png> <./Images/fpn3.png>] [26 <./Images/fpn4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 533--534
-
- []
-
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 558--559
+[26 <./Images/fpn2.png> <./Images/fpn3.png>] [27 <./Images/fpn4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 531--532
 
  []
 
 [28]
-<Images/FocalLoss_6_1.png, id=153, 940.51375pt x 505.89pt>
+Underfull \hbox (badness 10000) in paragraph at lines 556--557
+
+ []
+
+[29]
+<Images/FocalLoss_6_1.png, id=156, 940.51375pt x 505.89pt>
 File: Images/FocalLoss_6_1.png Graphic file (type png)
 <use Images/FocalLoss_6_1.png>
-Package pdftex.def Info: Images/FocalLoss_6_1.png  used on input line 583.
+Package pdftex.def Info: Images/FocalLoss_6_1.png  used on input line 581.
 (pdftex.def)             Requested size: 441.01773pt x 237.22026pt.
- [29 <./Images/FocalLoss_6_1.png>]
-<Images/dog_bike.png, id=159, 340.27126pt x 341.275pt>
+ [30 <./Images/FocalLoss_6_1.png>]
+<Images/dog_bike.png, id=163, 340.27126pt x 341.275pt>
 File: Images/dog_bike.png Graphic file (type png)
 <use Images/dog_bike.png>
-Package pdftex.def Info: Images/dog_bike.png  used on input line 613.
+Package pdftex.def Info: Images/dog_bike.png  used on input line 611.
 (pdftex.def)             Requested size: 220.50887pt x 221.15956pt.
- [30] [31 <./Images/dog_bike.png>]
+ [31] [32 <./Images/dog_bike.png>]
 Ch\uhorn \ohorn ng 2.
-<Images/Img_RSKA003603_0_r2560_c3200_2.png, id=168, 256.96pt x 256.96pt>
+<Images/Img_RSKA003603_0_r2560_c3200_2.png, id=171, 256.96pt x 256.96pt>
 File: Images/Img_RSKA003603_0_r2560_c3200_2.png Graphic file (type png)
 <use Images/Img_RSKA003603_0_r2560_c3200_2.png>
 Package pdftex.def Info: Images/Img_RSKA003603_0_r2560_c3200_2.png  used on inp
-ut line 629.
+ut line 627.
 (pdftex.def)             Requested size: 198.45662pt x 198.4597pt.
-<Images/Img_RSKA003603_0_r2560_c3200.png, id=169, 256.96pt x 256.96pt>
+<Images/Img_RSKA003603_0_r2560_c3200.png, id=172, 256.96pt x 256.96pt>
 File: Images/Img_RSKA003603_0_r2560_c3200.png Graphic file (type png)
 <use Images/Img_RSKA003603_0_r2560_c3200.png>
 Package pdftex.def Info: Images/Img_RSKA003603_0_r2560_c3200.png  used on input
- line 636.
+ line 634.
 (pdftex.def)             Requested size: 198.45662pt x 198.4597pt.
-[32
+[33
 
-] [33 <./Images/Img_RSKA003603_0_r2560_c3200_2.png (PNG copy)> <./Images/Img_RS
+] [34 <./Images/Img_RSKA003603_0_r2560_c3200_2.png (PNG copy)> <./Images/Img_RS
 KA003603_0_r2560_c3200.png (PNG copy)>]
-<Images/data_folder.png, id=177, 774.895pt x 400.49625pt>
+<Images/data_folder.png, id=180, 774.895pt x 400.49625pt>
 File: Images/data_folder.png Graphic file (type png)
 <use Images/data_folder.png>
-Package pdftex.def Info: Images/data_folder.png  used on input line 660.
+Package pdftex.def Info: Images/data_folder.png  used on input line 658.
 (pdftex.def)             Requested size: 441.01773pt x 227.9369pt.
- [34 <./Images/data_folder.png>]
-<Images/qgisa.png, id=182, 920.43875pt x 549.05125pt>
+ [35 <./Images/data_folder.png>]
+<Images/qgisa.png, id=185, 920.43875pt x 549.05125pt>
 File: Images/qgisa.png Graphic file (type png)
 <use Images/qgisa.png>
-Package pdftex.def Info: Images/qgisa.png  used on input line 668.
+Package pdftex.def Info: Images/qgisa.png  used on input line 666.
 (pdftex.def)             Requested size: 441.01773pt x 263.07245pt.
-<Images/qgisb.png, id=183, 648.4225pt x 466.74374pt>
+<Images/qgisb.png, id=186, 648.4225pt x 466.74374pt>
 File: Images/qgisb.png Graphic file (type png)
 <use Images/qgisb.png>
-Package pdftex.def Info: Images/qgisb.png  used on input line 676.
+Package pdftex.def Info: Images/qgisb.png  used on input line 674.
 (pdftex.def)             Requested size: 308.71106pt x 222.21835pt.
 
-[35 <./Images/qgisa.png> <./Images/qgisb.png>]
-<Images/polygon_ori.png, id=189, 565.11125pt x 396.48125pt>
+[36 <./Images/qgisa.png> <./Images/qgisb.png>]
+<Images/polygon_ori.png, id=193, 565.11125pt x 396.48125pt>
 File: Images/polygon_ori.png Graphic file (type png)
 <use Images/polygon_ori.png>
-Package pdftex.def Info: Images/polygon_ori.png  used on input line 702.
+Package pdftex.def Info: Images/polygon_ori.png  used on input line 700.
 (pdftex.def)             Requested size: 441.01773pt x 309.42351pt.
-<Images/polygon_bounds.png, id=190, 581.17125pt x 449.68pt>
+<Images/polygon_bounds.png, id=194, 581.17125pt x 449.68pt>
 File: Images/polygon_bounds.png Graphic file (type png)
 <use Images/polygon_bounds.png>
-Package pdftex.def Info: Images/polygon_bounds.png  used on input line 710.
+Package pdftex.def Info: Images/polygon_bounds.png  used on input line 708.
 (pdftex.def)             Requested size: 441.01773pt x 341.23886pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[36 <./Images/polygon_ori.png>] [37 <./Images/polygon_bounds.png>]
-<Images/original/Img_RSKA003603_0_r000_c256.jpg, id=200, 256.96pt x 256.96pt>
+[37 <./Images/polygon_ori.png>] [38 <./Images/polygon_bounds.png>]
+<Images/original/Img_RSKA003603_0_r000_c256.jpg, id=203, 256.96pt x 256.96pt>
 File: Images/original/Img_RSKA003603_0_r000_c256.jpg Graphic file (type jpg)
 <use Images/original/Img_RSKA003603_0_r000_c256.jpg>
 Package pdftex.def Info: Images/original/Img_RSKA003603_0_r000_c256.jpg  used o
-n input line 748.
+n input line 746.
 (pdftex.def)             Requested size: 198.45662pt x 198.4597pt.
-<Images/original/Img_RSKA003603_0_r256_c3328.jpg, id=201, 256.96pt x 256.96pt>
+<Images/original/Img_RSKA003603_0_r256_c3328.jpg, id=204, 256.96pt x 256.96pt>
 File: Images/original/Img_RSKA003603_0_r256_c3328.jpg Graphic file (type jpg)
 <use Images/original/Img_RSKA003603_0_r256_c3328.jpg>
 Package pdftex.def Info: Images/original/Img_RSKA003603_0_r256_c3328.jpg  used 
-on input line 755.
+on input line 753.
 (pdftex.def)             Requested size: 198.45662pt x 198.4597pt.
-<Images/original/Img_RSKA014702_3_r1664_c384.jpg, id=202, 256.96pt x 222.8325pt
+<Images/original/Img_RSKA014702_3_r1664_c384.jpg, id=205, 256.96pt x 222.8325pt
 >
 File: Images/original/Img_RSKA014702_3_r1664_c384.jpg Graphic file (type jpg)
 <use Images/original/Img_RSKA014702_3_r1664_c384.jpg>
 Package pdftex.def Info: Images/original/Img_RSKA014702_3_r1664_c384.jpg  used 
-on input line 762.
+on input line 760.
 (pdftex.def)             Requested size: 220.50887pt x 191.2242pt.
- [38 <./Images/original/Img_RSKA003603_0_r000_c256.jpg> <./Images/original/Img_
+ [39 <./Images/original/Img_RSKA003603_0_r000_c256.jpg> <./Images/original/Img_
 RSKA003603_0_r256_c3328.jpg> <./Images/original/Img_RSKA014702_3_r1664_c384.jpg
 >]
-<Images/tree_DATN.png, id=206, 354.32375pt x 449.68pt>
+<Images/tree_DATN.png, id=209, 354.32375pt x 449.68pt>
 File: Images/tree_DATN.png Graphic file (type png)
 <use Images/tree_DATN.png>
-Package pdftex.def Info: Images/tree_DATN.png  used on input line 777.
+Package pdftex.def Info: Images/tree_DATN.png  used on input line 775.
 (pdftex.def)             Requested size: 352.81552pt x 447.77823pt.
- [39 <./Images/tree_DATN.png>] [40]
+ [40 <./Images/tree_DATN.png>] [41]
 Ch\uhorn \ohorn ng 3.
-<Images/nvidia-smi.png, id=214, 670.505pt x 589.20125pt>
+<Images/nvidia-smi.png, id=217, 670.505pt x 589.20125pt>
 File: Images/nvidia-smi.png Graphic file (type png)
 <use Images/nvidia-smi.png>
-Package pdftex.def Info: Images/nvidia-smi.png  used on input line 802.
+Package pdftex.def Info: Images/nvidia-smi.png  used on input line 800.
 (pdftex.def)             Requested size: 352.81552pt x 310.02754pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (26.88184pt too wide) in paragraph at lines 810--811
+Overfull \hbox (26.88184pt too wide) in paragraph at lines 808--809
 []\T5/cmr/m/n/12 C¡c th÷ vi»n Python sû döng trong ch÷ìng tr¼nh ^^_÷ñc vi¸t tro
 ng file "requirements.txt" 
  []
 
-<Images/demo.png, id=215, 1292.83pt x 729.72626pt>
+<Images/demo.png, id=218, 1292.83pt x 729.72626pt>
 File: Images/demo.png Graphic file (type png)
 <use Images/demo.png>
-Package pdftex.def Info: Images/demo.png  used on input line 819.
+Package pdftex.def Info: Images/demo.png  used on input line 817.
 (pdftex.def)             Requested size: 441.01773pt x 248.92761pt.
-[41
+[42
 
 ]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/shpfile_demo_result.png, id=219, 277.035pt x 94.3525pt>
+<Images/shpfile_demo_result.png, id=223, 277.035pt x 94.3525pt>
 File: Images/shpfile_demo_result.png Graphic file (type png)
 <use Images/shpfile_demo_result.png>
-Package pdftex.def Info: Images/shpfile_demo_result.png  used on input line 829
+Package pdftex.def Info: Images/shpfile_demo_result.png  used on input line 827
 .
 (pdftex.def)             Requested size: 220.50887pt x 75.10056pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/demo_result.png, id=220, 1020.81375pt x 601.24625pt>
+<Images/demo_result.png, id=224, 1020.81375pt x 601.24625pt>
 File: Images/demo_result.png Graphic file (type png)
 <use Images/demo_result.png>
-Package pdftex.def Info: Images/demo_result.png  used on input line 840.
+Package pdftex.def Info: Images/demo_result.png  used on input line 838.
 (pdftex.def)             Requested size: 441.01773pt x 259.7602pt.
-[42 <./Images/nvidia-smi.png>]
+[43 <./Images/nvidia-smi.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[43 <./Images/demo.png> <./Images/shpfile_demo_result.png>]
-<Images/f1-score.png, id=231, 263.98625pt x 72.27pt>
+[44 <./Images/demo.png> <./Images/shpfile_demo_result.png>]
+<Images/f1-score.png, id=234, 263.98625pt x 72.27pt>
 File: Images/f1-score.png Graphic file (type png)
 <use Images/f1-score.png>
-Package pdftex.def Info: Images/f1-score.png  used on input line 865.
+Package pdftex.def Info: Images/f1-score.png  used on input line 863.
 (pdftex.def)             Requested size: 352.81552pt x 96.59425pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[44 <./Images/demo_result.png>] [45 <./Images/f1-score.png>]
-Underfull \hbox (badness 4001) in paragraph at lines 953--961
+[45 <./Images/demo_result.png>] [46 <./Images/f1-score.png>]
+Underfull \hbox (badness 4001) in paragraph at lines 951--959
 \T5/cmr/m/n/12 and Serge J. Belongie. \T5/cmr/m/it/12 Feature Pyramid Networks 
 for Object Detection\T5/cmr/m/n/12 .
  []
 
-[46
+[47
 
 ] (./baocao.aux)
 
@@ -1407,7 +1407,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  19454 strings out of 492616
  353355 string characters out of 6129480
- 420292 words of memory out of 5000000
+ 420293 words of memory out of 5000000
  22926 multiletter control sequences out of 15000+600000
  23218 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1426,10 +1426,10 @@ al/texlive/2019/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2019/texmf
 -dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2019/texmf-dist/fonts
 /type1/vntex/vnr/vnti12.pfb>
-Output written on baocao.pdf (47 pages, 9377218 bytes).
+Output written on baocao.pdf (48 pages, 9378586 bytes).
 PDF statistics:
- 291 PDF objects out of 1000 (max. 8388607)
- 152 compressed objects within 2 object streams
+ 294 PDF objects out of 1000 (max. 8388607)
+ 154 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  233 words of extra memory for PDF output out of 10000 (max. 10000000)
 
