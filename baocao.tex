@@ -67,6 +67,8 @@
 %\usepackage[english]{babel}
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
+%\setlength{\parindent}{4em}
+
 \begin{document}
 
 
@@ -136,14 +138,25 @@
 
 \chapter*{Lời cảm ơn}
 \addcontentsline{toc}{chapter}{Lời cảm ơn}	
-
+Trước hết, em xin gửi lời cảm ơn sâu sắc tới TS. Lê Hải Hà, Viện Toán Ứng Dụng Và Tin Học, thầy là người đã hướng dẫn trực tiếp cho
+em trong suốt quá trình thực hiện đồ án. Nhờ có sự tận tâm
+của thầy, em đã tiếp thu được nhiều kiến thức trong xử lý ảnh ở một số lĩnh vực đặc thù; những kiến thức để thực hiện đồ án này nhưng thầy đã từng bước giúp em tìm hiểu, cho em rất nhiều
+ý kiến, cũng như giúp hoàn thành các thủ tục liên quan, qua đó giúp em hoàn
+thành đồ án tốt nghiệp.  \\
+\hspace*{1cm}Em xin chân thành gửi lời cảm ơn đến công ty cổ phần Techainer,  đơn vị được viện gửi em đến thực tập  đã tạo mọi điều kiện thuận lợi giúp đỡ em
+trong suốt quá trình 4 tháng thực tập và làm việc tại đây, giúp em có thêm những kiến thức chuyên sâu hơn về xử lý ảnh cũng như quy trình triển khai, xây dựng một dự án về trí tuệ nhân tạo trong thực tế  qua đó giúp
+em hoàn thành được đồ án này. Em xin gửi lời cảm ơn đến các anh, các bạn
+nghiên cứu sinh tại công ty đã hỗ trợ, chỉ dạy cho em trong suốt thời gian
+làm việc tại đây.  \\
+\hspace*{1cm}Cuối cùng, em xin gửi cảm ơn tới tất cả những thầy cô trong trường Đại học Bách Khoa Hà Nội nói chung và thầy cô tại Viện Toán Ứng Dụng Và Tin
+Học nói riêng đã tận tình chỉ dạy và cung cấp những kiến thức quý báu cho
+em trong suốt 5 năm qua.
 \chapter*{Lời mở đầu}
 \addcontentsline{toc}{chapter}{Lời mở đầu}
 Việc sản xuất và phân phối loại cây trồng có giá trị kinh tế cao đòi hỏi phải có sự giám sát thường xuyên đối với theo chu kì và theo mùa vụ. Đây là một nhiệm vụ quan trọng đối với việc quản lý tài nguyên, rừng. Để đáp ứng nhu cầu ngày càng tăng của thế giới và sản lượng nông nghiệp tiêu dùng, năng suất cây trồng phải được ước tính. Việc phát hiện, thu thập thủ công dữ liệu cây trồng để lưu trữ hồ sơ trên một diễn tích đất lớn là không khả thi đối với con người, gây tốn kém tiền bạc và dễ bị ảnh hưởng bởi lỗi của con người
 Việc phát hiện cây trồng trên một diện tích lớn sẽ giúp doanh nghiệp giảm bớt sự phụ thuộc vào con người và chi phí, dễ dàng quản lý và lên kế hoạch kịp thời cho sản xuất. Trong vài năm trở lại đây, lĩnh vực học sâu và xử lý ảnh đang nhận được nhiều sự quan tâm, áp dụng trong nhiều lĩnh vực khoa học khác nhau.  Hơn nữa,  cùng với sự phát triển của công nghệ,  các bức ảnh viễn thám chụp bề mặt trái đất có kích thước ngày càng lớn, có độ nét cao,  mang lại cơ hội cho việc viễn thám các cảnh quan sinh học có quy mô từ các sinh vật riêng lẻ đến các hệ thống toàn cầu. Trong báo cáo đồ án này, em xin giới thiệu một giải pháp phát hiện cây trong các bức ảnh viễn thám dựa trên mô hình học sâu. Nội dung của đồ án gồm có phần mở đầu, 4 chương, phần kết luận, tài liệu tham khảo:
 \begin{itemize}
-	\item \textbf{Chương 1: }
-	
+	\item \textbf{Chương 1: Lý thuyết học sâu và bài toán nhận diện vật thể}: Chương này trình bày về cơ sở lý thuyết của học sâu; giới thiệu chung về bài toán nhận diện vật thể và mô hình mạng nơ-ron nhân tạo sẽ được sử dụng phục vụ cho bài toán.
 	\item \textbf{Chương 2: }
 
 	\item \textbf{Chương 3: }
@@ -773,7 +786,7 @@ Dưới đây ta sẽ tìm hiểu kỹ chức năng các thư mục và file tr�
 	\item /raster\_split: Thư mục này dùng để chuyển các ảnh vệ tinh định dạng GeoTiff về định dạng .png đồng thời tạo một bộ dataset gồm các ảnh png và file .txt chứa vị trí các đối tượng trong ảnh.
 	\item /lib: Thư mục này xây dựng các metrics trong việc đánh giá một mô hình object detection: Precision, Recall, Average Precision, F1-score.
 	\item demo.py: Kết hợp với các file trong thư mục /demo thực hiện nhiệm vụ testing: Đầu tiên sẽ load file weight trong thư mục checkpoint, đọc dữ liệu ảnh GeoTiff đầu vào và đưa vào trong model. Kết quả sau đó được lưu lại và xử lý để xuất ra shapefile
-	\item train.py: File này có nhiệm vụ chạy mô hình RetinaNet và lưu kết quả vào thư mục /checkpoint sau mỗi lần lặp trên bộ dataset. Thao tác này chỉ cần thực hiện một lần duy nhất.
+	\item train.py: File này có nhiệm vụ chạy mô hình RetinaNet và lưu trọng số của mô hình vào thư mục /checkpoint sau mỗi lần lặp trên toàn  bộ dataset. Thao tác này chỉ cần thực hiện một lần duy nhất.
 \end{itemize}
 
 \section{Kết quả huấn luyện}
