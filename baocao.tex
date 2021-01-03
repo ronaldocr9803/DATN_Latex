@@ -643,12 +643,19 @@ Tỷ lệ này sẽ còn lớn hơn nữa nếu tăng $\gamma$ hoặc giá trị
 \begin{enumerate}[label= \textit{\alph*)}]
 \item \textit{Mô hình hóa bài toán} \\
 \textbf{Input:} \\
-Ảnh viễn thám được lưu ở định dạng .tif, có kích thước lớn (từ vài chục MB đến GB) \\ 
+Ảnh viễn thám được lưu ở định dạng .tif, có kích thước khá lớn (từ vài chục MB đến GB) \\ 
 \textbf{Tiền xử lý:} \\
-Ảnh đầu vào sẽ được chia nhỏ thành các ảnh có kích thước $256 \times 256$ (bằng với kích thước trong tập ảnh training),  với tỉ lệ \textit{overlap} giữa các tấm ảnh là $0.5$ \\
+Ảnh đầu vào sẽ được chia nhỏ thành các ảnh có kích thước window size = $256 \times 256$ (bằng với kích thước trong tập ảnh training),  với tỉ lệ \textit{overlap} giữa các tấm ảnh là $0.5$ \ref{fig:demo_prepare_data} \\
+ \begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\linewidth]{Images/demo_prepare_data}
+	\caption{Chia nhỏ thành các bức ảnh con từ ảnh ban đầu}
+	\label{fig:demo_prepare_data}
+\end{figure}
+
 \textbf{Output:} \\
 Các file định dạng .txt chứa các bounding box mà mô hình đoán đó là vật thể trong bức ảnh đó.  
-Vì mục tiêu của bài toán là nhận dạng và đếm số cây trên một bức ảnh lớn,  nên ta sẽ ghép các tấm ảnh nhỏ ở trên lại để đưa về hình ảnh gốc của chúng.  Vì trong quá trình tiền xử lý, ta thiết lập overlap $= 0.5$ nên việc các bounding box của các bức ảnh gần nhau sẽ đè lên nhau,  gây ra hiện tượng trùng lặp.  Để giải quyết vấn đề này,  các bounding box thu được trên toàn bộ các ảnh đầu tiên sẽ được đưa về toạ độ địa lý, sau đó sử dụng thuật toán NMS để loại bỏ các bounding box trùng nhau (nếu như giá trị IOU của hai bounding box này vượt quá một ngưỡng (trong mô hình này em lấy ngưỡng $=0.3$)).  Kết quả sau khi thực hiện thuật toán NMS sẽ 
+Vì mục tiêu của bài toán là nhận dạng và đếm số cây trên một bức ảnh lớn,  nên ta sẽ ghép các tấm ảnh nhỏ ở trên lại để đưa về hình ảnh gốc của chúng.  Vì trong quá trình tiền xử lý, ta thiết lập overlap $= 0.5$ nên việc các bounding box của các bức ảnh gần nhau sẽ đè lên nhau,  gây ra hiện tượng trùng lặp.  Để giải quyết vấn đề này,  các bounding box thu được trên toàn bộ các ảnh đầu tiên sẽ được đưa về toạ độ địa lý, sau đó sử dụng thuật toán NMS để loại bỏ các bounding box trùng nhau (nếu như giá trị IOU của hai bounding box này vượt quá một ngưỡng (trong mô hình này em lấy ngưỡng $=0.1$)).  Kết quả sau khi thực hiện thuật toán NMS sẽ 
 
 
 \item \textit{Thiết kế dữ liệu luyện mạng} \\
@@ -693,7 +700,7 @@ Dữ liệu sử dụng trong bài toán này được cung cấp bởi thầy g
 %\caption{Minh hoạ ảnh viễn thám với phần mềm QGIS (hình \ref{fig:1a}),  toạ độ các bounding box trên ảnh,  biểu thị bởi các hình tròn màu vàng (hình \ref{fig:1b})} \label{fig:1}
 %\end{figure}
 \newpage
-Các ảnh trong bộ dữ liệu ở trên có 2 loại kích thước : $3141 \times 1885$ và $3874 \times 3100$.  Để thuận tiện cho việc training mô hình,  ta sẽ chia nhỏ mỗi ảnh thành nhiều ảnh con có kích thước $256 \times 256$ với giá trị $overlap = 0.5$.  Để lấy bounding box trong từng bức ảnh được cắt ra,  đầu tiên ta tiến hành đọc file \textit{shapefile} của ảnh đó bằng thư viện \textit{geopandas} (hình \ref{fig:polygon_ori}): 
+Các ảnh trong bộ dữ liệu ở trên có 2 loại kích thước : $3141 \times 1885$ và $3874 \times 3100$.  Để thuận tiện cho việc training mô hình cũng như xây dựng bộ dữ liệu  ta sẽ chia nhỏ mỗi ảnh thành nhiều ảnh con có kích thước $256 \times 256$ với giá trị $overlap = 0.5$.  Để lấy bounding box trong từng bức ảnh được cắt ra,  đầu tiên ta tiến hành đọc file \textit{shapefile} của ảnh đó bằng thư viện \textit{geopandas} (hình \ref{fig:polygon_ori}): 
 
  \begin{figure}[!h]
 	\centering
@@ -738,7 +745,7 @@ Vì toạ độ các câu được đánh dấu theo hình tròn nên ta cần c
 %	\label{fig:polygon_bounds}
 %\end{figure}
 \newpage
-Tuy nhiên trong hình trên, mỗi điểm là một toạ độ trên một mặt phẳng địa lý,  ta phải chuyển các toạ độ $x,y$ về toạ độ cột,  hàng tương ứng.  Một vài kết quả thu được sau khi tiến hành cắt ảnh và lấy bounding box tương ứng cho mỗi bức ảnh đó: 
+Tuy nhiên trong hình trên, mỗi điểm là một toạ độ trên một mặt phẳng địa lý,  ta phải chuyển các toạ độ $x,y$ về toạ độ cột,  hàng tương ứng của ma trận các pixel.  Một vài kết quả thu được sau khi tiến hành cắt ảnh và lấy bounding box tương ứng cho mỗi bức ảnh đó: 
 \newpage
 \begin{figure}[!h]
     \centering
@@ -805,7 +812,7 @@ Chương trình được cài đặt trên ngôn ngữ Python (phiên bản 3.6.
 \begin{itemize}
 	\item Ngôn ngữ sử dụng: Python phiên bản 3.6.9
 	\item IDE sử dụng: Visual Studio Code
-	\item Các thư viện Python sử dụng trong chương trình được viết trong file " requirements.txt"
+	\item Các thư viện Python sử dụng trong chương trình được viết trong file "requirements.txt"
 \end{itemize}
 
 
@@ -842,10 +849,7 @@ Ta sử dụng file shapefile ở trên để mô phỏng kết quả trên ph�
 
 
 \section{Đánh giá kết quả}
-Hình \ref{fig:demo_result} chỉ cho ta một cách khái quát về kết quả mô hình khi so sánh với các bounding box ban đầu.  Để đánh giá kết quả của mô hình,  trước tiên ta định nghĩa: Hai bounding box cùng phát hiện một đối tượng nếu giá trị IOU của chúng $\geq 0.3$. Khi đó,  bounding box được dự đoán từ mô hình sẽ được coi là một \textit{True positive},  ngược lại sẽ là \textit{False positive}.  Trong trường hợp có nhiều hơn 1 bounding box cùng dự đoán một đối tượng,  ta sẽ lấy bounding box có confidence (độ tin cậy) cao nhất làm TP, các bounding box còn lại sẽ là FP.  Để so sánh một cách khách quan, em sử dụng cùng một tập các thang đo phổ biến là Precision, Recall và F1-score.  Trong đó, Precision là tỉ lệ giữa số cây được phát hiện chính xác trên tổng số cây được phát hiện. Recall là tỉ lệ giữa số cây được 
-phát hiện đúng trên tổng số cây thực sự trong ảnh.
-F1-score là trung bình điều hòa giữa hai giá trị Precision và Recall. Các tham
-số trên được biểu diễn trong các biểu thức:
+Hình \ref{fig:demo_result} chỉ cho ta một cách khái quát về kết quả mô hình khi so sánh với các bounding box ban đầu.  Để đánh giá kết quả của mô hình,  trước tiên ta định nghĩa: Hai bounding box cùng phát hiện một đối tượng nếu giá trị IOU của chúng $\geq 0.3$. Khi đó,  bounding box được dự đoán từ mô hình sẽ được coi là một \textit{True positive},  ngược lại sẽ là \textit{False positive}.  Trong trường hợp có nhiều hơn 1 bounding box cùng dự đoán một đối tượng,  ta sẽ lấy bounding box có confidence (độ tin cậy) cao nhất làm TP, các bounding box còn lại sẽ là FP.  Để so sánh một cách khách quan, em sử dụng cùng một tập các thang đo phổ biến là Precision, Recall và F1-score.  Trong đó, Precision là tỉ lệ giữa số cây được phát hiện chính xác trên tổng số cây được phát hiện. Recall là tỉ lệ giữa số cây được phát hiện đúng trên tổng số cây thực sự  có trong ảnh. F1-score là trung bình điều hòa giữa hai giá trị Precision và Recall.  Các tham số trên được biểu diễn trong các biểu thức:
 \begin{equation*}
 	Precision = \frac{TP}{TP + FP}
 \end{equation*}
