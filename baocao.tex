@@ -95,8 +95,8 @@
 %						(Principal Component Analysis - PCA )
 %				}}
 
-				{\Large\bf \textbf{HỌC SÂU
-						VÀ ỨNG DỤNG TRONG\\ BÀI TOÁN ĐẾM CÂY\\
+				{\Large\bf \textbf{ỨNG DỤNG HỌC SÂU TRONG BÀI TOÁN \\
+						PHÁT HIỆN CÂY TRÊN ẢNH VIỄN THÁM\\
 				}}
 				\vskip 1cm
 				{\bf ĐỒ ÁN TỐT NGHIỆP ĐẠI HỌC}
@@ -126,11 +126,69 @@
 			
 	\end{titlepage}
 
+\begin{titlepage}
+\begin{center}
+\textbf{NHẬN XÉT CỦA GIẢNG VIÊN HƯỚNG DẪN}
+\end{center}
+\textbf{1. Mục đích và nội dung của đồ án:} \\\\
+\begin{tikzpicture}
+    \foreach \x in {0,0.7,1.4, 2.1, 2.8,3.5, 4.2, 4.9}
+    \draw[dotted] (0, \x)--(15.5,\x);
+\end{tikzpicture}\\
+\textbf{2. Kết quả đạt được:} \\\\
+\begin{tikzpicture}
+    \foreach \x in {0,0.7,1.4, 2.1, 2.8,3.5, 4.2}
+    \draw[dotted] (0, \x)--(15.5,\x);
+\end{tikzpicture}\\
+\textbf{3. Ý thức làm việc của sinh viên: }\\\\
+\begin{tikzpicture}
+    \foreach \x in {0,0.7,1.4, 2.1, 2.8,3.5}
+    \draw[dotted] (0, \x)--(15.5,\x);
+\end{tikzpicture}
+\begin{flushright}
+Hà Nội, ngày \hspace{.5cm} tháng \hspace{.5cm} năm 2021\\
+Giảng viên hướng dẫn \hspace*{1.1cm} \\
+\textit{(Ký và ghi rõ họ tên)} \hspace*{1.2cm}
+\end{flushright} 
+\end{titlepage}
+
 \tableofcontents{}
 
 \chapter*{Danh mục từ viết tắt}
 \addcontentsline{toc}{chapter}{Danh mục từ viết tắt}
-
+\begin{center}
+\begin{tabular}{ |c|c| } 
+ \hline
+   AP &  Average Precision \\ 
+\hline
+ CNN & Convolutional Neural Network \\
+ \hline
+  CE & Cross Entropy \\
+ \hline
+  CPU & Central Processing Unit \\
+ \hline
+   FCN & Fully Convolutional Networks \\ 
+ \hline
+  FPN & Feature Pyramid Network \\ 
+ \hline
+   FL & Focal Loss \\ 
+ \hline
+   FP & False Positive \\  
+ \hline
+  GPU & Graphics Processing Unit \\
+ \hline
+ IoU & Intersect over Union \\ 
+ \hline
+ mAP & mean Average Precision \\ 
+ \hline
+  NMS & None Maximum Suppression \\ 
+ \hline
+RAM & Random Access Memory \\
+\hline
+ TP & True Positive \\ 
+\hline
+\end{tabular}
+\end{center}
 
 %\chapter*{Danh sách hình vẽ}
 \addcontentsline{toc}{chapter}{Danh sách hình vẽ}
@@ -639,27 +697,27 @@ Tỷ lệ này sẽ còn lớn hơn nữa nếu tăng $\gamma$ hoặc giá trị
 \end{figure}
 
 
-\section{Mô hình hoá bài toán và thiết kế dữ liệu luyện}
-\begin{enumerate}[label= \textit{\alph*)}]
-\item \textit{Mô hình hóa bài toán} \\
-\textbf{Input:} \\
-Ảnh viễn thám được lưu ở định dạng .tif, có kích thước khá lớn (từ vài chục MB đến GB) \\ 
-\textbf{Tiền xử lý:} \\
-Ảnh đầu vào sẽ được chia nhỏ thành các ảnh có kích thước window size = $256 \times 256$ (bằng với kích thước trong tập ảnh training),  với tỉ lệ \textit{overlap} giữa các tấm ảnh là $0.5$ \ref{fig:demo_prepare_data} \\
- \begin{figure}[!htb]
-	\centering
-	\includegraphics[width=1\linewidth]{Images/demo_prepare_data}
-	\caption{Chia nhỏ thành các bức ảnh con từ ảnh ban đầu}
-	\label{fig:demo_prepare_data}
-\end{figure}
+%\section{Mô hình hoá bài toán và thiết kế dữ liệu luyện}
+%\begin{enumerate}[label= \textit{\alph*)}]
+%\item \textit{Mô hình hóa bài toán} \\
+%\textbf{Input:} \\
+%Ảnh viễn thám được lưu ở định dạng .tif, có kích thước khá lớn (từ vài chục MB đến GB) \\ 
+%\textbf{Tiền xử lý:} \\
+%Ảnh đầu vào sẽ được chia nhỏ thành các ảnh có kích thước window size = $256 \times 256$ (bằng với kích thước trong tập ảnh training),  với tỉ lệ \textit{overlap} giữa các tấm ảnh là $0.5$ \ref{fig:demo_prepare_data} \\
+% \begin{figure}[!htb]
+%	\centering
+%	\includegraphics[width=1\linewidth]{Images/demo_prepare_data}
+%	\caption{Chia nhỏ thành các bức ảnh con từ ảnh ban đầu}
+%	\label{fig:demo_prepare_data}
+%\end{figure}
+%
+%\textbf{Output:} \\
+%Các file định dạng .txt chứa các bounding box mà mô hình đoán đó là vật thể trong bức ảnh đó.  
+%Vì mục tiêu của bài toán là nhận dạng và đếm số cây trên một bức ảnh lớn,  nên ta sẽ ghép các tấm ảnh nhỏ ở trên lại để đưa về hình ảnh gốc của chúng.  Vì trong quá trình tiền xử lý, ta thiết lập overlap $= 0.5$ nên việc các bounding box của các bức ảnh gần nhau sẽ đè lên nhau,  gây ra hiện tượng trùng lặp.  Để giải quyết vấn đề này,  các bounding box thu được trên toàn bộ các ảnh đầu tiên sẽ được đưa về toạ độ địa lý, sau đó sử dụng thuật toán NMS để loại bỏ các bounding box trùng nhau (nếu như giá trị IOU của hai bounding box này vượt quá một ngưỡng (trong mô hình này em lấy ngưỡng $=0.1$)).  Kết quả sau khi thực hiện thuật toán NMS sẽ 
 
-\textbf{Output:} \\
-Các file định dạng .txt chứa các bounding box mà mô hình đoán đó là vật thể trong bức ảnh đó.  
-Vì mục tiêu của bài toán là nhận dạng và đếm số cây trên một bức ảnh lớn,  nên ta sẽ ghép các tấm ảnh nhỏ ở trên lại để đưa về hình ảnh gốc của chúng.  Vì trong quá trình tiền xử lý, ta thiết lập overlap $= 0.5$ nên việc các bounding box của các bức ảnh gần nhau sẽ đè lên nhau,  gây ra hiện tượng trùng lặp.  Để giải quyết vấn đề này,  các bounding box thu được trên toàn bộ các ảnh đầu tiên sẽ được đưa về toạ độ địa lý, sau đó sử dụng thuật toán NMS để loại bỏ các bounding box trùng nhau (nếu như giá trị IOU của hai bounding box này vượt quá một ngưỡng (trong mô hình này em lấy ngưỡng $=0.1$)).  Kết quả sau khi thực hiện thuật toán NMS sẽ 
 
-
-\item \textit{Thiết kế dữ liệu luyện mạng} \\
-Dữ liệu sử dụng trong bài toán này được cung cấp bởi thầy giáo hướng dẫn TS.  Lê Hải Hà.  Dữ liệu bao gồm 2 thư mục,  nỗi thư mực gồm một vài ảnh ở định dạng GeoTif và các \textbf{shapefile} chứa toạ độ các bounding box trong các bức ảnh đó
+\section{Xây dựng bộ dữ liệu} 
+Dữ liệu sử dụng trong bài toán này được cung cấp bởi thầy giáo hướng dẫn TS.  Lê Hải Hà.  Dữ liệu gốc bao gồm 2 thư mục,  nỗi thư mực gồm một vài ảnh ở định dạng GeoTif và các \textbf{shapefile} chứa toạ độ các bounding box trong các bức ảnh đó
  \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\linewidth]{Images/data_folder}
@@ -699,10 +757,16 @@ Dữ liệu sử dụng trong bài toán này được cung cấp bởi thầy g
 %
 %\caption{Minh hoạ ảnh viễn thám với phần mềm QGIS (hình \ref{fig:1a}),  toạ độ các bounding box trên ảnh,  biểu thị bởi các hình tròn màu vàng (hình \ref{fig:1b})} \label{fig:1}
 %\end{figure}
-\newpage
-Các ảnh trong bộ dữ liệu ở trên có 2 loại kích thước : $3141 \times 1885$ và $3874 \times 3100$.  Để thuận tiện cho việc training mô hình cũng như xây dựng bộ dữ liệu  ta sẽ chia nhỏ mỗi ảnh thành nhiều ảnh con có kích thước $256 \times 256$ với giá trị $overlap = 0.5$.  Để lấy bounding box trong từng bức ảnh được cắt ra,  đầu tiên ta tiến hành đọc file \textit{shapefile} của ảnh đó bằng thư viện \textit{geopandas} (hình \ref{fig:polygon_ori}): 
+Các ảnh trong bộ dữ liệu ở trên có 2 loại kích thước : $3141 \times 1885$ và $3874 \times 3100$ (có kích thước từ $20 - 50 \textrm{ MB}$).  Để thuận tiện cho việc training mô hình cũng như xây dựng bộ dữ liệu  ta sẽ chia nhỏ mỗi ảnh thành nhiều ảnh con có kích thước window size $256 \times 256$ với giá trị $overlap = 0.5$. (hình \ref{fig:demo_prepare_data}) \\
+ \begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\linewidth]{Images/demo_prepare_data}
+	\caption{Chia nhỏ thành các bức ảnh con từ ảnh ban đầu}
+	\label{fig:demo_prepare_data}
+\end{figure}
+Vì shapefile ở trong bộ dữ liệu được cung cấp chứa toạ độ các cây trên một bức ảnh lớn nên ta cần vẽ lại toạ độ các vật thể theo toạ độ của mỗi bức ảnh được cắt ra. Để lấy bounding box trong từng bức ảnh được cắt ra,  đầu tiên ta tiến hành đọc file \textit{shapefile} của ảnh đó bằng thư viện \textit{geopandas} (hình \ref{fig:polygon_ori}): 
 
- \begin{figure}[!h]
+ \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\linewidth]{Images/polygon_ori}
 	\caption{Đọc file shapefile với thư viện geopandas}
@@ -744,8 +808,7 @@ Vì toạ độ các câu được đánh dấu theo hình tròn nên ta cần c
 %	\caption{Toạ độ 4 đỉnh của một polygon}
 %	\label{fig:polygon_bounds}
 %\end{figure}
-\newpage
-Tuy nhiên trong hình trên, mỗi điểm là một toạ độ trên một mặt phẳng địa lý,  ta phải chuyển các toạ độ $x,y$ về toạ độ cột,  hàng tương ứng của ma trận các pixel.  Một vài kết quả thu được sau khi tiến hành cắt ảnh và lấy bounding box tương ứng cho mỗi bức ảnh đó: 
+Tuy nhiên trong hình \ref{fig:polygon_bounds},  kết quả trả về cho mỗi điểm là một toạ độ trên một mặt phẳng địa lý,  ta phải chuyển các toạ độ $x,y$ về toạ độ cột,  hàng tương ứng của ma trận các pixel.  Một vài kết quả thu được sau khi tiến hành cắt ảnh và lấy bounding box tương ứng cho mỗi bức ảnh đó (hình \ref{fig:demo_split})
 \newpage
 \begin{figure}[!h]
     \centering
@@ -770,11 +833,22 @@ Tuy nhiên trong hình trên, mỗi điểm là một toạ độ trên một m�
         \label{fig:subfig3}
     \end{subfigure}
     \caption[Optional caption for list of figures]{Một vài ảnh trọng bộ dữ liệu được tạo ra}
+    \label{fig:demo_split}
 \end{figure}
-\end{enumerate}
+%\end{enumerate}
 Kết quả sau khi cắt ảnh ra ta thu được bộ dữ liệu hơn 5000 ảnh kích thước $256 \times 256$ cùng với toạ độ các bounding box chứa đối tượng trong từng ảnh đó
 \section{Huấn luyện mạng neural}
-Chúng ta sẽ tiến hành huấn luyện mô hình dựa trên bộ dữ liệu được tạo ra ở trên.  Mô hình mà em sử dụng trong bài toán này là RetinaNet; trong đó backbone sử dụng ở đây là ResNet50 được pretrained trên bộ dữ liệu nổi tiếng ImageNet phục vụ cho việc trích xuất các đặc trưng trong ảnh
+
+Chúng ta sẽ tiến hành huấn luyện mạng neural dựa trên dữ liệu luyện được trình bày ở trên. Sau khi luyện xong sẽ lưu kết quả thành một file có định dạng .pt để những lần chạy thuật toán tiếp theo, ta chỉ cần load file này lên mà không cần phải luyện lại mạng. Thuật toán luyện mạng trong chương trình này được tham khảo từ: https://github.com/yhenon/pytorch-retinanet.  Repo này được tác giả triển khai lại thuật toán RetinaNet theo ngôn ngữ Pytorch dựa trên paper \textit{Focal Loss for Dense Object Detection}
+
+Chúng ta sẽ tiến hành huấn luyện mô hình dựa trên bộ dữ liệu được tạo ra ở trên.  Mô hình mà em sử dụng trong bài toán này là RetinaNet; trong đó backbone được sử dụng trong mạnh kim tự tháp đặc trưng FPN là ResNet50 được pretrained trên bộ dữ liệu nổi tiếng ImageNet phục vụ cho việc trích xuất các đặc trưng trong ảnh. Tổng số ảnh được đưa vào mô hình là 4505 ảnh,  trong đó lấy ra 20\% số ảnh được đưa vào tập test để đánh giá mô hình sau mỗi vòng lặp. Tổng số vòng luyện mạng là 50 vòng, thời gian luyện xấp xỉ 8 giờ (chạy trên CPU 4 cores,  GPU  Tesla V100).  Kết quả việc đánh giá mô hình sao mỗi vòng lặp được thể hiện thông qua giá trị \textit{Average precison} như sau: %Add ảnh vào
+\begin{figure}
+\centering
+  \includegraphics[width=.6\linewidth]{Images/mAPplot}
+  \caption{Giá trị mAP sau mỗi vòng lặp}
+\label{fig:mAPplot}
+\end{figure}
+
 \section{Xây dựng chương trình}
 Chương trình được xây dựng trên nền tảng ngôn ngữ Python (phiên bản 3.6.9).. Cấu trúc thư mục của chương trình như hình 4.2 dưới đây: 
  \begin{figure}[!h]
@@ -794,7 +868,7 @@ Dưới đây ta sẽ tìm hiểu kỹ chức năng các thư mục và file tr�
 	\item train.py: File này có nhiệm vụ chạy mô hình RetinaNet và lưu trọng số của mô hình vào thư mục /checkpoint sau mỗi lần lặp trên toàn  bộ dataset. Thao tác này chỉ cần thực hiện một lần duy nhất.
 \end{itemize}
 
-\section{Kết quả huấn luyện}
+%\section{Kết quả huấn luyện}
 
 
 \chapter{Cài đặt chương trình và đánh giá kết quả}
@@ -817,16 +891,24 @@ Chương trình được cài đặt trên ngôn ngữ Python (phiên bản 3.6.
 
 
 
-\section{Dữ liệu đầu vào}
-Vì dữ liệu em được cung cấp bị hạn chế, nên trong bộ dữ liệu ban đầu em lấy ra 1 ảnh chưa được xử lý trong tập train và validation (hình \ref{fig:demo}) để làm dữ liệu đầu vào cho mô hình nhận diện vật thể đã xây dựng ở chương trước.  Lý do của việc lấy một ảnh kích thước lớn để dự đoán là vì theo yêu cầu của khách hàng,  họ cần đánh giá kết quả mô hình trên toàn bộ diện tích đất của họ chứ không phải các tấm ảnh kích thước $256 \times 256$ được cắt nhỏ từ tấm ảnh ban đầu.
- \begin{figure}[!h]
+\section{Triển khai mô hình trên dữ liệu thực tế}
+Vì dữ liệu em được cung cấp bị hạn chế, nên trong bộ dữ liệu ban đầu em lấy ra 1 ảnh chưa được xử lý trong tập train và validation (hình \ref{fig:demo}) có kích thước $3874 \times 3100$ để làm dữ liệu đầu vào cho mô hình nhận diện vật thể đã xây dựng ở chương trước.  Lý do của việc lấy một ảnh kích thước lớn để dự đoán là vì theo yêu cầu của khách hàng,  họ cần đánh giá kết quả mô hình trên toàn bộ diện tích đất của họ chứ không phải các tấm ảnh kích thước $256 \times 256$ được cắt nhỏ từ tấm ảnh ban đầu. Vì các cây trong bức ảnh lớn có kích thước nhỏ nên để thuận tiện, ảnh đầu vào sẽ được chia nhỏ thành các ảnh có kích thước window size = $256 \times 256$ (bằng với kích thước trong tập ảnh training),  với tỉ lệ \textit{overlap} giữa các tấm ảnh là $0.5$. Lần lượt đưa các ảnh được cắt ra vào mô hình.  Mô hình sẽ cho ra toạ độ chứa vật thể được phát hiện tương ứng với từng bức ảnh. Sau đó, tiến hành ghép các tấm ảnh nhỏ ở trên lại để đưa về hình ảnh gốc ban đầu.  Vì trong quá trình tiền xử lý, ta thiết lập overlap $= 0.5$ nên việc toạ độ các bounding box chứa vật thể của các bức ảnh gần nhau sẽ đè lên nhau,  gây ra hiện tượng trùng lặp.  Để giải quyết vấn đề này,  các bounding box thu được trên toàn bộ các ảnh đầu tiên sẽ được đưa về toạ độ địa lý, sau đó sử dụng thuật toán NMS để loại bỏ các bounding box trùng nhau (nếu như giá trị IOU của hai bounding box này vượt quá một ngưỡng (trong mô hình này em lấy ngưỡng $=0.1$)).  Kết quả sau khi thực hiện thuật toán NMS sẽ 
+cho ra toạ độ các bounding box cuối cùng chứa vật thể trong ảnh được lưu ở định dạng \textbf{shpfile} gắn với vị trí vật thể trên quả địa cầu.  Chi tiết quá trình triển khai được mô tả trên hình \ref{fig:deploymentStage}
+ \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\linewidth]{Images/demo}
 	\caption{Dữ liệu đầu vào để phát hiện vật thể}
 	\label{fig:demo}
 \end{figure}
 
-\section{Kết quả mô hình}
+ \begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1\linewidth, height=7cm]{Images/deploymentStage1}
+	\caption{Dữ liệu đầu vào để phát hiện vật thể}
+	\label{fig:deploymentStage}
+\end{figure}
+
+\section{Kết quả mô hình và đánh giá}
 Thời gian chạy chương trình cho ảnh trên: $43$ giây \\
 Hình ảnh kết quả được lưu lại ở định dạng shapefile: 	(hình \ref{fig:shpfile_demo_result})
  \begin{figure}[!h]
@@ -848,8 +930,8 @@ Ta sử dụng file shapefile ở trên để mô phỏng kết quả trên ph�
 \end{figure}
 
 
-\section{Đánh giá kết quả}
-Hình \ref{fig:demo_result} chỉ cho ta một cách khái quát về kết quả mô hình khi so sánh với các bounding box ban đầu.  Để đánh giá kết quả của mô hình,  trước tiên ta định nghĩa: Hai bounding box cùng phát hiện một đối tượng nếu giá trị IOU của chúng $\geq 0.3$. Khi đó,  bounding box được dự đoán từ mô hình sẽ được coi là một \textit{True positive},  ngược lại sẽ là \textit{False positive}.  Trong trường hợp có nhiều hơn 1 bounding box cùng dự đoán một đối tượng,  ta sẽ lấy bounding box có confidence (độ tin cậy) cao nhất làm TP, các bounding box còn lại sẽ là FP.  Để so sánh một cách khách quan, em sử dụng cùng một tập các thang đo phổ biến là Precision, Recall và F1-score.  Trong đó, Precision là tỉ lệ giữa số cây được phát hiện chính xác trên tổng số cây được phát hiện. Recall là tỉ lệ giữa số cây được phát hiện đúng trên tổng số cây thực sự  có trong ảnh. F1-score là trung bình điều hòa giữa hai giá trị Precision và Recall.  Các tham số trên được biểu diễn trong các biểu thức:
+%\section{Đánh giá kết quả}
+Hình \ref{fig:demo_result} chỉ cho ta một cách khái quát về kết quả mô hình khi so sánh với các bounding box ban đầu.  Để đánh giá kết quả của mô hình,  trước tiên ta định nghĩa: Hai bounding box cùng phát hiện một đối tượng nếu giá trị IoU của chúng $\geq 0.3$. Khi đó,  bounding box được dự đoán từ mô hình sẽ được coi là một \textit{True positive},  ngược lại sẽ là \textit{False positive}.  Trong trường hợp có nhiều hơn 1 bounding box cùng dự đoán một đối tượng,  ta sẽ lấy bounding box có confidence (độ tin cậy) cao nhất làm TP, các bounding box còn lại sẽ là FP.  Để so sánh một cách khách quan, em sử dụng cùng một tập các thang đo phổ biến là Precision, Recall và F1-score (hình \ref{fig:res_pre_rec}).  Trong đó, Precision là tỉ lệ giữa số cây được phát hiện chính xác trên tổng số cây được phát hiện. Recall là tỉ lệ giữa số cây được phát hiện đúng trên tổng số cây thực sự  có trong ảnh. F1-score là trung bình điều hòa giữa hai giá trị Precision và Recall.  Các tham số trên được biểu diễn trong các biểu thức:
 \begin{equation*}
 	Precision = \frac{TP}{TP + FP}
 \end{equation*}
@@ -866,7 +948,7 @@ Hình \ref{fig:demo_result} chỉ cho ta một cách khái quát về kết qu�
 	\centering
   	\includegraphics[width=.8\linewidth]{Images/f1-score} %example-image-a
  	 \caption{Đánh giá kết quả}
- 	 \label{fig:sub1}
+ 	 \label{fig:res_pre_rec}
 \end{figure}
 
 \section{Định hướng phát triển trong tương lai}
@@ -960,6 +1042,11 @@ Từ kết quả thực nghiệm cho thấy, chương trình đã có những th
                Serge J. Belongie.
 	\textit{Feature Pyramid Networks for Object Detection}.  
 	arXiv:1612.03144.
+	
+	\bibitem{tiling} 
+	Ozge Unel, F. and Ozkalayci, Burak O. and Cigla, Cevahir.
+	\textit{The Power of Tiling for Small Object Detection}.  
+	Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops.
 	
 \end{thebibliography}
 
