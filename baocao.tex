@@ -1,4 +1,6 @@
 \documentclass[a4paper, 12pt]{report}
+%\NeedsTeXFormat{LaTeX2e}
+%\documentclass[12pt,oneside,A4paper]{book}
 \usepackage[utf8]{vietnam}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -6,7 +8,7 @@
 \usepackage{amsthm}
 \usepackage{fancyhdr}
 \usepackage{mathrsfs}
-\usepackage[left=3.5cm,right=2cm,top=3.5cm,bottom=3cm]{geometry}
+\usepackage[left=3.5cm,right=2.5cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{float}
@@ -51,7 +53,8 @@
 \newtheorem{Proposition}{Mệnh đề } %without numbering
 \newtheorem*{Propositionproof}{Chứng minh mệnh đề 1: } %without numbering
 \newtheorem{claim}{Khẳng định}
-\pagestyle{fancy}
+%\pagestyle{fancy}
+%\pagestyle{plain}
 \fancyhead{}
 \fancyhead[L]{}
 \fancyhead[R]{\itshape Đồ án tốt nghiệp 20201}
@@ -68,6 +71,9 @@
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
 %\setlength{\parindent}{4em}
+\addto\captionsenglish{%
+   \renewcommand\listfigurename{aa}}
+%\renewcommand*\listfigurename{aa}
 
 \begin{document}
 
@@ -80,7 +86,7 @@
 				
 				{\large\bf TRƯỜNG ĐẠI HỌC BÁCH KHOA HÀ NỘI}\\
 				
-				{\large\bf VIỆN TOÁN ỨNG DỤNG VÀ TIN HỌC} \\
+%				{\large\bf VIỆN TOÁN ỨNG DỤNG VÀ TIN HỌC} \\
 				
 				{———————o0o——————–}
 				\vskip 1cm
@@ -88,39 +94,68 @@
 				\begin{center}
      				\includegraphics[scale=.85]{Images/biaDA.png}
 				\end{center}
-				\vskip 1cm
+%				\vskip 1cm
 				
 %				{\Large\bf \textbf{PHƯƠNG PHÁP\\ 
 %						PHÂN TÍCH THÀNH PHẦN CHÍNH\\
 %						(Principal Component Analysis - PCA )
 %				}}
+%				{\Large\bf \textbf {ĐỒ ÁN TỐT NGHIỆP}}
+				\fontsize{25pt}{0.15cm}\selectfont
+				\textbf{ĐỒ ÁN TỐT NGHIỆP}
+				
+				
+				\vspace{1.5cm}
+				\fontsize{23pt}{0.15cm}\selectfont 
+				\textbf{Ứng dụng học sâu trong bài toán \\
+				phát hiện cây trên ảnh viễn thám} 
+				
+%				{\Large\bf \textbf{Ứng dụng học sâu trong bài toán \\
+%				phát hiện cây trên ảnh viễn thám
+%				}}
+	
+%				{\Large\bf \textbf{ỨNG DỤNG HỌC SÂU TRONG BÀI TOÁN \\
+%						PHÁT HIỆN CÂY TRÊN ẢNH VIỄN THÁM\\
+%				}}
+				\vspace{1cm}
+				\fontsize{14pt}{0.15cm}\selectfont
+				\textbf{LAI ĐỨC THẮNG}
+				
+				\vspace{0.3cm}
+				\fontsize{13pt}{0.15cm}\selectfont
+				\text{thang.ld163830@sis.hust.edu.vn}
+%				\vskip 0.5cm
+%				{\bf \textbf{LAI ĐỨC THẮNG}} \\
+%				thang.ld163830@sis.hust.edu.vn
 
-				{\Large\bf \textbf{ỨNG DỤNG HỌC SÂU TRONG BÀI TOÁN \\
-						PHÁT HIỆN CÂY TRÊN ẢNH VIỄN THÁM\\
-				}}
-				\vskip 1cm
-				{\bf ĐỒ ÁN TỐT NGHIỆP ĐẠI HỌC}
-				
-				
-				{\bf {\it Chuyên ngành:} TOÁN TIN}\\
-%				{\bf {\it Chuyên sâu:} }Xác suất rời rạc
-				
-				\vskip 1cm
-				
-				\begin{tabular}{r l}
-					
-					Giảng viên hướng dẫn:&{\bf TS.  LÊ HẢI HÀ  }\\[0.5cm]
-					
-					Họ và tên sinh viên:&{\bf LAI ĐỨC THẮNG}\\[0.5cm]
-					
-					Số hiệu sinh viên:&{\bf 20163830}\\[0.5cm]
-					Lớp:&{\bf Toán Tin K61}
-					
-				\end{tabular}
+				\vspace{1cm}
+				\fontsize{14pt}{17pt}
+				\textbf{Chuyên ngành Toán Tin}
+				\vspace{2cm}
+
+				\begin{tabbing}
+		\hspace{5cm}\=\hspace{5cm}\=\hspace{5cm} 
+		\kill{\it }\>{\it}\\				
+		\begin{bfseries}\fontsize{13pt}{0.15cm}\hspace{2cm} Giảng viên hướng dẫn:\end{bfseries}\> \begin{bfseries}\fontsize{13pt}{0.15cm} \hspace{2.3cm} TS.  LÊ HẢI HÀ\end{bfseries}\>\\
+		\begin{bfseries}\fontsize{13pt}{0.15cm}\hspace{2cm} Bộ môn:\end{bfseries}\> 
+		\begin{bfseries}\fontsize{13pt}{0.15cm}\hspace{2.5cm} Toán Tin\end{bfseries}\>\\
+		\begin{bfseries}\fontsize{13pt}{0.15cm}\hspace{2cm} Viện:\end{bfseries}\> 
+		\begin{bfseries}\fontsize{13pt}{0.15cm}\hspace{2.5cm} Toán ứng dụng và tin học\end{bfseries}\>
+	\end{tabbing}
+%				\begin{tabular}{r l}
+%					
+%					Giảng viên hướng dẫn:&{\bf TS.  LÊ HẢI HÀ  }\\[0.5cm]
+%					
+%					Họ và tên sinh viên:&{\bf LAI ĐỨC THẮNG}\\[0.5cm]
+%					
+%					Số hiệu sinh viên:&{\bf 20163830}\\[0.5cm]
+%					Lớp:&{\bf Toán Tin K61}
+%					
+%				\end{tabular}
 				
 				\vfill
 				
-				{\bf HÀ NỘI - 2020}
+				{\bf HÀ NỘI, 1/2021}
 				
 			\end{center}
 			
@@ -152,7 +187,52 @@ Giảng viên hướng dẫn \hspace*{1.1cm} \\
 \end{flushright} 
 \end{titlepage}
 
+
+
+
+%\chapter*{Danh sách hình vẽ}
+
+
+\chapter*{Lời cảm ơn}
+\addcontentsline{toc}{chapter}{Lời cảm ơn}	
+Trước hết, em xin gửi lời cảm ơn sâu sắc tới TS. Lê Hải Hà, Viện Toán Ứng Dụng Và Tin Học, thầy là người đã hướng dẫn trực tiếp cho
+em trong suốt quá trình thực hiện đồ án. Nhờ có sự tận tâm
+của thầy, em đã tiếp thu được nhiều kiến thức trong xử lý ảnh ở một số lĩnh vực đặc thù; những kiến thức để thực hiện đồ án này nhưng thầy đã từng bước giúp em tìm hiểu, cho em rất nhiều
+ý kiến, cũng như giúp hoàn thành các thủ tục liên quan, qua đó giúp em hoàn
+thành đồ án tốt nghiệp.  \\
+\hspace*{1cm}Em xin chân thành gửi lời cảm ơn đến công ty cổ phần Techainer,  đơn vị được viện gửi em đến thực tập  đã tạo mọi điều kiện thuận lợi giúp đỡ em
+trong suốt quá trình 4 tháng thực tập và làm việc tại đây, giúp em có thêm những kiến thức chuyên sâu hơn về xử lý ảnh cũng như quy trình triển khai, xây dựng một dự án về trí tuệ nhân tạo trong thực tế  qua đó giúp
+em hoàn thành được đồ án này. Em xin gửi lời cảm ơn đến các anh, các bạn
+nghiên cứu sinh tại công ty đã hỗ trợ, chỉ dạy cho em trong suốt thời gian
+làm việc tại đây.  \\
+\hspace*{1cm}Cuối cùng, em xin gửi cảm ơn tới tất cả những thầy cô trong trường Đại học Bách Khoa Hà Nội nói chung và thầy cô tại Viện Toán Ứng Dụng Và Tin Học nói riêng đã tận tình chỉ dạy và cung cấp những kiến thức quý báu cho em trong suốt 5 năm qua.
+\begin{flushright}
+Sinh viên thực hiện
+\end{flushright}
+\chapter*{Tóm tắt nội dung đồ án}
+\addcontentsline{toc}{chapter}{Tóm tắt nội dung đồ án}
+Việc sản xuất và phân phối loại cây trồng có giá trị kinh tế cao đòi hỏi phải có sự giám sát thường xuyên đối với theo chu kì và theo mùa vụ. Đây là một nhiệm vụ quan trọng đối với việc quản lý tài nguyên, rừng. Để đáp ứng nhu cầu ngày càng tăng của thế giới và sản lượng nông nghiệp tiêu dùng, năng suất cây trồng phải được ước tính. Việc phát hiện, thu thập thủ công dữ liệu cây trồng để lưu trữ hồ sơ trên một diễn tích đất lớn là không khả thi đối với con người, gây tốn kém tiền bạc và dễ bị ảnh hưởng bởi lỗi của con người
+Việc phát hiện cây trồng trên một diện tích lớn sẽ giúp doanh nghiệp giảm bớt sự phụ thuộc vào con người và chi phí, dễ dàng quản lý và lên kế hoạch kịp thời cho sản xuất. Trong vài năm trở lại đây, lĩnh vực học sâu và xử lý ảnh đang nhận được nhiều sự quan tâm, áp dụng trong nhiều lĩnh vực khoa học khác nhau.  Hơn nữa,  cùng với sự phát triển của công nghệ,  các bức ảnh viễn thám chụp bề mặt trái đất có kích thước ngày càng lớn, có độ nét cao,  mang lại cơ hội cho việc viễn thám các cảnh quan sinh học có quy mô từ các sinh vật riêng lẻ đến các hệ thống toàn cầu. Trong báo cáo đồ án này, em xin giới thiệu một giải pháp phát hiện cây trong các bức ảnh viễn thám dựa trên mô hình học sâu. Nội dung của đồ án gồm có phần mở đầu, 4 chương, phần kết luận, tài liệu tham khảo:
+\begin{itemize}
+	\item \textbf{Chương 1 -  Lý thuyết học sâu và bài toán nhận diện vật thể}: Chương này trình bày về cơ sở lý thuyết của học sâu; giới thiệu chung về bài toán nhận diện vật thể và mô hình mạng nơ-ron nhân tạo sẽ được sử dụng phục vụ cho bài toán.
+	\item \textbf{Chương 2 - Ứng dụng học sâu vào bài toán đếm cây trên ảnh viễn thám}: Trình bày về bài toán phát hiện cây trên ảnh viễn thám,  các cách tiếp tận bài toán, xử lý và xây dựng bộ dữ liệu, huấn luyện mô hình cho bài toán trên
+	\item \textbf{Chương 3 -  Triển khai đánh giá thử nghiệm}: Chương 3 sẽ trình bày kết quả đạt được của bài toán, đưa ra những đánh giá về tính chính xác, cách triển khai mô hình chạy thử với dữ liệu  thực tế
+\end{itemize}
+Tuy đã cố gắng hết sức, nhưng do thời gian thực hiện đề tài có hạn nên khó tránh khỏi những thiếu sót. Vì vậy, em rất mong nhận được sự góp ý của thầy cô để đề tài được hoàn thiện hơn. Em xin chân thành cảm ơn!
+\begin{flushright}
+Sinh viên thực hiện
+\end{flushright}
+%\chapter{Lý thuyết về hệ thống thông tin địa lý và tiền xử lý ảnh viễn thám}
+%
+%\section{Hệ thống thông tin địa lý}
+%
+%\section{Ảnh viễn thám và quá trình tiền xử lý}
+
 \tableofcontents{}
+
+%\chapter*{Danh mục hình vẽ}
+\addcontentsline{toc}{chapter}{Danh mục hình vẽ}
+\listoffigures
 
 \chapter*{Danh mục từ viết tắt}
 \addcontentsline{toc}{chapter}{Danh mục từ viết tắt}
@@ -160,10 +240,14 @@ Giảng viên hướng dẫn \hspace*{1.1cm} \\
 \begin{tabular}{ |c|c| } 
  \hline
    AP &  Average Precision \\ 
+  \hline
+  BCE & Balanced Cross Entropy \\
 \hline
  CNN & Convolutional Neural Network \\
  \hline
   CE & Cross Entropy \\
+ \hline
+ CONV & Convolutional \\
  \hline
   CPU & Central Processing Unit \\
  \hline
@@ -189,44 +273,6 @@ RAM & Random Access Memory \\
 \hline
 \end{tabular}
 \end{center}
-
-%\chapter*{Danh sách hình vẽ}
-\addcontentsline{toc}{chapter}{Danh sách hình vẽ}
-\listoffigures
-
-\chapter*{Lời cảm ơn}
-\addcontentsline{toc}{chapter}{Lời cảm ơn}	
-Trước hết, em xin gửi lời cảm ơn sâu sắc tới TS. Lê Hải Hà, Viện Toán Ứng Dụng Và Tin Học, thầy là người đã hướng dẫn trực tiếp cho
-em trong suốt quá trình thực hiện đồ án. Nhờ có sự tận tâm
-của thầy, em đã tiếp thu được nhiều kiến thức trong xử lý ảnh ở một số lĩnh vực đặc thù; những kiến thức để thực hiện đồ án này nhưng thầy đã từng bước giúp em tìm hiểu, cho em rất nhiều
-ý kiến, cũng như giúp hoàn thành các thủ tục liên quan, qua đó giúp em hoàn
-thành đồ án tốt nghiệp.  \\
-\hspace*{1cm}Em xin chân thành gửi lời cảm ơn đến công ty cổ phần Techainer,  đơn vị được viện gửi em đến thực tập  đã tạo mọi điều kiện thuận lợi giúp đỡ em
-trong suốt quá trình 4 tháng thực tập và làm việc tại đây, giúp em có thêm những kiến thức chuyên sâu hơn về xử lý ảnh cũng như quy trình triển khai, xây dựng một dự án về trí tuệ nhân tạo trong thực tế  qua đó giúp
-em hoàn thành được đồ án này. Em xin gửi lời cảm ơn đến các anh, các bạn
-nghiên cứu sinh tại công ty đã hỗ trợ, chỉ dạy cho em trong suốt thời gian
-làm việc tại đây.  \\
-\hspace*{1cm}Cuối cùng, em xin gửi cảm ơn tới tất cả những thầy cô trong trường Đại học Bách Khoa Hà Nội nói chung và thầy cô tại Viện Toán Ứng Dụng Và Tin
-Học nói riêng đã tận tình chỉ dạy và cung cấp những kiến thức quý báu cho
-em trong suốt 5 năm qua.
-\chapter*{Lời mở đầu}
-\addcontentsline{toc}{chapter}{Lời mở đầu}
-Việc sản xuất và phân phối loại cây trồng có giá trị kinh tế cao đòi hỏi phải có sự giám sát thường xuyên đối với theo chu kì và theo mùa vụ. Đây là một nhiệm vụ quan trọng đối với việc quản lý tài nguyên, rừng. Để đáp ứng nhu cầu ngày càng tăng của thế giới và sản lượng nông nghiệp tiêu dùng, năng suất cây trồng phải được ước tính. Việc phát hiện, thu thập thủ công dữ liệu cây trồng để lưu trữ hồ sơ trên một diễn tích đất lớn là không khả thi đối với con người, gây tốn kém tiền bạc và dễ bị ảnh hưởng bởi lỗi của con người
-Việc phát hiện cây trồng trên một diện tích lớn sẽ giúp doanh nghiệp giảm bớt sự phụ thuộc vào con người và chi phí, dễ dàng quản lý và lên kế hoạch kịp thời cho sản xuất. Trong vài năm trở lại đây, lĩnh vực học sâu và xử lý ảnh đang nhận được nhiều sự quan tâm, áp dụng trong nhiều lĩnh vực khoa học khác nhau.  Hơn nữa,  cùng với sự phát triển của công nghệ,  các bức ảnh viễn thám chụp bề mặt trái đất có kích thước ngày càng lớn, có độ nét cao,  mang lại cơ hội cho việc viễn thám các cảnh quan sinh học có quy mô từ các sinh vật riêng lẻ đến các hệ thống toàn cầu. Trong báo cáo đồ án này, em xin giới thiệu một giải pháp phát hiện cây trong các bức ảnh viễn thám dựa trên mô hình học sâu. Nội dung của đồ án gồm có phần mở đầu, 4 chương, phần kết luận, tài liệu tham khảo:
-\begin{itemize}
-	\item \textbf{Chương 1 -  Lý thuyết học sâu và bài toán nhận diện vật thể}: Chương này trình bày về cơ sở lý thuyết của học sâu; giới thiệu chung về bài toán nhận diện vật thể và mô hình mạng nơ-ron nhân tạo sẽ được sử dụng phục vụ cho bài toán.
-	\item \textbf{Chương 2 - Ứng dụng học sâu vào bài toán đếm cây trên ảnh viễn thám}: Trình bày về bài toán phát hiện cây trên ảnh viễn thám,  các cách tiếp tận bài toán, xử lý và xây dựng bộ dữ liệu, huấn luyện mô hình cho bài toán trên
-	\item \textbf{Chương 3 -  Triển khai đánh giá thử nghiệm}: Chương 3 sẽ trình bày kết quả đạt được của bài toán, đưa ra những đánh giá về tính chính xác, cách triển khai mô hình chạy thử với dữ liệu  thực tế
-\end{itemize}
-Tuy đã cố gắng hết sức, nhưng do thời gian thực hiện đề tài có hạn nên khó tránh khỏi những thiếu sót. Vì vậy, em rất mong nhận được sự góp ý của thầy cô để đề tài được hoàn thiện hơn. Em xin chân thành cảm ơn!
-%\chapter{Lý thuyết về hệ thống thông tin địa lý và tiền xử lý ảnh viễn thám}
-%
-%\section{Hệ thống thông tin địa lý}
-%
-%\section{Ảnh viễn thám và quá trình tiền xử lý}
-
-
-
 
 \chapter{Lý thuyết học sâu và bài toán nhận diện vật thể}
 Deep Learning là một kỹ thuật Machine Learning mà ở đó huấn luyện máy tính giống như cách thức tự nhiên của con người: Học qua các ví dụ. Những năm gần đây, Deep learning đã mang đến nhiều bất ngờ trên quy mô toàn cầu và dẫn đường cho những tiến triển nhanh chóng trong nhiều lĩnh vực khác nhau như thị giác máy tính, xử lý ngôn ngữ tự nhiên (natural language processing), nhận dạng giọng nói tự động (automatic speech recognition), học tăng cường (reinforcement learning), và mô hình hoá thống kê (statistical modeling). Với những tiến bộ này, chúng ta bây giờ có thể xây dựng xe tự lái với mức độ tự động ngày càng cao (nhưng chưa nhiều tới mức như vài công ty đang tuyên bố), xây dựng các hệ thống giúp trả lời thư tự động khi con người ngập trong núi email, hay lập trình phần mềm chơi cờ vây có thể thắng cả nhà vô địch thế giới, một kỳ tích từng được xem là không thể đạt được trong nhiều thập kỷ tới. Những công cụ này đã và đang gây ảnh hưởng rộng rãi tới các ngành công nghiệp và đời sống xã hội, thay đổi cách tạo ra các bộ phim, cách chẩn đoán bệnh và đóng một vài trò ngày càng tăng trong các ngành khoa học cơ bản – từ vật lý thiên văn tới sinh học.\par
@@ -356,7 +402,7 @@ Ví dụ về stride = 1 và stride bằng 2
 Các hình ảnh trong cuộc sống bình thường thì không chỉ chứa 1 đối tượng mà thường bao gồm rất nhiều các đối tượng. Ta quan tâm đến vị trí của từng đối tượng trong ảnh. Bài toán như vậy được gọi là: object detection.\par
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Images/det}
+	\includegraphics[width=0.7\linewidth]{Images/object_in_real}
 	\caption{Ví dụ về đầu ra của bài toán nhận diện vật thể}
 	\label{fig:det}
 \end{figure}
@@ -416,7 +462,7 @@ Trước hết xét bài toán phân loại nhị phân. Ta cũng coi một tron
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Images/PR}
-	\caption{Cách tính Precision và Recall. (Nguồn: \textit{Machine Learning cơ bản})}
+	\caption{Cách tính Precision và Recall.}
 	\label{fig:iou2}
 \end{figure}
 \textbf{Precision} cao đồng nghĩa với việc độ chính xác của các điểm tìm được là cao. \textbf{Recall} cao đồng nghĩa với việc True Positive Rate cao, tức tỉ lệ bỏ sót các điểm thực sự positive là thấp.\par
@@ -469,26 +515,7 @@ Mean average precision (mAP) là trung bình của AP. Trong một số trườn
 \end{figure}
 
 \section{Mô hình RetinaNet}
-%\subsection{Sơ lược về Transfer Learning}
-%Những năm gần đây, Deep Learning phát triển cực nhanh dựa trên lượng dữ liệu training khổng lồ và khả năng tính toán ngày càng được cải tiến của các máy tính. Các kết quả cho bài toán phân loại ảnh ngày càng được nâng cao. Bộ cơ sở dữ liệu thường được dùng nhất là ImageNet với 1.2M ảnh cho 1000 classes khác nhau. Rất nhiều các mô hình Deep Learning đã giành chiến thắng trong các cuộc thi ILSVRC (ImageNet Large Scale Visual Recognition Challenge). Có thể kể ra một vài: AlexNet, ZFNet, GoogLeNet, ResNet, VGG.\par
-%Nhìn chung, các mô hình này đều bao gồm rất nhiều layers. Các layers phía trước thường là các Convolutional layers kết hợp với các nonlinear activation functions và pooling layers (và được gọi chung là ConvNet). Layer cuối cùng là một Fully Connected Layer và thường là một Softmax Regression (Xem Hình 1). Số lượng units ở layer cuối cùng bằng với số lượng classes (với ImageNet là 1000). Vì vậy output ở layer gần cuối cùng (second to last layer) có thể được coi là feature vectors và Softmax Regression chính là Classifier được sử dụng.\par
-%Chính nhờ việc features và classifier được trained cùng nhau qua deep networks khiến cho các mô hình này đạt kết quả tốt. Tuy nhiên, những mô hình này đều là các Deep Networks với rất nhiều layers. Việc training dựa trên 1.2M bức ảnh của ImageNet cũng tốn rất nhiều thời gian (2-3 tuần).\par
-%Với các bài toàn dựa trên tập dữ liệu khác, rất ít khi người ta xây dựng và train lại toàn bộ Network từ đầu, bởi vì có rất ít các cơ sở dữ liệu có kích thước lớn. Thay vào đó, phương pháp thường được dùng là sử dụng các mô hình (nêu phía trên) đã được trained từ trước, và sử dụng một vài kỹ thuật khác để giải quyết bài toán. Phương pháp sử dụng các mô hình có sẵn như thế này được gọi là Transfer Learning.\par
-%Có 2 loại transfer learning:
-%\begin{itemize}
-%	\item \textbf{Feature extractor:} Sau khi lấy ra các đặc điểm của ảnh bằng việc sử dụng ConvNet của pre-trained model, thì ta sẽ dùng linear classifier (linear SVM, softmax classifier,..) để phân loại ảnh.
-%	\item \textbf{Fine tuning:} Sau khi lấy ra các đặc điểm của ảnh bằng việc sử dụng ConvNet của pre-trained model, thì ta sẽ coi đây là input của 1 CNN mới bằng cách thêm các ConvNet và Fully Connected layer. 
-%\end{itemize}
-%\subsubsection{PyTorch}
-%PyTorch là một thư viện machine learning mã nguồn mở dựa trên Torch, được sử dụng cho lĩnh vực Thị giác máy tính (Computer Vision) và xử lý ngôn ngữ tự nhiên (Natural language processing), được phát triển bởi Phòng nghiên cứu AI của Facebook (FAIR). Pytorch tập trung vào 2 khả năng chính:
-%\begin{itemize}
-%	\item Một sự thay thế cho bộ thư viện numpy để tận dụng sức mạnh tính toán của GPU.
-%	\item Một platform Deep learning phục vụ trong nghiên cứu, mang lại sự linh hoạt và tốc độ.
-%\end{itemize}
-%Cấu trúc dữ liệu cốt lõi được sử dụng trong PyTorch là \textbf{Tensor}.\par
-
-%\subsection{Kiến trúc mô hình RetinaNet}
-RetinaNet là một mạng tổng hợp bao gồm:
+RetinaNet \cite{floss} là một mạng tổng hợp bao gồm:
 \begin{itemize}
 	\item Mạng kim tự tháp đặc trưng-Feature Pyramid Networks (FPN) được xây dựng dưa trên mạng ResNet; chịu trách nhiệm tính toán,  trích xuất các đặc trưng trong bức ảnh
 	\item Mạng con chịu trách nhiệm thực hiện phân loại đối tượng bằng cách sử dụng đầu ra của mạng kim tự tháp đặc trưng FPN
@@ -513,8 +540,7 @@ RetinaNet là một mạng tổng hợp bao gồm:
 ResNet-50 là một mạng bao gồm 50 lớp residual.\par
 
 \textbf{Mạng kim tự tháp đặc trưng-Feature Pyramid Networks (FPN)}  \\
-Phát hiện các đối tượng có kích thước nhỏ là một vấn đề vô cùng quan
-trọng để nâng cao độ chính xác. Và FPN là mô hình mạng được thiết kế
+Phát hiện các đối tượng có kích thước nhỏ là một vấn đề vô cùng quan trọng để nâng cao độ chính xác. Và FPN \cite{cfpn} là mô hình mạng được thiết kế
 ra dựa trên khái niệm kim tự tháp (pyramid) để giải quyết vấn đề này. \\
 \begin{figure}[!h]
 	\centering
@@ -620,8 +646,8 @@ Hàm mất mát phân loại mà mô hình retinanet sử dụng là Focal Loss.
 \begin{equation}
 CE(p,y) = 
 \begin{cases} 
--log(p) \textrm{     if      }  y =1 \\
--log(1-p) \textrm{     otherwise,      }
+-log(p) \textrm{     nếu      }  y =1 \\
+-log(1-p) \textrm{     ngược lại,      }
 \end{cases}
 \end{equation}
 với $y$ là nhãn phân loại của dữ liệu,  $p \in [0, 1]$ là xác suất dự đoán cho lớp có nhãn y của mô hình. Để thuận tiện, ta định nghĩa $p_t$:
@@ -629,7 +655,7 @@ với $y$ là nhãn phân loại của dữ liệu,  $p \in [0, 1]$ là xác su�
 p_t = 
 \begin{cases} 
 p \textrm{    nếu      }  y =1 \\
-1-p \textrm{     otherwise,      }
+1-p \textrm{     ngược lại,      }
 \end{cases}
 \end{equation}
 Khi đó $CE(p,y)=CE(p_t)=-log(p_t)$ \\
@@ -717,7 +743,7 @@ Tỷ lệ này sẽ còn lớn hơn nữa nếu tăng $\gamma$ hoặc giá trị
 
 
 \section{Xây dựng bộ dữ liệu} 
-Dữ liệu sử dụng trong bài toán này được cung cấp bởi thầy giáo hướng dẫn TS.  Lê Hải Hà.  Dữ liệu gốc bao gồm 2 thư mục,  nỗi thư mực gồm một vài ảnh ở định dạng GeoTif và các \textbf{shapefile} chứa toạ độ các bounding box trong các bức ảnh đó
+Dữ liệu sử dụng trong bài toán này được cung cấp bởi thầy giáo hướng dẫn TS.  Lê Hải Hà.  Dữ liệu gốc (hình \ref{fig:1a}) bao gồm 2 thư mục,  nỗi thư mực gồm một vài ảnh ở định dạng GeoTif và các \textbf{shapefile} chứa toạ độ các bounding box trong các bức ảnh đó.
  \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\linewidth]{Images/data_folder}
@@ -725,7 +751,7 @@ Dữ liệu sử dụng trong bài toán này được cung cấp bởi thầy g
 	\label{fig:data_folder}
 \end{figure}
 
-\newpage
+%\newpage
  \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\linewidth]{Images/qgisa}
@@ -839,32 +865,71 @@ Tuy nhiên trong hình \ref{fig:polygon_bounds},  kết quả trả về cho m�
 Kết quả sau khi cắt ảnh ra ta thu được bộ dữ liệu hơn 5000 ảnh kích thước $256 \times 256$ cùng với toạ độ các bounding box chứa đối tượng trong từng ảnh đó
 \section{Huấn luyện mạng neural}
 
-Chúng ta sẽ tiến hành huấn luyện mạng neural dựa trên dữ liệu luyện được trình bày ở trên. Sau khi luyện xong sẽ lưu kết quả thành một file có định dạng .pt để những lần chạy thuật toán tiếp theo, ta chỉ cần load file này lên mà không cần phải luyện lại mạng. Thuật toán luyện mạng trong chương trình này được tham khảo từ: https://github.com/yhenon/pytorch-retinanet.  Repo này được tác giả triển khai lại thuật toán RetinaNet theo ngôn ngữ Pytorch dựa trên paper \textit{Focal Loss for Dense Object Detection}
-
-Chúng ta sẽ tiến hành huấn luyện mô hình dựa trên bộ dữ liệu được tạo ra ở trên.  Mô hình mà em sử dụng trong bài toán này là RetinaNet; trong đó backbone được sử dụng trong mạnh kim tự tháp đặc trưng FPN là ResNet50 được pretrained trên bộ dữ liệu nổi tiếng ImageNet phục vụ cho việc trích xuất các đặc trưng trong ảnh. Tổng số ảnh được đưa vào mô hình là 4505 ảnh,  trong đó lấy ra 20\% số ảnh được đưa vào tập test để đánh giá mô hình sau mỗi vòng lặp. Tổng số vòng luyện mạng là 50 vòng, thời gian luyện xấp xỉ 8 giờ (chạy trên CPU 4 cores,  GPU  Tesla V100).  Kết quả việc đánh giá mô hình sao mỗi vòng lặp được thể hiện thông qua giá trị \textit{Average precison} như sau: %Add ảnh vào
+Chúng ta sẽ tiến hành huấn luyện mạng neural dựa trên dữ liệu luyện được trình bày ở trên. Sau khi luyện xong sẽ lưu kết quả thành một file có định dạng .pt để những lần chạy thuật toán tiếp theo, ta chỉ cần load file này lên mà không cần phải luyện lại mạng. Thuật toán luyện mạng trong chương trình này được tham khảo từ: https://github.com/yhenon/pytorch-retinanet.  Repo này được tác giả triển khai lại thuật toán RetinaNet theo ngôn ngữ Pytorch dựa trên paper \textit{Focal Loss for Dense Object Detection} \cite{floss}.
+Chúng ta sẽ tiến hành huấn luyện mô hình dựa trên bộ dữ liệu được tạo ra ở trên.  Mô hình mà em sử dụng trong bài toán này là RetinaNet; trong đó backbone được sử dụng trong mạnh kim tự tháp đặc trưng FPN là ResNet50 được pretrained trên bộ dữ liệu nổi tiếng ImageNet phục vụ cho việc trích xuất các đặc trưng trong ảnh. Tổng số ảnh được đưa vào mô hình là 4505 ảnh,  trong đó lấy ra 20\% số ảnh được đưa vào tập test để đánh giá mô hình sau mỗi vòng lặp. Tổng số vòng luyện mạng là 50 vòng, thời gian luyện xấp xỉ 8 giờ (chạy trên CPU 4 cores,  GPU  Tesla V100).  Kết quả việc đánh giá mô hình sao mỗi vòng lặp được thể hiện thông qua giá trị \textit{Average precison} (hình \ref{fig:mAPplot}) %Add ảnh vào
 \begin{figure}
 \centering
-  \includegraphics[width=.6\linewidth]{Images/mAPplot}
-  \caption{Giá trị mAP sau mỗi vòng lặp}
+  \includegraphics[width=1\linewidth]{Images/mAPplot}
+  \caption{Giá trị Average Precision sau mỗi vòng lặp}
 \label{fig:mAPplot}
 \end{figure}
 
+Một số kết quả trên tập ảnh test:
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[!h]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{Images/detect_res/Img_RSKA003603_0_r1536_c1536}
+        \subcaption[short for lof]{}
+%        \rule{\linewidth}{3cm}
+        \label{fig:subfig1}
+    \end{subfigure}%
+    \quad
+    \begin{subfigure}[!h]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{Images/detect_res/Img_RSKA003603_0_r1920_c1920}
+        \subcaption[short for lof]{}
+%        \rule{\linewidth}{3cm}
+        \label{fig:subfig2}
+    \end{subfigure}
+    \caption[Optional caption for list of figures]{Kết quả mô hình}
+    \label{fig:demo_split}
+\end{figure}
+
+Một số ảnh nhận dạng sai
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[!h]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{Images/detect_fail/Img_RSKA003603_0_r2304_c3584}
+        \subcaption[short for lof]{Vùng đất gây hiểu nhầm}
+%        \rule{\linewidth}{3cm}
+        \label{fig:subfig1}
+    \end{subfigure}%
+    \quad
+    \begin{subfigure}[!h]{0.45\textwidth}
+    \includegraphics[width=\linewidth]{Images/detect_fail/Img_RSKA003603_0_r2176_c1024}
+        \subcaption[short for lof]{mô hình nhận dạng nhầm bụi cỏ}
+%        \rule{\linewidth}{3cm}
+        \label{fig:subfig2}
+    \end{subfigure}
+    \caption[Optional caption for list of figures]{Một số trường hợp mô hình nhận dạng sai}
+    \label{fig:demo_split}
+\end{figure}
+
 \section{Xây dựng chương trình}
-Chương trình được xây dựng trên nền tảng ngôn ngữ Python (phiên bản 3.6.9).. Cấu trúc thư mục của chương trình như hình 4.2 dưới đây: 
+Chương trình được xây dựng trên nền tảng ngôn ngữ Python (phiên bản 3.6.9).. Cấu trúc thư mục của chương trình như hình \ref{fig:tree_DATN} 
  \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Images/tree_DATN}
 	\caption{Cấu trúc chương trình}
 	\label{fig:tree_DATN}
 \end{figure}
-Dưới đây ta sẽ tìm hiểu kỹ chức năng các thư mục và file trên:
+Ta sẽ tìm hiểu kỹ chức năng các thư mục và file trên:
 \begin{itemize}
-	\item $/$data\_tiff: Thư mục này chứa các ảnh viễn thám định dạng GeoTiff cùng với các file ".shp" chứa các thông tin về đặc dạng hình học của đối tượng có trong ảnh
-	\item $/$retinanet: Thư mục xây dưng mô hình RetinaNet: khởi tạo model,  hàm loss, DataLoader để đưa dữ liệu vào mô hình
-	\item $/$checkpoint: Thư mục này lưu lại các trọng số trong mạng sau mỗi lần duyệt qua toàn bộ dataset, phục vụ cho việc đánh giá và dự đoán model. Các file trong thư mục này đều có định dạng: *.pt
+	\item $/$data\_tiff: Thư mục này chứa các ảnh viễn thám định dạng GeoTiff cùng với các file ".shp" chứa các thông tin về đặc dạng hình học của đối tượng có trong ảnh.
+	\item $/$retinanet: Thư mục xây dưng mô hình RetinaNet: khởi tạo model,  hàm loss, DataLoader để đưa dữ liệu vào mô hình.
+	\item $/$checkpoint: Thư mục này lưu lại các trọng số trong mạng sau mỗi lần duyệt qua toàn bộ dataset, phục vụ cho việc đánh giá và dự đoán model. Các file trong thư mục này đều có định dạng: *.pt.
 	\item /raster\_split: Thư mục này dùng để chuyển các ảnh vệ tinh định dạng GeoTiff về định dạng .png đồng thời tạo một bộ dataset gồm các ảnh png và file .txt chứa vị trí các đối tượng trong ảnh.
 	\item /lib: Thư mục này xây dựng các metrics trong việc đánh giá một mô hình object detection: Precision, Recall, Average Precision, F1-score.
-	\item demo.py: Kết hợp với các file trong thư mục /demo thực hiện nhiệm vụ testing: Đầu tiên sẽ load file weight trong thư mục checkpoint, đọc dữ liệu ảnh GeoTiff đầu vào và đưa vào trong model. Kết quả sau đó được lưu lại và xử lý để xuất ra shapefile
+	\item demo.py: Kết hợp với các file trong thư mục /demo thực hiện nhiệm vụ testing: Đầu tiên sẽ load file weight trong thư mục checkpoint, đọc dữ liệu ảnh GeoTiff đầu vào và đưa vào trong model. Kết quả sau đó được lưu lại và xử lý để xuất ra shapefile.
 	\item train.py: File này có nhiệm vụ chạy mô hình RetinaNet và lưu trọng số của mô hình vào thư mục /checkpoint sau mỗi lần lặp trên toàn  bộ dataset. Thao tác này chỉ cần thực hiện một lần duy nhất.
 \end{itemize}
 
@@ -903,7 +968,7 @@ cho ra toạ độ các bounding box cuối cùng chứa vật thể trong ảnh
 
  \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=1\linewidth, height=7cm]{Images/deploymentStage1}
+	\includegraphics[width=1.1\linewidth, height=7cm]{Images/deploymentStage1}
 	\caption{Dữ liệu đầu vào để phát hiện vật thể}
 	\label{fig:deploymentStage}
 \end{figure}
@@ -951,12 +1016,29 @@ Hình \ref{fig:demo_result} chỉ cho ta một cách khái quát về kết qu�
  	 \label{fig:res_pre_rec}
 \end{figure}
 
-\section{Định hướng phát triển trong tương lai}
+
+\chapter{Kết luận}\
+\section{Kết luận}
+Phát hiện đối tượng trong ảnh là một bài toán hấp dẫn và có rất nhiều ứng dụng trong thực tế. Ngày nay, cùng với sự phát triển của các thiết bị công nghệ cao,  các bức ảnh viễn thám được chụp trở nên rõ nét hơn,  là nguồn dữ liệu đầu vào chất lượng cho các mô hình phát hiện đối tượng,  từ đó hỗ trợ đáng kể các dự án quản lý rừng,  và sự phân bố các cây trồng trên một diện tích đất lớn. Trong quá trình thực hiện đồ án này, bước đầu em có gặp rất nhiều khó khăn nhưng nhờ có sự giúp đỡ tận tình của thầy cô và bạn bè, em đã có thêm nhiều kinh nghiệm và kiến thức:
+\begin{itemize}
+	\item Tìm hiểu các phương pháp phát hiện vật thể.
+	\item Các phương pháp đánh giá một mô hình phát hiện vật thể.
+	\item Tìm hiểu, áp dụng mô hình RetinaNet vào bài toán mục tiêu, đây là một mô hình "one-stage"  trong các thuật toán object detection nhưng đem lại kết quả tốt như những mô hình "two-stage"  nhưng với thời gian chạy huấn luyện nhanh hơn.
+	\item Kĩ năng tiền xử lý dữ liệu, xây dựng bộ dữ liệu trong các bài toán với ảnh viễn thám.
+	
+	
+\end{itemize}
+Từ kết quả kiểm thử cho thấy đồ án đã đạt được các mục đích nhất định:
+\begin{itemize}
+	\item Cho cái nhìn tổng quát về phương pháp để giải quyết các bài toán về phát hiện vật thể trong lĩnh vực ảnh viễn thám.
+	\item Kết quả nhiện diện bước đầu khá tốt.
+\end{itemize}
+\section{Hướng phát triển của đồ án trong tương lai}
 Từ kết quả thực nghiệm cho thấy, chương trình đã có những thành công nhất định. Song bên cạnh đó cũng còn khá nhiều nhược điểm cần cải tiến. Trong quá trình hoàn thành đồ án em đã đầu tư nhiều thời gian và công sức với bài toán này, và nhận thấy đây là bài toán có khả năng phát triển cao hơn nữa . Em xin đưa ra một số hướng phát triển tiếp theo cho bài toán như sau:
 \begin{itemize}
 	\item Phát triển và cài đặt giao diện chương trình để có thể dễ dàng chạy và sử dụng hơn. 
 	\item Sử dụng thêm một vài phép xử lý ảnh để tăng cường dữ liệu phục vụ cho việc training 
-	\item Cải tiến, thay đổi các thuật toán để loại bỏ các bounding box trùng nhau nhanh hơn khi sử dụng thuật toán NMS; giúp chương trình chạy tối ưu hơn
+	\item Hiện tại,  dữ liệu sử dụng trong bài toán chỉ là ảnh chụp các cây mới trồng nên không xảy ra hiện tượng các cây đè lên nhau trong ảnh.  Vấn đề cần cải tiến là  nghiên cứu thêm các mô hình phát hiện đối tượng khi các cây này lớn lên, và bị đè lên nhau khi chụp.
 \end{itemize}
 
 
@@ -1024,7 +1106,7 @@ Từ kết quả thực nghiệm cho thấy, chương trình đã có những th
 		Detection with Region Proposal Networks}.  
 	arXiv:1506.01497.
 		
-	\bibitem{cpoints} 
+	\bibitem{floss} 
 	Tsung{-}Yi Lin,
                Priya Goyal,
                Ross B. Girshick,
